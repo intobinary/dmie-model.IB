@@ -6,7 +6,7 @@
 			arrScripts = Array.from(document.scripts).filter(s => s.src),
 			arrStylesheets = Array.from(document.querySelectorAll('link[rel="stylesheet"]')),
 			arrVideos = Array.from(document.querySelectorAll('video')),
-			iProgressBar = 0, iProgressBarFROM = 0, iProgressBarUNTIL = 0, iResources = 0,
+			iProgressBar = 0, iResources = 0,
 			itemsIMG = document.images,
 			itemsIMGsize = itemsIMG.length,
 			tagOverlay = intobinary("#overlay"),
@@ -82,6 +82,7 @@
 		}
 		
 		/*
+		var iProgressBarFROM = 0, iProgressBarUNTIL = 0;
 		async function animateProgressBar(vUntilStat) {
 			iProgressBarUNTIL = vUntilStat;
 			
@@ -97,20 +98,6 @@
 			iProgressBarFROM = vUntilStat;
 		}
 		*/
-		
-		function smoothCounter(target) {
-			let current = parseInt(tagStat.textContent.match(/\d+/)[0]) || 0;
-			let increment = target > current ? 1 : -1; // Determine direction of counting
-			let interval = setInterval(() => {
-				if (current === target) {
-					clearInterval(interval);
-				} else {
-					current += increment;
-					tagProgress.style.width = current + '%';
-					tagStat.textContent = `Loading ${current}%`;
-				}
-			}, 1); // Adjust the speed of the counter here
-		}
   }
   document.addEventListener('DOMContentLoaded', classProgressStat, false);
 }());
