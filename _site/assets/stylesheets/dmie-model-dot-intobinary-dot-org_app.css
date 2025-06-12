@@ -1,0 +1,156 @@
+/*** CANCEL ***/
+/*** END CANCEL ***/
+
+/*** Z-INDEXES ***/
+.banner-bg { position: relative; z-index: 10; }
+.map-svg { position: relative; z-index: 20; }
+.banner-title { position: relative; z-index: 30; }
+/*** END Z-INDEXES ***/
+
+/*** COLORS ***/
+.banner-title-main { color: white; }
+
+.banner { background-color: #AAA; }
+/*** END COLORS ***/
+
+/*** FONTS ***/
+.banner-title { font-family: "Arial Black"; }
+
+.banner-title-main { font-size: 30vw; }
+.banner-title-sub { font-size: 10vw; }
+
+.banner-title-sub { text-align: right; }
+
+.menu-cta { font-weight: bold; }
+.banner-title-sub { text-transform: lowercase; }
+.menu-cta { text-transform: uppercase; }
+/*** END FONTS ***/
+
+/*** COMPONENTS ***/
+	/*** COMMONS ***/
+
+	/*** .banner ***/
+	.banner { display: flex; }
+	.banner { align-items: flex-end; }
+	.banner { justify-content: center; }
+
+	.banner {
+		position: relative;
+	}
+	.banner-bg {
+		position: absolute; top: 0; right: 0;
+		width: 100%; height: 100%;
+	}
+	.banner-title {
+		position: relative;
+	}
+	.banner-title-main {
+		position: relative; top: .12em;
+	}
+	.banner-title-sub {
+		position: absolute; bottom: -1em;
+	}
+	
+	/*** .explainer ***/
+	.explainer {
+		
+		
+		background-color: purple;
+	}
+	
+	/*** .map ***/
+	.map {
+		position: relative;
+	}
+	.map-svg {
+		position: absolute;
+	}
+	
+	/*** .menu ***/
+	.menu {
+		position: relative;
+		padding: 1.9em 0;
+	}
+	.menu-cta {
+		padding: 1em 1.5em;
+		
+		border-radius: .5em;
+		background-color: black;
+		color: white;
+	}
+/*** END COMPONENTS ***/
+
+/*** INTERACTIVITY ***/
+label { cursor: pointer; }
+
+#chbx4explainer:checked ~ main .map-svg-path {
+	fill: transparent !important;
+	stroke: black !important;
+}
+/*** END INTERACTIVITY ***/
+
+/*** MEDIA-QUERIES ***/
+@media screen and (max-width: 600px) {
+	/** COLORS ***/
+	.banner-title-sub { color: #AAA; }
+	
+	/*** FONTS ***/
+	.menu { text-align: center; }
+	
+	/*** COMMONS ***/
+	.banner { height: 30vh; }
+	.map-svg { top: -30vh; }
+		.menu { margin-top: 50vh; }
+	
+	.map-svg { width: 100%; }
+	.menu { width: 100%; left: 0; }
+}
+@media screen and (min-width: 600px) and (max-width: 900px) {
+	/*** COMMONS ***/
+	.banner { height: 50vh; }
+	.map-svg { top: -50vh; }
+		.menu { margin-top: 25vh; }
+	
+	.map-svg { width: 60%; }
+	.menu { width: 40%; left: 60%; }
+}
+@media screen and (min-width: 900px) {
+	/*** COMMONS ***/
+	.banner { height: 70vh; }
+	.map-svg { top: -70vh; }
+		.menu { margin-top: 30vh; }
+	
+	.map-svg { width: 60%; }
+	.menu { width: 40%; left: 60%; }
+}
+/*** END MEDIA-QUERIES ***/
+
+/*** ANIMATION ***/
+	/*** .d-gradient ***/
+	.d-gradient {
+		background: linear-gradient(10deg, green, black);
+		background-size: 180% 180%;
+		animation: aGradient 6s ease infinite;
+	}
+
+	@keyframes aGradient {
+		0% { background-position: 0% 50%; }
+		50% { background-position: 100% 50%; }
+		100% { background-position: 0% 50%; }
+	}
+/*** END ANIMATION ***/
+
+/*** SANDBOX ***/
+.explainer { display: none; }
+/*** END SANDBOX ***/
+
+/*** CSS-HACKS ***/
+	.banner-title-sub {
+		width: 100%;
+		display: block;
+	}
+	
+	.explainer {
+		margin-top: 9em !important;
+	}
+/*** END CSS-HACKS ***/
