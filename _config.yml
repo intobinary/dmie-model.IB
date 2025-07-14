@@ -1,4 +1,12 @@
 collections:
-  pages:
+  app:
     output: true
     permalink: /:path/
+    
+defaults:
+  -
+    scope:
+      path: ""
+      type: "app"
+    values:
+      layout: "app"

@@ -1,11 +1,10 @@
 ---
-layout: app
-
 w-marquee: "App In Construction"
 w-lang:
   en: "Use the app in English"
   fr: "Use the app in French"
 w-intro: "The Informal Economy — A Hidden Giant. But how significant is it in the Democratic Republic of the Congo?"
+w-button: "Discover the Research"
 w1:
   title: "THE WORLD THROUGH THE EYES OF THE WEST"
   text: "For decades, the global economy has been measured by standards and models largely"

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Fixed Map Hover Over Explainer Spacer Detection</title>
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+	/* Reset and base styles */
+	* {
+		box-sizing: border-box;
+	}
+	body {
+		margin: 0;
+		font-family: 'Inter', sans-serif;
+		background: #f9fafb;
+		color: #374151;
+		line-height: 1.6;
+	}
+	main {
+		max-width: 900px;
+		margin: 0 auto;
+		padding: 120px 24px 120px; /* Padding top for fixed map space */
+	}
+	h1 {
+		font-weight: 800;
+		font-size: 36px;
+		margin-bottom: 24px;
+		color: #111827;
+	}
+	p {
+		font-size: 18px;
+		color: #4b5563;
+		margin-bottom: 32px;
+	}
+
+	/* Fixed map styling */
+	.map {
+		position: fixed;
+		top: 24px;
+		right: 24px;
+		width: 300px;
+		height: 400px;
+		background: #3b82f6;
+		border-radius: 16px;
+		box-shadow: 0 12px 24px rgba(59, 130, 246, 0.4);
+		color: white;
+		padding: 24px;
+		z-index: 1000;
+		transition: box-shadow 0.3s ease, border-color 0.3s ease;
+		border: 3px solid transparent;
+	}
+	/* Highlight border when overlapping */
+	.map.overlap {
+		box-shadow: 0 12px 32px rgba(59, 130, 246, 0.8);
+		border-color: #2563eb;
+		
+		background-color: purple !important;
+	}
+
+	/* Explainer spacer styling */
+	.explainer-viewbox {
+		background: #d1fae5;
+		border: 2px solid #10b981;
+		border-radius: 12px;
+		min-height: 300px;
+		margin: 64px 0;
+		padding: 24px 32px;
+		box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+		font-weight: 600;
+		font-size: 20px;
+		color: #065f46;
+		text-align: center;
+	}
+
+	/* Additional content spacing for page length */
+	.content-block {
+		padding: 24px 32px;
+		font-size: 16px;
+		color: #374151;
+		max-width: 600px;
+		margin: 64px auto;
+		background: white;
+		border-radius: 12px;
+		box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+		
+		min-height: 170vh !important;
+	}
+
+	/* Responsive */
+	@media (max-width: 640px) {
+		.map {
+			width: 90vw;
+			height: 320px;
+			top: 16px;
+			right: 5vw;
+			padding: 16px;
+		}
+		main {
+			padding: 160px 16px 80px;
+		}
+		.explainer-viewbox {
+			min-height: 250px;
+			margin: 48px 0;
+			font-size: 18px;
+			padding: 16px 20px;
+		}
+		.content-block {
+			margin: 48px 16px;
+			padding: 16px 20px;
+		}
+	}
+</style>
+</head>
+<body>
+
+<div class="map" id="fixedMap">
+	<h2>Fixed Map</h2>
+	<p>This map div is fixed positioned. As you scroll, it may hover over the green explainer spacer.</p>
+</div>
+
+<main>
+	<h1>Scroll to See Map Hover on Explainer Spacer</h1>
+	<p>Scroll the page so the fixed blue map box overlaps the green explainer spacer box below.</p>
+
+	<div class="content-block">
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lorem ac urna consequat cursus. Proin finibus, justo non malesuada porttitor, quam erat tincidunt arcu, et efficitur orci metus a urna.</p>
+	</div>
+
+	<div class="explainer-viewbox" id="explainer1">
+		This is the .explainer-viewbox section the fixed map will overlap when scrolling.
+	</div>
+
+	<div class="content-block">
+		<p>Ut a sem non ligula posuere blandit. Nulla facilisi. Curabitur at fermentum enim. Suspendisse potenti. Phasellus faucibus justo eget finibus mattis.</p>
+	</div>
+
+	<div class="explainer-viewbox" id="explainer2">
+		Another .explainer-viewbox to test multiple overlaps.
+	</div>
+
+	<div class="content-block">
+		<p>Sed posuere laoreet nibh, sed gravida mi. Donec gravida vestibulum erat, a cursus orci accumsan in. Mauris imperdiet risus ut eros aliquet, a eleifend massa dictum.</p>
+	</div>
+
+</main>
+
+<script>
+	// Pure JS detection if fixed .map overlaps any .explainer-viewbox on scroll/resize
+	(function(){
+		const mapEl = document.querySelector('.map');
+		const explainerEls = Array.from(document.querySelectorAll('.explainer-viewbox'));
+
+		// Helper: check if two DOMRect intersect
+		function rectsIntersect(r1, r2) {
+			return !(
+				r1.right < r2.left ||
+				r1.left > r2.right ||
+				r1.bottom < r2.top ||
+				r1.top > r2.bottom
+			);
+		}
+
+		function detectOverlap() {
+			if (!mapEl) return;
+			const mapRect = mapEl.getBoundingClientRect();
+
+			let overlapFound = false;
+			for (const explainer of explainerEls) {
+				const explainerRect = explainer.getBoundingClientRect();
+				if (rectsIntersect(mapRect, explainerRect)) {
+					overlapFound = true;
+					break;
+				}
+			}
+			if (overlapFound) {
+				mapEl.classList.add('overlap');
+			} else {
+				mapEl.classList.remove('overlap');
+			}
+		}
+
+		window.addEventListener('scroll', detectOverlap, {passive:true});
+		window.addEventListener('resize', detectOverlap);
+		detectOverlap(); // initial check on load
+	})();
+</script>
+
+</body>
+</html>
+
