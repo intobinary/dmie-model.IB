@@ -54,6 +54,8 @@
 .d-gradient {
 	background: url("/assets/images/background.png") top right !important;
 	background-size: cover !important;
+	
+	filter: grayscale(100%);
 }
 /*** END MEDIA ***/
 
