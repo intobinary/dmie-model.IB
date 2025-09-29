@@ -1,0 +1,269 @@
+/*** CANCEL ***/
+html, body, main { width: 100%; height: 100%; }
+
+.calculator-data input[type="radio"] { display: inline-block !important; }
+/*** END CANCEL ***/
+
+/*** COLORS ***/
+.header, .header:before { background-color: #4A4E67; }
+.calculator-nav-button, .calculator-nav-label { background-color: #4A4E67 !important; }
+
+.header-research-a,
+.section, .section:before,
+#rdb4author:checked ~ main .header-nav-button.is-forAuthor,
+#rdb4calculator:checked ~ main .header-nav-button.is-forCalculator { background-color: #F7E9E8; }
+
+.calculator-nav-button, .calculator-nav-label { color: #eee; }
+.header-hgroup-title,
+.header-hgroup-p,
+#rdb4author:checked ~ main .header-nav-button.is-forCalculator,
+#rdb4calculator:checked ~ main .header-nav-button.is-forAuthor { color: white; }
+/*** END COLORS ***/
+
+/*** FONTS ***/
+* { font-family: "Arial Black"; }
+
+.header { text-align: center; }
+.header-hgroup { text-align: left; }
+/*** END FONTS ***/
+
+/*** MEDIA ***/
+#rdb4dataPreset1:checked ~ .calculator-data-presets-map { background-image: url("/assets/images/preset1_drc.png"); }
+#rdb4dataPreset2:checked ~ .calculator-data-presets-map { background-image: url("/assets/images/preset2_sa.png"); }
+.calculator-data-presets-map {
+	background-size: cover;
+	filter: grayscale(100%);
+}
+/*** END MEDIA ***/
+
+/*** COMPONENTS ***/
+	/*** COMMONS ***/
+	.header, .section {
+		padding: 1em;
+	}
+	
+	.header { display: flex; }
+	.header,
+	.section { flex-direction: column; }
+	
+	.header-hgroup-p,
+	.section-hgroup-p {
+		margin: 1em 0;
+	}
+	
+	/*** .calculator ***/
+	.calculator-data {
+		position: relative;
+	}
+	.calculator-data-presets-map {
+		position: absolute !important; top: 100%; right: 0;
+		display: block;
+	}
+	
+	.calculator-fieldset div,
+	.calculator-nav div {
+		padding: 0 1em;
+	}
+	.calculator-fieldset label,
+	.calculator-fieldset input {
+		width: 100%;
+		display: block;
+	}
+	.calculator-fieldset input {
+		padding: .5em;
+		margin: .75em 0;
+	}
+	
+	.calculator-nav-button,
+	.calculator-nav-label {
+		width: 100%;
+		display: block;
+		padding: 1em;
+		border-radius: 1em;
+		
+		text-align: center;
+	}
+
+	/*** .header ***/
+	.header-nav {
+		display: inline-block;
+		margin: auto;
+
+		border-radius: 1em;
+		overflow: hidden;
+	}
+	.header-nav-button {
+		display: inline-block;
+		padding: 1em;
+	}
+	
+	.header-research {
+		position: relative;
+	}
+	.header-research-a {
+		position: absolute !important; bottom: 7em; left: 0; right: 0; z-index: 100 !important;
+		padding: .5em;
+		
+		border-radius: 1em;
+	}
+/*** END COMPONENTS ***/
+
+/*** INTERACTIVITY ***/
+.calculator input[type="radio"],
+.calculator label,
+.header-nav-button { cursor: pointer; }
+
+#rdb4author:checked ~ main .header-nav-button.is-forAuthor,
+#rdb4calculator:checked ~ main .header-nav-button.is-forCalculator {
+	text-transform: uppercase;
+	
+//	background-color: black;
+//	color: white;
+}
+#rdb4author:checked ~ main .header-nav-button.is-forCalculator,
+#rdb4calculator:checked ~ main .header-nav-button.is-forAuthor {
+	text-decoration: underline;
+}
+
+.section { display: none; }
+#rdb4author:checked ~ main .section.is-forAuthor,
+#rdb4calculator:checked ~ main .section.is-forCalculator { display: flex; }
+
+.calculator-nav-button,
+.calculator-nav-label { display: none !important; }
+html.is-loggedIn .calculator-nav-button,
+html.is-loggedOut .calculator-nav-label { display: block !important; }
+/*** END INTERACTIVITY ***/
+
+/*** MEDIA-QUERIES ***/
+@media screen and (max-width: 50em) {
+	/*** FONTS ***/
+	.header-hgroup-title,
+	.section-hgroup-author { font-size: 1.8em; }
+	
+	/*** COMPONENTS: .calculator ***/
+		.calculator-fieldset div:nth-child(2) input,
+		.calculator-fieldset div:nth-child(7) input,
+		.calculator-fieldset div:nth-child(8) input,
+		.calculator-fieldset div:nth-child(9) input { width: 50%; }
+		
+	/*** COMPONENTS: .header ***/
+	.header-research {
+		margin-top: 1.9em;
+	}
+}
+@media screen and (min-width: 50em) {
+	/*** Z-INDEXES ***/
+	.header:before,
+	.section:before { position: relative; z-index: 10; }
+	.header *,
+	.section * { position: relative; z-index: 20; }
+	
+	/*** FONTS ***/
+	.header-hgroup-title,
+	.section-hgroup-author { font-size: 3em; }
+	.calculator-nav div:nth-child(1),
+	.calculator-data-presets { text-align: right; }
+
+	/*** COMMONS ***/
+	main { display: flex; }
+	.header { width: 30%; }
+	.section { width: 70%; }
+	
+	.section hgroup,
+	.header-research { flex: 1; }
+	
+	html, body { overflow-x: hidden; }
+	
+	/*** COMPONENTS: .about ***/
+	.author { display: flex; }
+	.author { align-items: flex-end; }
+	.author p { flex: 1; }
+	
+	.author img { width: 33.333%; }
+	
+	/*** COMPONENTS: .calculator ***/
+	.calculator-data,
+	.calculator-nav,
+	.calculator-nav div:nth-child(1) { display: flex; }
+	.calculator-nav div:nth-child(1) { align-items: center; justify-content: flex-end; }
+	.calculator-data-manual,
+	.calculator-nav div:nth-child(1) { flex: 1; }
+	
+	.calculator-fieldset div { width: 50%; }
+		.calculator-fieldset div:nth-child(7),
+		.calculator-fieldset div:nth-child(8),
+		.calculator-fieldset div:nth-child(9) { width: 33.333%; }
+		
+		.calculator-fieldset div:nth-child(2) input { width: 50%; }
+	
+	.calculator-fieldset div {
+		display: inline-block;
+	}
+	
+	.calculator-nav div { width: 33.333%; }
+	.calculator-nav-button { min-height: 5em !important; }
+	
+	.calculator-data-presets-map {
+		width: 50vh; height: 50vh;
+	}
+	
+	.calculator input[name="rdb4data"] {
+		width: 1.8em; height: 1.8em;
+	}
+	
+	/*** COMPONENTS: .header ***/
+	.header-research { display: flex; }
+	.header-research { align-items: flex-end; }
+	
+	.header,
+	.section { position: relative; }
+	.header:before,
+	.section:before {
+		content: "";
+		position: absolute; top: 0;
+		width: 1000%; height: 100%;
+	}
+	.header:before { right: 0; }
+	.section:before { left: 0; }
+}
+/*** END MEDIA-QUERIES ***/
+
+/*** DECORATION ***/
+	/*** .d-midWrap ***/
+	.d-midWrap {
+		max-width: 75em;
+		margin: auto;
+	}
+/*** END DECORATION ***/
+
+/*** TO DELETE ***/
+input:-webkit-autofill {
+	box-shadow: 0 0 0 1000px white inset !important;
+}
+input[readOnly] {
+	background-color: #AAA !important;
+	color: white !important;
+	cursor: initial !important;
+}
+
+.js-RDBs-container {
+	padding: .5em;
+//	overflow-x: scroll;
+}
+.js-RDBs-container label {
+	display: inline-block;
+	margin: 0 .5em;
+}
+.js-RDBs-container label.is-saved {
+	background-color: #4A4E67 !important;
+//	background-color: #eee !important;
+}
+.js-RDBs-container label.is-deleted {
+	background-color: red;
+}
+
+.js-manualNav {
+	display: inline-block;
+}
+/*** TO DELETE ***/

@@ -1,0 +1,115 @@
+---
+layout: default
+---
+		<input type="radio" id="rdb4calculator" name="rdb4app" checked />
+		<input type="radio" id="rdb4author" name="rdb4app" />
+		<main class="d-midWrap">
+			<header class="header">
+				<hgroup class="header-hgroup">
+					<h1 class="header-hgroup-title">DMIE Model</h1>
+					<p class="header-hgroup-p">Did you know that you can estimate a country's informal economy with a simple math equation? Discover the DMIE Model.</p>
+				</hgroup>
+				
+				<nav class="header-nav">
+					<label for="rdb4calculator" class="header-nav-button is-forCalculator">Calculator</label>
+					<label for="rdb4author" class="header-nav-button is-forAuthor">About</label>
+				</nav>
+				
+				<div class="header-research">
+					<a href="" class="header-research-a" download>Download PDFs</a>
+					<img src="/assets/images/files.png" />
+				</div>
+			</header>
+			
+			<section class="section is-forCalculator">
+				<hgroup>Section Calculator</hgroup>
+				
+				<form class="calculator">
+					<fieldset class="calculator-data">
+						<div class="calculator-data-manual">
+							<span>Manual Inputs</span>
+							<div class="js-manualNav">
+								<span class="js-btnAdd">+</span>
+								<span class="js-btnDelete">x</span>
+								<!--
+								<input type="submit" class="js-btnAdd" value="+" />
+								<input type="submit" class="js-btnDelete" value="x" />
+								-->
+								<input type="submit" class="js-btnSave" value="$" />
+								<span class="js-btnRefresh">@</span>
+							</div>
+							<br /><br />
+
+							<div class="js-RDBs-container">
+								<label><input type="radio" id="rdb4dataManual1" name="rdb4data" onclick="rdbBtnIsClicked(this)" checked />1</label>
+							</div>
+						</div>
+						<div class="calculator-data-presets">
+							<span>Data Presets</span>
+							<br /><br />
+							<label><input type="radio" id="rdb4dataPresetDRC" name="rdb4data" onclick="rdbBtnIsClicked(this)" />DRC</label>
+							<label><input type="radio" id="rdb4dataPresetSA" name="rdb4data" onclick="rdbBtnIsClicked(this)" />SA</label>
+
+							<span class="calculator-data-presets-map"></span>
+						</div>
+					</fieldset>
+				
+					<fieldset class="calculator-fieldset">
+						<div>
+							<label>Country</label>
+							<input type="text" id="country" placeholder="Name of Country" required />
+						</div><div>
+							<label>Year</label>
+							<input type="number" id="year" placeholder="####" required />
+						</div><div>
+							<label>WF (Workforce)</label>
+							<input type="number" id="wf" placeholder="########" required />
+						</div><div>
+							<label>FW (Formal Workers)</label>
+							<input type="number" id="fw" placeholder="########" required />
+						</div><div>
+							<label>IF (Informal Workers)</label>
+							<input type="number" id="if" placeholder="########" required />
+						</div><div>
+							<label>Yof (Official GDP)</label>
+							<input type="number" id="yof" placeholder="##########" required />
+						</div><div>
+							<label>FP (Formal Productivity)</label>
+							<input type="number" id="fp" placeholder="###" required />
+						</div><div>
+							<label>IP (Informal Productivity)</label>
+							<input type="number" id="ip" placeholder="###" required />
+						</div><div>
+							<label>OL (Obligatory Levies / Tax Burden)</label>
+							<input type="number" id="ol" placeholder="####" required />
+						</div>
+					</fieldset>
+					
+					<nav class="calculator-nav">
+						<div>Hello, visitor! You must be logged in to use the DMIE Model's Calculator. Click here!</div>
+					
+						<div>
+							<input type="submit" class="calculator-nav-button js-btnCalculate" value="CALCULATE" />
+							<label class="calculator-nav-label" title="You must be logged in to use the DMIE Model's Calculator">LOG IN TO CALCULATE</label>
+						</div>
+					</nav>
+				</form>
+			</section>
+			
+			<section class="section is-forAuthor">
+				<hgroup>
+					<p class="section-hgroup-p">Meet the economist, and researcher behind the <br />DMIE Model's innovation.</p>
+					<h2 class="section-hgroup-author">Donatien Malala</h2>
+				</hgroup>
+				
+				<div class="author">
+					<p>Donatien Malala is a renowed economist, having spent his career as the CFO of SCPT (ex ONATRA) in DR Congo. You can email him at malaladonatien@gmail.com</p>
+					<img src="/assets/images/Donatien-Malala-Economist-and-Researcher_1.png" />
+				</div>
+			</section>
+		</main>
+		
+		<!--
+		<script src="/assets/scripts/dmie-model-dot-intobinary-dot-org_global.js"></script>
+		-->
+		<script src="/assets/scripts/dmie-model-dot-intobinary-dot-org_{{ page.layout }}.js"></script>

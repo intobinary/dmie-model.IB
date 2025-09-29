@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Detection with Intersection Observer</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .view-section {
+            min-height: 100vh;
+            margin: 20px 0;
+            padding: 40px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4e7ed 100%);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .view-section h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            font-size: 2.2em;
+        }
+
+        .view-section p {
+            color: #7f8c8d;
+            font-size: 1.1em;
+            max-width: 600px;
+        }
+
+        /* Initial state - not in view */
+        .view-section {
+            opacity: 0.3;
+            transform: translateY(50px);
+        }
+
+        /* When element is in view */
+        .view-section.in-view {
+            opacity: 1;
+            transform: translateY(0);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .view-section.in-view h2,
+        .view-section.in-view p {
+            color: white;
+        }
+
+        .status-indicator {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            z-index: 1000;
+        }
+
+        .scroll-hint {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(52, 152, 219, 0.9);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="status-indicator">
+        Elements in view: <span id="counter">0</span>
+    </div>
+
+    <div class="scroll-hint">
+        Scroll down to see sections come into view ↓
+    </div>
+
+    <div class="container">
+        <div class="view-section js-view-element" data-id="section-1">
+            <h2>Welcome to Section 1</h2>
+            <p>This section will change appearance when it enters the viewport. Watch the status indicator update!</p>
+        </div>
+
+        <div class="view-section js-view-element" data-id="section-2">
+            <h2>Section 2 Content</h2>
+            <p>Another section that will be detected when scrolled into view. The border and background will change.</p>
+        </div>
+
+        <div class="view-section js-view-element" data-id="section-3">
+            <h2>Third Section</h2>
+            <p>Keep scrolling to see more sections transition into view with smooth animations.</p>
+        </div>
+
+        <div class="view-section js-view-element" data-id="section-4">
+            <h2>Final Section</h2>
+            <p>This is the last section. Scroll up and down to see the classes being added and removed dynamically.</p>
+        </div>
+    </div>
+
+    <script>
+        // Counter to track how many elements are currently in view
+        let inViewCount = 0;
+
+        // Create Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const element = entry.target;
+                const sectionId = element.getAttribute('data-id');
+                
+                if (entry.isIntersecting) {
+                    // Element is in view
+                    element.classList.add('in-view');
+                    inViewCount++;
+                    console.log(`✅ ${sectionId} entered viewport`);
+                } else {
+                    // Element left view
+                    element.classList.remove('in-view');
+                    inViewCount--;
+                    console.log(`❌ ${sectionId} left viewport`);
+                }
+                
+                // Update counter display
+                document.getElementById('counter').textContent = inViewCount;
+            });
+        }, {
+            threshold: 0.5, // Trigger when 50% of element is visible
+            rootMargin: '0px' // No additional margin
+        });
+
+        // Observe all elements with the class
+        const viewElements = document.querySelectorAll('.js-view-element');
+        viewElements.forEach(element => {
+            observer.observe(element);
+        });
+
+        // Optional: Log initial state
+        console.log('Scroll detection initialized. Observing', viewElements.length, 'elements.');
+    </script>
+</body>
+</html>

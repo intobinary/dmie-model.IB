@@ -12,28 +12,35 @@
 .explainer { position: relative; z-index: 70; }
 .menu { position: relative; z-index: 80; }
 
-.nav { position: relative; z-index: 90; }
+.explainer-viewbox-details { position: relative; z-index: 500; }
+.explainer-viewbox-btnInfo { position: relative; z-index: 510; }
+
+.nav { position: relative; z-index: 110; }
 /*** END Z-INDEXES ***/
 
 /*** COLORS ***/
-.explainer-content-p { background-color: white; }
 .banner-title-main,
+.menu-toc-content-title,
 .nav-lang-a,
 .nav-phonetics { color: white; }
 
-.banner { background-color: #AAA; }
+.banner,
+.explainer-viewbox-details { background-color: #AAA; }
 
-#chbx4explainer:not(:checked) ~ main .map-svg-path {// fill: black !important; }
+.map-svg-path { stroke: black !important; }
+#chbx4explainer:not(:checked) ~ main .map-svg-path { fill: black !important; }
+.menu-toc-content-title { background-color: black; }
 /*** END COLORS ***/
 
 /*** FONTS ***/
 .banner-title,
+.explainer-viewbox,
+.menu,
 .menu-intro,
 .nav { font-family: "Arial Black"; }
 
 .banner-title-main { font-size: 30vw; }
 .banner-title-sub { font-size: 10vw; }
-.explainer-content-p { font-size: 2em; }
 .nav-lang-a,
 .nav-phonetics { font-size: 1.25em; }
 
@@ -42,11 +49,15 @@
 .nav { text-align: right; }
 
 .menu-cta { font-weight: bold; }
-.banner-title-sub { text-transform: lowercase; }
+html.is-en .nav-lang-a.is-en,
+html.is-fr .nav-lang-a.is-fr { text-decoration: underline; }
+.banner-title-sub,
 .menu-cta { text-transform: uppercase; }
 /*** END FONTS ***/
 
 /*** MEDIA ***/
+#chbx4explainer:not(:checked) ~ main .map-svg-path {// stroke-width: .25em !important; }
+
 #chbx4explainer:not(:checked) ~ main .map-video {
 	clip-path: polygon(95.77% 19.84%, 19.34% 20.85%, 0.48% 13.05%, 18.03% 26.24%, 33.60% 12.80%, 31.20% 30.21%, 56.91% 40.99%, 97.47% 78.58%, 81.48% 53.79%, 86.87% 62.34%, 61.11% 31.38%, 9.64% 26.39%, 15.23% 74.31%, 58.80% 75.15%, 33.33% 9.15%, 23.02% 67.36%, 67.84% 30.34%, 95.77% 36.00%, 83.12% 71.20%, 72.66% 22.65%, 33.60% 28.30%, 52.00% 45.44%);
 }
@@ -61,7 +72,7 @@
 
 /*** COMPONENTS ***/
 	/*** COMMONS ***/
-	.explainer-content_dock { width: 70%; left: 30%; }
+	.explainer-viewbox_dock { width: 70%; left: 30%; }
 	.menu-toc { width: 30%; }
 
 	.explainer-viewbox { height: 70vh; }
@@ -89,10 +100,24 @@
 	}
 	
 	/*** .explainer ***/
-	.explainer-content_dock {
+	.explainer-viewbox_dock {
 		position: relative;
+		height: 100%;
 	}
 	.explainer-viewbox { display: block; }
+	.explainer-viewbox-btnInfo {
+		position: absolute; top: 0; right: 0;
+		
+		width: 1.9em; height: 1.9em;
+		border-radius: 50%;
+		
+		background-color: purple;
+	}
+	.explainer-viewbox-details {
+		position: absolute; top: 0; right: 0;
+		width: 50%;
+		padding: 1em;
+	}
 	
 	/*** .map ***/
 	.map {
@@ -128,8 +153,11 @@
 	}
 	.menu-toc {
 		left: 0; bottom: 0;
-		
-		background-color: purple;
+		padding-right: 1.8em;
+	}
+	.menu-toc-content-title {
+		display: block;
+		padding: .75em;
 	}
 	
 	/*** .nav ***/
@@ -172,28 +200,158 @@ label { cursor: pointer; }
 	stroke: black !important;
 }
 	
-	.map *[attr-action="step2"] { display: none; }
-	.js-main.action-step2 .map *[attr-action="step2"] { display: block; z-index: 100; }
-	.js-main.action-step1 .map-svg-path { stroke-width: .1px !important; }
+	.js-main[attr-step="step1"] .map-svg-path {// stroke-width: .1px !important; }
 	
-	/*** .js-viewbox STEPS ***/
-	.js-main.action-step1 .map-svg {
+	/*** .js-viewbox STEPS: ALL ***/
+	.menu-toc-content-title { display: none; } 
+	.js-main[attr-step="step1"] .menu-toc-content-title:nth-child(1),
+	.js-main[attr-step="step2"] .menu-toc-content-title:nth-child(2),
+	.js-main[attr-step="step3"] .menu-toc-content-title:nth-child(3),
+	.js-main[attr-step="step4"] .menu-toc-content-title:nth-child(4),
+	.js-main[attr-step="step5"] .menu-toc-content-title:nth-child(5),
+	.js-main[attr-step="step6"] .menu-toc-content-title:nth-child(6),
+	.js-main[attr-step="step7"] .menu-toc-content-title:nth-child(7),
+	.js-main[attr-step="step8"] .menu-toc-content-title:nth-child(8),
+	.js-main[attr-step="step9"] .menu-toc-content-title:nth-child(9),
+	.js-main[attr-step="step10"] .menu-toc-content-title:nth-child(10),
+	.jekyllPlaceholderClassname { display: block; }
+	
+	.js-main[attr-step="step5"] .map-svg,
+	.js-main[attr-step="step6"] .map-svg,
+	.js-main[attr-step="step7"] .map-svg,
+	.js-main[attr-step="step8"] .map-svg,
+	.js-main[attr-step="step9"] .map-svg,
+	.js-main[attr-step="step10"] .map-svg { display: none !important; }
+	
+	/*** .js-viewbox STEPS: 1 ***/
+		.map *[attr-action="step2"] { display: none; }
+	
+	.js-main[attr-step="step1"] .map-svg {
 		transform: translate(0, -25%);
 		/*
 		top: -45% !important;
 		*/
-			height: 190% !important;
+			height: 250% !important;
 	}
+	.js-mainp[attr-view="step1"] .map-svg-path { stroke-width: 10px !important; }
 	
-	/*** .js-viewbox*[attr-action="step1"] ***/
-	.js-main.action-step2 .map-svg {
-		transform: translate(25%, -30%);
+		.explainer-viewbox-step1-numbers span:nth-child(1) { font-size: 5vw; }
+		.explainer-viewbox-step1 p { font-size: 2.5vw; }
+		.explainer-viewbox-step1-numbers div { text-align: center; }
+		.explainer-viewbox-step1 p { text-transform: uppercase; }
+
+		.explainer-viewbox-step1-numbers { display: flex; }
+		.explainer-viewbox-step1-numbers div { flex: 1; }
+		.explainer-viewbox-step1 {
+			position: relative;
+//			background-color: green;
+		}
+		.explainer-viewbox-step1-numbers {
+			position: relative; left: 30%;
+			width: 70%;
+		}
+		.explainer-viewbox-step1-tip {
+			position: absolute; bottom: 0; left: 0;
+		}
+	
+	/*** .js-viewbox STEPS: 2 ***/
+		.js-main[attr-step="step2"] .map *[attr-action="step2"] { display: block; z-index: 100; }
+		
+	.js-main[attr-step="step2"] .map-svg {
+		transform: translate(18%, -35%);
 		/*
 		top: -75% !important; left: 25% !important;
 		*/
 			height: 250% !important;
 	}
-	.js-main.action-step2 .map-svg-path[name="Kinshasa"] { fill: purple !important; }
+	.js-main[attr-step="step2"] .map-svg-path[name="Kinshasa"] { fill: purple !important; }
+	
+		.explainer-viewbox-step2 ~ .explainer-viewbox-btnInfo,
+		.explainer-viewbox-step2 ~ .explainer-viewbox-details { right: initial !important; }
+		
+		.explainer-viewbox-step2 span:nth-child(1) { font-size: 5vw; }
+		.explainer-viewbox-step2 span { vertical-align: top; }
+		
+		.explainer-viewbox-step2 div {
+			position: relative; left: 55%;
+			width: 45%;
+		}
+		.explainer-viewbox-step2 span:nth-child(2) {
+			display: inline-block;
+			margin-top: .7em;
+		}
+	
+	/*** .js-viewbox STEPS: 3 ***/
+	
+	.js-main[attr-step="step3"] .map-svg {
+		transform: translate(0, 30%);
+			height: 70% !important;
+	}
+
+		.explainer-viewbox-step3-numbers img { position: relative; z-index: 300; }
+		.explainer-viewbox-step3-numbers div { position: relative; z-index: 310; }
+		
+		.explainer-viewbox-step3 p { font-size: 2.5vw; }
+		.explainer-viewbox-step3-numbers span:nth-child(2) { font-size: 5vw; }
+		.explainer-viewbox-step3-numbers span:nth-child(1) { text-align: center; }
+		.explainer-viewbox-step3 p { text-transform: uppercase; }
+
+		.explainer-viewbox-step3-numbers div { display: flex; }
+		.explainer-viewbox-step3-numbers div { align-items: center; }
+		.explainer-viewbox-step3-numbers span { flex: 1; }
+		.explainer-viewbox-step3 p {
+//			width: 50%;
+		}
+		.explainer-viewbox-step3-numbers {
+			position: relative;
+		}
+		.explainer-viewbox-step3-numbers div,
+		.explainer-viewbox-step3-numbers div p { width: 100%; }
+		.explainer-viewbox-step3-numbers div {
+			padding: 1em 0;
+		}
+		.explainer-viewbox-step3-numbers img {
+			position: absolute; bottom: 0; right: 50%;
+			width: auto; height: 125%;
+			
+			background-color: purple;
+		}
+		
+	/*** .js-viewbox STEPS: 4 ***/
+
+	.js-main[attr-step="step4"] .map-svg {
+		transform: translate(0, 0);
+			height: 0% !important;
+	}
+	
+		.explainer-viewbox-step4 ~ .explainer-viewbox-btnInfo,
+		.explainer-viewbox-step4 ~ .explainer-viewbox-details { right: initial !important; }
+		
+		.explainer-viewbox-step4 span { text-transform: lowercase; }
+		.explainer-viewbox-step4 span:nth-child(2) { text-transform: uppercase; }
+
+		.explainer-viewbox-step4 {
+			width: 100%; height: 100%;
+			font-size: 1.9em;
+		}
+		.explainer-viewbox-step4_dock {
+			position: relative;
+		}
+		.explainer-viewbox-step4 span {
+			display: block;
+		}
+		.explainer-viewbox-step4 span:nth-child(2) {
+			font-size: 3.5em;
+			font-weight: bold;
+		}
+		.explainer-viewbox-step4 span:nth-child(1),
+		.explainer-viewbox-step4 span:nth-child(3) {
+			position: absolute;
+			font-size: 1.5em;
+			text-wrap: nowrap; word-wrap: nowrap;
+		}
+		.explainer-viewbox-step4 span:nth-child(1) { top: -1em; left: 1em; }
+		.explainer-viewbox-step4 span:nth-child(3) { bottom: -1em; right: 1em; }
 /*** END INTERACTIVITY ***/
 
 /*** MEDIA-QUERIES ***/
@@ -232,11 +390,29 @@ label { cursor: pointer; }
 	.map-svg { width: 60%; }
 	.menu { width: 40%; left: 60%; }
 	
-	.explainer-content_dock { width: 60%; }
+	.explainer-viewbox_dock { width: 60%; }
 }
 /*** END MEDIA-QUERIES ***/
 
+/*** DECORATION ***/
+	/*** .d-cssCentered ***/
+	.d-cssCentered {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+/*** END DECORATION ***/
+
 /*** ANIMATION ***/
+	/*** .d-attention ***/
+	.d-attention { animation: call 1s alternate infinite; }
+	.d-attention:hover { animation-play-state: paused; }
+	
+	@keyframes call {
+		from { transform: scale(1); }
+		to { transform: scale(1.8); }
+	}
+
 	/*** .d-gradient ***/
 	.d-gradient {
 		background: linear-gradient(10deg, green, black);
@@ -252,22 +428,18 @@ label { cursor: pointer; }
 /*** END ANIMATION ***/
 
 /*** SANDBOX ***/
-	.menu-toc-content {// display: none; }
-	.menu-toc { display: none; }
-
-.map.is-inview {
-//	background-color: purple;
-}
-.map.action-step1 {
-//	background-color: purple;
-}
-.explainer-viewbox {
-	min-height: 70vh;
-}
-
-	.explainer-content-p {
-		display: inline;
-	}
+.explainer-viewbox-details { display: none; }
+#chbx4info1:checked ~ main .js-viewbox[attr-action="step1"] .explainer-viewbox-details,
+#chbx4info2:checked ~ main .js-viewbox[attr-action="step2"] .explainer-viewbox-details,
+#chbx4info3:checked ~ main .js-viewbox[attr-action="step3"] .explainer-viewbox-details,
+#chbx4info4:checked ~ main .js-viewbox[attr-action="step4"] .explainer-viewbox-details,
+#chbx4info5:checked ~ main .js-viewbox[attr-action="step5"] .explainer-viewbox-details,
+#chbx4info6:checked ~ main .js-viewbox[attr-action="step6"] .explainer-viewbox-details,
+#chbx4info7:checked ~ main .js-viewbox[attr-action="step7"] .explainer-viewbox-details,
+#chbx4info8:checked ~ main .js-viewbox[attr-action="step8"] .explainer-viewbox-details,
+#chbx4info9:checked ~ main .js-viewbox[attr-action="step9"] .explainer-viewbox-details,
+#chbx4info10:checked ~ main .js-viewbox[attr-action="step10"] .explainer-viewbox-details,
+.jekyllPlaceholderClassname { display: block !important; }
 /*** END SANDBOX ***/
 
 /*** CSS-HACKS ***/

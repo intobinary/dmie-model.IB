@@ -1,17 +1,12 @@
 ---
 ---
 <!DOCTYPE html>
-<html>
+<html class="is-{{ page.url | remove: '/' }} is-loggedIn">
 	<head>
 		{% include components/meta-tags.html %}
 	</head>
 	
 	<body>
-		{{ content }}
-		
-		<!--
-		<script src="/assets/scripts/dmie-model-dot-intobinary-dot-org_global.js"></script>
-		-->
-		<script src="/assets/scripts/dmie-model-dot-intobinary-dot-org_{{ page.layout }}.js"></script>
+{{ content }}
 	</body>
 </html>

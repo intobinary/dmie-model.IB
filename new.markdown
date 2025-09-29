@@ -1,0 +1,4 @@
+---
+layout: new
+permalink: /new/
+---

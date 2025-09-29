@@ -3,12 +3,14 @@ layout: default
 ---
 	<marquee direction="alternate">{% for i in (1..1) %}<span>{{ page.w-marquee }}</span>{% endfor %}</marquee>
 
-	<input type="checkbox" id="chbx4explainer" name="chbx4explainer" />
-	<main class="js-main">
+	{% if page.url contains 'en' %}<input type="checkbox" id="chbx4explainer" name="chbx4explainer" checked />{% endif %}
+	{% for i in (1..10) %}
+	<input type="checkbox" id="chbx4info{{ i }}" name="chbxs4infos" />{% endfor %}
+	<main class="js-main" attr-step="">
 		<nav class="nav">
 			<div class="nav-lang">
-				<a href="/en/" class="nav-lang-a" title="{{ page.w-lang.en }}">EN</a>
-				<a href="/fr/" class="nav-lang-a" title="{{ page.w-lang.fr }}">FR</a>
+				<a class="nav-lang-a is-en" title="{{ page.w-lang.en }}">EN</a>
+				<a class="nav-lang-a is-fr" title="{{ page.w-lang.fr }}">FR</a>
 			</div>
 			
 			<span class="nav-phonetics">Dimay</span>
@@ -37,51 +39,164 @@ layout: default
 		
 		<nav class="menu">
 			<p class="menu-intro">{{ page.w-intro }}</p><br />
-			<label class="menu-cta">{{ page.w-button }}</label>
+			<label for="chbx4explainer" class="menu-cta">{{ page.w-button }}</label>
 			
 			<div class="menu-toc">
+				<!--
 				<label class="menu-toc-title">TABLE OF CONTENT</label>
+				-->
 
 				<div class="menu-toc-content">
-					GGG
+					<span class="menu-toc-content-title">(1) {{ page.w1.title }}</span>
+					<span class="menu-toc-content-title">(2) {{ page.w2.title }}</span>
+					<span class="menu-toc-content-title">(3) {{ page.w3.title }}</span>
+					<span class="menu-toc-content-title">(4) {{ page.w4.title }}</span>
+					<span class="menu-toc-content-title">(5) {{ page.w5.title }}</span>
+					<span class="menu-toc-content-title">(6) {{ page.w6.title }}</span>
+					<span class="menu-toc-content-title">(7) {{ page.w7.title }}</span>
+					<span class="menu-toc-content-title">(8) {{ page.w8.title }}</span>
+					<span class="menu-toc-content-title">(9) {{ page.w9.title }}</span>
+					<span class="menu-toc-content-title">(10) {{ page.w10.title }}</span>
 				</div>
 			</div>
 		</nav>
 		
 		<section class="explainer">
-			<span class="explainer-viewbox js-viewbox" attr-action="step1"></span>
-			<div class="explainer-content"><div class="explainer-content_dock">
-				<p class="explainer-content-p">You might think that the formal economy is the backbone of the DRC, but the reality is quite different. After analyzing the economic data, it turns out that a staggering 90% of the active workforce operates in the informal sector, leaving only 10% in formal employment.</p>
+			<div class="explainer-viewbox js-viewbox" attr-action="step1"><div class="explainer-viewbox_dock">
+				<div class="explainer-viewbox-step1">
+					<p >The first-biggest market is Indonesia with 17 million users in July 2022. Lisbon, Portugal is the biggest market on European with 2 million users.</p>
+					
+					<span class="explainer-viewbox-step1-tip">GradeA Quality:</span>
+					<div class="explainer-viewbox-step1-numbers">
+						<div><span>2B</span><br /><span>monthly revenue</span></div>
+						<div><span>45M</span><br /><span>monthly users</span></div>
+						<div><span>18M</span><br /><span>guiness world record</span></div>
+					</div>
+				</div>
+			
+				<label for="chbx4info1" class="explainer-viewbox-btnInfo d-attention d-cssCentered">1</label>
+				<div class="explainer-viewbox-details">
+					1: {{ page.w1.title }}
+					<br /><br />
+					{{ page.w1.text }}
+				</div>
 			</div></div>
 			
-			<span class="explainer-viewbox js-viewbox" attr-action="step2"></span>
-			<div class="explainer-content"><div class="explainer-content_dock">
-				<p class="explainer-content-p">But nothing compares to the scale of the informal economy in the DRC. Let’s explore what makes this sector so vast and how it impacts the overall economy.</p>
+			<div class="explainer-viewbox js-viewbox" attr-action="step2"><div class="explainer-viewbox_dock">
+				<div class="explainer-viewbox-step2">
+					<div><span>+90%</span><span>TEXT AAA</span></div>
+					<div><span>+90%</span><span>TEXT AAA</span></div>
+					<div><span>+18%</span><span>TEXT AAA</span></div>
+				</div>
+			
+				<label for="chbx4info2" class="explainer-viewbox-btnInfo d-attention d-cssCentered">2</label>
+				<div class="explainer-viewbox-details">
+					2: {{ page.w2.title }}
+					<br /><br />
+					{{ page.w2.text }}
+				</div>
 			</div></div>
 			
-			<span class="explainer-viewbox js-viewbox" attr-action="step3"></span>
-			<div class="explainer-content"><div class="explainer-content_dock">
-				<p class="explainer-content-p">I recently noticed that during discussions about economic growth, someone will inevitably mention the informal sector, often saying, “Oh, but you have to consider the informal workers; they are the backbone of the economy” (which is almost true).</p>
+			<div class="explainer-viewbox js-viewbox" attr-action="step3"><div class="explainer-viewbox_dock">
+				<div class="explainer-viewbox-step3">
+					<p>The markets <br />in the shadows:</p>
+					<br /><br /><br /><br /><br /><br /><br />
+					
+					<div class="explainer-viewbox-step3-numbers">
+						<div>
+							<p>Tanzanian Market</p>
+							<div>
+								<span>TEXT AAA</span>
+								<span>+70%</span>
+							</div>
+						</div>
+						<div>
+							<p>Tanzanian Market</p>
+							<div>
+								<span>TEXT AAA</span>
+								<span>+70%</span>
+							</div>
+						</div>
+						
+						<img src="/assets/images/placeholder-3x4.png" />
+					</div>
+				</div>
+			
+				<label for="chbx4info3" class="explainer-viewbox-btnInfo d-attention d-cssCentered">3</label>
+				<div class="explainer-viewbox-details">
+					3: {{ page.w3.title }}
+					<br /><br />
+					{{ page.w3.text }}
+				</div>
 			</div></div>
 			
-			<span class="explainer-viewbox js-viewbox" attr-action="step4"></span>
-			<div class="explainer-content"><div class="explainer-content_dock">
-				<p class="explainer-content-p">But not everyone understands the full picture. Since the informal economy is only as strong as its contributions, I delved into the available data to substantiate that claim. So, what makes the informal economy in the DRC so significant?</p>
+			<div class="explainer-viewbox js-viewbox" attr-action="step4"><div class="explainer-viewbox_dock">
+				<div class="explainer-viewbox-step4 d-cssCentered"><div class="explainer-viewbox-step4_dock">
+					<span>in 2024, generated</span>{% assign vText = "33 billion" %}
+					<span style="--char-count: {{ vText | size }}">{{ vText }}</span>
+					<span>in annual revenue<span>
+				</div></div>
+			
+				<label for="chbx4info4" class="explainer-viewbox-btnInfo d-attention d-cssCentered">4</label>
+				<div class="explainer-viewbox-details">
+					4: {{ page.w4.title }}
+					<br /><br />
+					{{ page.w4.text }}
+				</div>
 			</div></div>
 			
-			<span class="explainer-viewbox js-viewbox" attr-action="step5"></span>
-			<div class="explainer-content"><div class="explainer-content_dock">
-				<p class="explainer-content-p">When you break it down to the numbers, the informal sector contributes a substantial portion to the GDP, despite being largely unrecognized. The GDP per capita may seem misleading at $697, but this figure masks the stark disparities in wealth distribution.</p>
+			<div class="explainer-viewbox js-viewbox" attr-action="step5"><div class="explainer-viewbox_dock">
+				<label for="chbx4info5" class="explainer-viewbox-btnInfo d-attention d-cssCentered">5</label>
+				<div class="explainer-viewbox-details">
+					5: {{ page.w5.title }}
+					<br /><br />
+					{{ page.w5.text }}
+				</div>
 			</div></div>
 			
-			<span class="explainer-viewbox js-viewbox" attr-action="step6"></span>
-			<div class="explainer-content"><div class="explainer-content_dock">
-				<p class="explainer-content-p">This gives us a clearer view of the economic landscape in the DRC. The larger the segment of the population engaged in informal work, the more pronounced the economic inequality becomes.</p>
+			<div class="explainer-viewbox js-viewbox" attr-action="step6"><div class="explainer-viewbox_dock">
+				<label for="chbx4info6" class="explainer-viewbox-btnInfo d-attention d-cssCentered">6</label>
+				<div class="explainer-viewbox-details">
+					6: {{ page.w6.title }}
+					<br /><br />
+					{{ page.w6.text }}
+				</div>
 			</div></div>
 			
-			<span class="explainer-viewbox js-viewbox" attr-action="step7"></span>
-			<div class="explainer-content"><div class="explainer-content_dock">
-				<p class="explainer-content-p">But I am just one researcher, with one interpretation of the data. Feel free to explore the findings below to see how different factors influence the understanding of the informal economy's impact.</p>
+			<div class="explainer-viewbox js-viewbox" attr-action="step7"><div class="explainer-viewbox_dock">
+				<label for="chbx4info7" class="explainer-viewbox-btnInfo d-attention d-cssCentered">7</label>
+				<div class="explainer-viewbox-details">
+					7: {{ page.w7.title }}
+					<br /><br />
+					{{ page.w7.text }}
+				</div>
+			</div></div>
+			
+			<div class="explainer-viewbox js-viewbox" attr-action="step8"><div class="explainer-viewbox_dock">
+				<label for="chbx4info8" class="explainer-viewbox-btnInfo d-attention d-cssCentered">8</label>
+				<div class="explainer-viewbox-details">
+					8: {{ page.w8.title }}
+					<br /><br />
+					{{ page.w8.text }}
+				</div>
+			</div></div>
+			
+			<div class="explainer-viewbox js-viewbox" attr-action="step9"><div class="explainer-viewbox_dock">
+				<label for="chbx4info9" class="explainer-viewbox-btnInfo d-attention d-cssCentered">9</label>
+				<div class="explainer-viewbox-details">
+					9: {{ page.w9.title }}
+					<br /><br />
+					{{ page.w9.text }}
+				</div>
+			</div></div>
+			
+			<div class="explainer-viewbox js-viewbox" attr-action="step10"><div class="explainer-viewbox_dock">
+				<label for="chbx4info10" class="explainer-viewbox-btnInfo d-attention d-cssCentered">10</label>
+				<div class="explainer-viewbox-details">
+					10: {{ page.w10.title }}
+					<br /><br />
+					{{ page.w10.text }}
+				</div>
 			</div></div>
 		</section>
 		
