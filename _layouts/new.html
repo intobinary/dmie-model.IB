@@ -24,19 +24,25 @@ layout: default
 			<section class="section is-forCalculator">
 				<hgroup>Section Calculator</hgroup>
 				
-				<form class="calculator">
+				<form id="py-form" class="calculator">
 					<fieldset class="calculator-data">
 						<div class="calculator-data-manual">
 							<span>Manual Inputs</span>
 							<div class="js-manualNav">
-								<span class="js-btnAdd">+</span>
-								<span class="js-btnDelete">x</span>
+								<span class="js-btnAdd" title="Add Additional Country">+</span>
+								<span class="js-btnDelete" title="Clear Form/Unsave Data">x</span>
 								<!--
 								<input type="submit" class="js-btnAdd" value="+" />
 								<input type="submit" class="js-btnDelete" value="x" />
 								-->
-								<input type="submit" class="js-btnSave" value="$" />
-								<span class="js-btnRefresh">@</span>
+								<input type="submit" class="js-btnSave" value="$" title="Save Country's Data" />
+								<span class="js-btnRefresh" title="Clean All Data">@</span>
+								<span class="js-btnDownload" title="Download as CSV File">!</span>
+								<!--
+								<span class="js-btnUpload">^</span>
+								-->
+								<label for="hiddenFile" class="js-btnImport" title="Upload Custom CSV File">^</label>
+								<input type="file" id="hiddenFile" class="js-inputFile" style="display: none !important" accept=".csv" />
 							</div>
 							<br /><br />
 
@@ -56,7 +62,7 @@ layout: default
 				
 					<fieldset class="calculator-fieldset">
 						<div>
-							<label>Country</label>
+							<label id="py-output">Country</label>
 							<input type="text" id="country" placeholder="Name of Country" required />
 						</div><div>
 							<label>Year</label>
@@ -68,7 +74,7 @@ layout: default
 							<label>FW (Formal Workers)</label>
 							<input type="number" id="fw" placeholder="########" required />
 						</div><div>
-							<label>IF (Informal Workers)</label>
+							<label>IW (Informal Workers)</label>
 							<input type="number" id="if" placeholder="########" required />
 						</div><div>
 							<label>Yof (Official GDP)</label>
@@ -86,13 +92,57 @@ layout: default
 					</fieldset>
 					
 					<nav class="calculator-nav">
-						<div>Hello, visitor! You must be logged in to use the DMIE Model's Calculator. Click here!</div>
+						<div>Hello, visitor! You must be logged in to use the DMIE Model's Calculator.</div>
 					
 						<div>
-							<input type="submit" class="calculator-nav-button js-btnCalculate" value="CALCULATE" />
+							<input type="submit" id="js-btnCalculate" class="calculator-nav-button js-btnCalculate" value="CALCULATE" />
 							<label class="calculator-nav-label" title="You must be logged in to use the DMIE Model's Calculator">LOG IN TO CALCULATE</label>
 						</div>
 					</nav>
+					
+					<div class="calculator-results">
+						<div class="calculator-results-design">
+							<nav class="calculator-results-design-nav">
+								<span class="js-btnResultsDownload">Download as CSV</span><span class="js-btnResultsClose">X</span>
+							</nav>
+							<div class="js-here"><!--{% for i in (1..7) %}
+							<div class="calculator-results-design-data">
+								<hgroup>
+									<h4>DRC:</h4>
+									<h5>2005</h5>
+								</hgroup>
+								<div class="calculator-results-design-data-numbers">
+									<div class="calculator-results-design-data-numbers-lines">
+										<div class="calculator-results-design-data-numbers-lines-div"><span class="calculator-results-design-data-numbers-lines-div-span">Yin: 100</span></div>
+										<div class="calculator-results-design-data-numbers-lines-div"><span class="calculator-results-design-data-numbers-lines-div-span">Yt: 100</span></div>
+									</div>
+									<div class="calculator-results-design-data-numbers-pie">
+										<span class="calculator-results-design-data-numbers-pie-span">Yin%:<br />90%</span>
+									</div>
+								</div>
+							</div>{% endfor %}-->
+							</div>
+						</div>
+						<!--
+						<table class="calculator-results-table">
+							<tr>
+								<th>Country</th>
+								<th>Year</th>
+								<th>Yin</th>
+								<th>Yt</th>
+								<th>Yin-percent</th>
+							</tr>
+							{% for i in (1..7) %}
+							<tr>
+								<th>DRC</th>
+								<th>100</th>
+								<th>100</th>
+								<th>100</th>
+								<th>100</th>
+							</tr>{% endfor %}
+						</table>
+						-->
+					</div>
 				</form>
 			</section>
 			
@@ -103,13 +153,14 @@ layout: default
 				</hgroup>
 				
 				<div class="author">
-					<p>Donatien Malala is a renowed economist, having spent his career as the CFO of SCPT (ex ONATRA) in DR Congo. You can email him at malaladonatien@gmail.com</p>
-					<img src="/assets/images/Donatien-Malala-Economist-and-Researcher_1.png" />
+					<p>Donatien Malala is a renowed economist. He worked for the Congolese public transport company ONATRA. He acquired extensive experience in logistics analysis, hinterland transport, port management, human resources, marketing and finance. You can email him at malaladonatien@gmail.com</p>
+					<img src="/assets/images/Malala-Donatien.jpg" />
 				</div>
 			</section>
 		</main>
 		
+		<script type="text/javascript" src="/assets/scripts/dmie-model-dot-intobinary-dot-org_new.js"></script>
 		<!--
-		<script src="/assets/scripts/dmie-model-dot-intobinary-dot-org_global.js"></script>
+		<script type="text/javascript" src="/assets/scripts/brython.min.js"></script>
+		<script type="text/python" src="/assets/scripts/python.py"></script>
 		-->
-		<script src="/assets/scripts/dmie-model-dot-intobinary-dot-org_{{ page.layout }}.js"></script>

@@ -1,5 +1,6 @@
 /*** CANCEL ***/
 html, body, main { width: 100%; height: 100%; }
+* { background-size: cover; }
 
 .calculator-data input[type="radio"] { display: inline-block !important; }
 /*** END CANCEL ***/
@@ -14,10 +15,15 @@ html, body, main { width: 100%; height: 100%; }
 #rdb4calculator:checked ~ main .header-nav-button.is-forCalculator { background-color: #F7E9E8; }
 
 .calculator-nav-button, .calculator-nav-label { color: #eee; }
+
+.calculator-results-design-data-numbers-lines-div { background-color: white; }
+.calculator-results-design-data hgroup,
+.calculator-results-design-data-numbers-pie-span,
 .header-hgroup-title,
 .header-hgroup-p,
 #rdb4author:checked ~ main .header-nav-button.is-forCalculator,
 #rdb4calculator:checked ~ main .header-nav-button.is-forAuthor { color: white; }
+.calculator-results-design-data-numbers-pie:before { border-color: white; }
 /*** END COLORS ***/
 
 /*** FONTS ***/
@@ -33,6 +39,19 @@ html, body, main { width: 100%; height: 100%; }
 .calculator-data-presets-map {
 	background-size: cover;
 	filter: grayscale(100%);
+}
+
+.js-btnRefresh { background-image: url("/assets/images/icon_refresh_white.png"); }
+.js-btnDelete { background-image: url("/assets/images/icon_close_white.png"); }
+.js-btnImport { background-image: url("/assets/images/icon_folder_white.png"); }
+.js-btnDownload { background-image: url("/assets/images/icon_download_white.png"); }
+.js-btnSave { background-image: url("/assets/images/icon_cursor_white.png"); }
+.js-btnAdd { background-image: url("/assets/images/icon_add_white.png"); }
+.js-manualNav * { text-indent: -9999px; }
+.js-manualNav * {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 80%;
 }
 /*** END MEDIA ***/
 
@@ -83,6 +102,89 @@ html, body, main { width: 100%; height: 100%; }
 		
 		text-align: center;
 	}
+	
+	.calculator {
+		position: relative;
+	}
+	
+	.calculator-results-design {
+		position: absolute !important; top: 0; left: 0;
+		width: 100%; height: 100%;
+		display: block;
+		padding: 1.8em;
+		
+		overflow-y: scroll !important;
+		
+		background-color: #4A4E67;
+	}
+	
+	.calculator-results-design-nav {
+		position: absolute; top: 0; right: 0;
+	}
+	.calculator-results-design-nav span {
+		cursor: pointer;
+		display: inline-block;
+		padding: .5em;
+		margin-top: 1em; margin-right: 1em;
+		background-color: #F7E9E8;
+	}
+	
+	.calculator-results-design-data {
+		margin-bottom: 1.8em;
+	}
+	.calculator-results-design-data hgroup {
+		margin-bottom: 1em;
+	}
+	.calculator-results-design-data hgroup h4,
+	.calculator-results-design-data hgroup h5 {
+		font-size: 1.8em;
+		display: inline;
+	}
+	
+	.calculator-results-design-data-numbers-lines-div {
+		text-align: right;
+		border-radius: 4em; overflow: hidden;
+	}
+	.calculator-results-design-data-numbers-lines-div:nth-child(1) { margin-bottom: 1em; }
+	.calculator-results-design-data-numbers-lines-div-span {
+		display: inline-block;
+		min-width: 30%;
+		padding: 1em 1.8em;
+	}
+	.calculator-results-design-data-numbers-pie {
+		position: relative;
+		width: auto; aspect-ratio: 2/1;
+		overflow: hidden;
+	}
+	.calculator-results-design-data-numbers-pie:before {
+		content: ""; position: absolute; top: 0; left: 0;
+		width: auto; height: 100%; aspect-ratio: 1/1;
+		border-radius: 50%;
+		
+		border-width: 3em; border-style: solid;
+//		opacity: .5;
+	}
+	.calculator-results-design-data-numbers-pie-span {
+		position: absolute; bottom: 0; left: 0; right: 0;
+		text-align: center;
+	}
+	
+	/*
+	.calculator-results { display: flex; }
+	.calculator-results { flex-direction: column; }
+	.calculator-results-table { flex: 1; }
+	.calculator-results {
+		position: absolute !important; top: 0; left: 0;
+		width: 100%; height: 100%;
+
+		background-color: purple;
+	}
+	.calculator-results-table {
+		width: 100%;
+		padding-top: 3em;
+		background-color: green;
+	}
+	*/
 
 	/*** .header ***/
 	.header-nav {
@@ -133,6 +235,9 @@ html, body, main { width: 100%; height: 100%; }
 .calculator-nav-label { display: none !important; }
 html.is-loggedIn .calculator-nav-button,
 html.is-loggedOut .calculator-nav-label { display: block !important; }
+
+.calculator-results { display: none; }
+.calculator-results.is-open { display: block; }
 /*** END INTERACTIVITY ***/
 
 /*** MEDIA-QUERIES ***/
@@ -146,6 +251,8 @@ html.is-loggedOut .calculator-nav-label { display: block !important; }
 		.calculator-fieldset div:nth-child(7) input,
 		.calculator-fieldset div:nth-child(8) input,
 		.calculator-fieldset div:nth-child(9) input { width: 50%; }
+	
+	.calculator-results-design-data-numbers-pie { height: 7em; }
 		
 	/*** COMPONENTS: .header ***/
 	.header-research {
@@ -157,11 +264,14 @@ html.is-loggedOut .calculator-nav-label { display: block !important; }
 	.header:before,
 	.section:before { position: relative; z-index: 10; }
 	.header *,
-	.section * { position: relative; z-index: 20; }
+	.section hgroup,
+	.section .author,
+	.section .calculator { position: relative; z-index: 20; }
 	
 	/*** FONTS ***/
 	.header-hgroup-title,
 	.section-hgroup-author { font-size: 3em; }
+	.author p { font-size: 1.8em; }
 	.calculator-nav div:nth-child(1),
 	.calculator-data-presets { text-align: right; }
 
@@ -212,6 +322,14 @@ html.is-loggedOut .calculator-nav-label { display: block !important; }
 		width: 1.8em; height: 1.8em;
 	}
 	
+	.calculator-results-design-data-numbers { display: flex; }
+	.calculator-results-design-data-numbers-lines { flex: 1; }
+	
+	.calculator-results-design-data-numbers-pie {
+		height: 7em;
+		margin-left: 7em;
+	}
+	
 	/*** COMPONENTS: .header ***/
 	.header-research { display: flex; }
 	.header-research { align-items: flex-end; }
@@ -251,6 +369,16 @@ input[readOnly] {
 	padding: .5em;
 //	overflow-x: scroll;
 }
+.js-manualNav * {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	width: 1.8em; aspect-ratio: 1/1;
+	background-color: #4A4E67 !important;
+	color: white;
+	cursor: pointer;
+	border-radius: .5em;
+}
 .js-RDBs-container label {
 	display: inline-block;
 	margin: 0 .5em;
@@ -260,7 +388,7 @@ input[readOnly] {
 //	background-color: #eee !important;
 }
 .js-RDBs-container label.is-deleted {
-	background-color: red;
+	background-color: red !important;
 }
 
 .js-manualNav {
