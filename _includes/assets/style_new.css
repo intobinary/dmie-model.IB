@@ -45,7 +45,7 @@ html, body, main { width: 100%; height: 100%; }
 .js-btnDelete { background-image: url("/assets/images/icon_close_white.png"); }
 .js-btnImport { background-image: url("/assets/images/icon_folder_white.png"); }
 .js-btnDownload { background-image: url("/assets/images/icon_download_white.png"); }
-.js-btnSave { background-image: url("/assets/images/icon_cursor_white.png"); }
+.js-btnSave { background-image: url("/assets/images/icon_save_white.png"); }
 .js-btnAdd { background-image: url("/assets/images/icon_add_white.png"); }
 .js-manualNav * { text-indent: -9999px; }
 .js-manualNav * {
