@@ -17,11 +17,11 @@ var tagForm = document.querySelector(".calculator"),
 	tagsFormInputs = document.querySelectorAll(".calculator-fieldset input"),
 	tagBtnResultsDownload = document.querySelector(".js-btnResultsDownload"),
 	tagBtnResultsClose = document.querySelector(".js-btnResultsClose");
-var aData4DRC = ["DRC", "2025", "100", "100", "100", "100", "100", "100", "100"],
-	aData4SA = ["SA", "2025", "0", "0", "0", "0", "0", "0", "0"];
+var aData4DRC = ["DRC", "2005", "33897500", "17457200", "30711135", "5300706000", "1.94", "0.69", "0.835"],
+	aData4SA = ["SA", "2025", "23000000", "17000000", "6000000", "420000000000", "1", "0.65", "0.28"];
 var {% for i in (1..100) %}aData4Manual{{ i }} = []{% if forloop.last == false %}, {% endif %}{% endfor %};
 var {% for i in (1..100) %}aData4Result{{ i }} = ["DRC", "2025", "100", "100", "100"]{% if forloop.last == false %}, {% endif %}{% endfor %};
-	
+
 var tagFormInputIDcountry = document.querySelector("form fielset input[id='Country']"),
 	tagFormInputIDyear = document.querySelector("form fielset input[id='Year']"),
 	tagFormInputIDwf = document.querySelector("form fielset input[id='WF']"),
@@ -42,22 +42,6 @@ tagForm.addEventListener("submit", (e)=>{
 	validateFormInputs();
 	setupForm();
 	currentManualIndex = document.querySelector(".js-RDBs-container input:checked").getAttribute("id").replace("rdb4dataManual", "");
-	
-	/*
-	var vCountry = tagFormInputIDcountry,
-		vYear = tagFormInputIDyear,
-		vWF = tagFormInputIDwf,
-		vFW = tagFormInputIDfw,
-		vIW = tagFormInputIDiw,
-		vYof = tagFormInputIDyof,
-		vFP = tagFormInputIDfp,
-		vIP = tagFormInputIDip,
-		vOL = tagFormInputIDol;
-	var aDataToSave = { vCountry, vWF, vFW, vIW, vYof, vFP, vIP, vOL },
-		aDataToSave = JSON.stringify(aDataToSave);
-	
-//	localStorage.setItem('')
-	*/
 });
 tagFormBtnAdd.addEventListener("click", ()=>{
 	if(countManualRDBS > 99) {
@@ -81,7 +65,6 @@ tagFormBtnCalculate.addEventListener("click", ()=>{
 	if(countSavedRDBs >= 1) {
 		tagFormBtnRefresh.click();
 
-//		alert(countSavedRDBs);
 		doDMIEcalculations();
 		
 		document.querySelector(".calculator-results").classList.add("is-open");
@@ -93,13 +76,6 @@ tagFormBtnCalculate.addEventListener("click", ()=>{
 			newResultRow.innerHTML = '<hgroup><h4>'+ window["aData4Result" + i][0] +': </h4><h5>'+ window["aData4Result" + i][1] +'</h5></hgroup><div class="calculator-results-design-data-numbers"><div class="calculator-results-design-data-numbers-lines"><div class="calculator-results-design-data-numbers-lines-div"><span class="calculator-results-design-data-numbers-lines-div-span">Yin: '+ window["aData4Result" + i][2] +'</span></div><div class="calculator-results-design-data-numbers-lines-div"><span class="calculator-results-design-data-numbers-lines-div-span">Yt: '+ window["aData4Result" + i][3] +'</span></div></div><div class="calculator-results-design-data-numbers-pie"><span class="calculator-results-design-data-numbers-pie-span">Yin%:<br />'+ window["aData4Result" + i][4] +'%</span></div></div>';
 
 			newResultRow.classList.add("calculator-results-design-data");	document.querySelector(".calculator-results-design .js-here").appendChild(newResultRow);
-			
-			/*
-			const newResultRow = document.createElement("tr");
-			newResultRow.innerHTML = "";
-			for(var j=0; j<5; j++) { newResultRow.innerHTML += "<th>"+ window["aData4Result" + i][j] +"</th>"; }
-			document.querySelector(".calculator-results-table tbody").appendChild(newResultRow);
-			*/
 		}
 	} else { alert("Please save your data, at least one country."); }
 });
@@ -113,7 +89,6 @@ tagFormBtnDelete.addEventListener("click", ()=>{
 		countSavedRDBs--;
 	}
 	window["aData4Manual" + currentManualIndex] = [];
-//	window["aData4Manual" + currentManualIndex].length = 0;
 	
 	if(isFormEmpty == false) {
 		doEmptyForm();
@@ -160,20 +135,6 @@ function exportCSV(aArray1, filename) {
 }
 
 tagBtnResultsClose.addEventListener("click", ()=>{
-	/*
-	countManualRDBS=0;
-	countSavedRDBs=0;
-	
-	for(var i=1; i<=100; i++) {
-		window["aData4Manual" + i] = [];
-		window["aData4Result" + i] = [];
-	}
-	
-	tagFormBtnRefresh.click();
-	doEmptyForm();
-	setupForm();
-	*/
-	
 	document.querySelector(".calculator-results").classList.remove("is-open");
 });
 
@@ -245,43 +206,6 @@ tagFormBtnSave.addEventListener("click", ()=>{
 	}
 });
 
-/*
-tagFormBtnUpload.addEventListener("click", ()=>{
-	countManualRDBS = 0;
-	countSavedRDBs = 0;
-	
-	tempElement = "";
-	tempElement = document.createElement("input");
-	tempElement.type = "file";
-	tempElement.style.display = "none";
-	document.body.appendChild(tempElement);
-	tempElement.click();
-	
-	tempElement.addEventListener("change",(e)=>{
-		var vFile = tempElement.files[0];
-		if(vFile) {
-			aArray1 = [], tempArray = [];
-			var vFileReader = new FileReader();
-			vFileReader.onload = ()=>{
-				var csvData = vFileReader.result;
-				var rows = csvData.split("\n");
-				rows.forEach((row)=>{
-					var columns = row.split("/");
-					aArray1.push([columns]);
-				});
-			};
-			vFileReader.readAsText(vFile);
-		}
-		aArray1.splice(0, 1);
-		aArray1.pop();
-		alert(aArray1);
-	});
-	
-	setupForm();
-	tempElement.body.removeChild(tempElement);
-});
-*/
-
 tagFormInput.addEventListener("change",(e)=>{
 	var vFile = tagFormInput.files[0];
 	if(vFile) {
@@ -327,24 +251,6 @@ tagFormInput.addEventListener("change",(e)=>{
 						aArray1 = aArray2;
 					}
 					window["aData4Manual" + i] = aArray1;
-					
-					/*
-					aArray1 = window["aData4Manual" + i];
-					if(aArray1 != "") {
-						aArray2 = aArray1;
-						aArray1 = [];
-						tempVar = "";
-						for(var i=0; i<aArray2.length; i++) {
-							tempVar = aArray2[i];
-//							tempVar = tempVar.replace(/\/r/g, "");
-							tempVar = tempVar.trim();
-							alert(tempVar);
-
-							aArray1.push(tempVar);
-						}
-					}
-					window["aData4Manual" + i] = aArray1;
-					*/
 				}
 				else { window["aData4Manual" + i] = []; }
 			}

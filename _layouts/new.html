@@ -22,12 +22,13 @@ layout: default
 			</header>
 			
 			<section class="section is-forCalculator">
-				<hgroup>Section Calculator</hgroup>
+				<hgroup><!--Section Calculator--></hgroup>
 				
 				<form id="py-form" class="calculator">
 					<fieldset class="calculator-data">
 						<div class="calculator-data-manual">
 							<span>Manual Inputs</span>
+							<div class="calculator-data-manual_wrap">
 							<div class="js-manualNav">
 								<span class="js-btnAdd" title="Add Additional Country">+</span>
 								<span class="js-btnDelete" title="Clear Form/Unsave Data">x</span>
@@ -38,16 +39,13 @@ layout: default
 								<input type="submit" class="js-btnSave" value="$" title="Save Country's Data" />
 								<span class="js-btnRefresh" title="Clean All Data">@</span>
 								<span class="js-btnDownload" title="Download as CSV File">!</span>
-								<!--
-								<span class="js-btnUpload">^</span>
-								-->
 								<label for="hiddenFile" class="js-btnImport" title="Upload Custom CSV File">^</label>
 								<input type="file" id="hiddenFile" class="js-inputFile" style="display: none !important" accept=".csv" />
 							</div>
-							<br /><br />
 
 							<div class="js-RDBs-container">
 								<label><input type="radio" id="rdb4dataManual1" name="rdb4data" onclick="rdbBtnIsClicked(this)" checked />1</label>
+							</div>
 							</div>
 						</div>
 						<div class="calculator-data-presets">
@@ -100,7 +98,7 @@ layout: default
 						</div>
 					</nav>
 					
-					<div class="calculator-results is-open">
+					<div class="calculator-results">
 						<div class="calculator-results-design">
 							<nav class="calculator-results-design-nav">
 								<span class="js-btnResultsDownload">Download as CSV</span><span class="js-btnResultsClose">X</span>
@@ -123,25 +121,6 @@ layout: default
 							</div>{% endfor %}
 							</div>
 						</div>
-						<!--
-						<table class="calculator-results-table">
-							<tr>
-								<th>Country</th>
-								<th>Year</th>
-								<th>Yin</th>
-								<th>Yt</th>
-								<th>Yin-percent</th>
-							</tr>
-							{% for i in (1..7) %}
-							<tr>
-								<th>DRC</th>
-								<th>100</th>
-								<th>100</th>
-								<th>100</th>
-								<th>100</th>
-							</tr>{% endfor %}
-						</table>
-						-->
 					</div>
 				</form>
 			</section>
