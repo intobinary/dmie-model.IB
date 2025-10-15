@@ -83,6 +83,10 @@ html, body, main { width: 100%; height: 100%; }
 	.calculator-data {
 		position: relative;
 	}
+	.calculator-data-manual .js-RDBs-container {
+		max-height: 5em;
+		overflow-y: auto;
+	}
 	.calculator-data-presets-map {
 		position: absolute !important; top: 100%; right: 0;
 		display: block;
@@ -256,8 +260,7 @@ html.is-loggedOut .calculator-nav-label { display: block !important; }
 	.section-hgroup-author { font-size: 1.8em; }
 	
 	/*** COMPONENTS: .calculator ***/
-	.calculator-data,
-	.calculator-data-manual_wrap { display: flex; flex-direction: column-reverse; }
+	.calculator-data { display: flex; flex-direction: column-reverse; }
 		.calculator-fieldset div:nth-child(2) input,
 		.calculator-fieldset div:nth-child(7) input,
 		.calculator-fieldset div:nth-child(8) input,
