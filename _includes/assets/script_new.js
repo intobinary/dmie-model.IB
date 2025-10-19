@@ -77,8 +77,8 @@ tagFormBtnCalculate.addEventListener("click", ()=>{
 				newResultRow.innerHTML = '<hgroup><h4>'+ window["aData4Result" + i][0] +': </h4><h5>'+ window["aData4Result" + i][1] +'</h5></hgroup><div class="calculator-results-design-data-numbers"><div class="calculator-results-design-data-numbers-lines"><div class="calculator-results-design-data-numbers-lines-div"><span class="calculator-results-design-data-numbers-lines-div-span">Yin: '+ window["aData4Result" + i][2] +'</span></div><div class="calculator-results-design-data-numbers-lines-div"><span class="calculator-results-design-data-numbers-lines-div-span">Yt: '+ window["aData4Result" + i][3] +'</span></div></div><div class="calculator-results-design-data-numbers-pie"><span class="calculator-results-design-data-numbers-pie-span">Yin%:<br />'+ window["aData4Result" + i][4] +'%</span></div></div>';
 
 				newResultRow.classList.add("calculator-results-design-data");	document.querySelector(".calculator-results-design .js-here").appendChild(newResultRow);
-			} else { document.querySelector("main") .classList.add("doPaypal"); }
-		}
+			}
+		} else { document.querySelector("main") .classList.add("doPaypal"); }
 	} else { alert("Please save your data, at least one country."); }
 });
 
