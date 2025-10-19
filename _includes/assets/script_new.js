@@ -1,7 +1,7 @@
 /*** DATA ***/
-var aArray1=[], aArray2 = [], tempArray = [], tempVar ="", tempElement = "";
 var vDataSelected = "", vDataToUse = "";
-var isFormEmpty = true, isFormValid = false;
+var isAppPaid = false, isFormEmpty = true, isFormValid = false;
+var aArray1=[], aArray2 = [], tempArray = [], tempVar ="", tempElement = "";
 var countManualRDBS = 1, countSavedRDBs = 0, currentManualIndex = "",
 	tagContainer4newManualRDBs = document.querySelector(".js-RDBs-container");
 var tagForm = document.querySelector(".calculator"),
@@ -16,7 +16,8 @@ var tagForm = document.querySelector(".calculator"),
 	tagFormNav = document.querySelector(".js-manualNav"),
 	tagsFormInputs = document.querySelectorAll(".calculator-fieldset input"),
 	tagBtnResultsDownload = document.querySelector(".js-btnResultsDownload"),
-	tagBtnResultsClose = document.querySelector(".js-btnResultsClose");
+	tagBtnResultsClose = document.querySelector(".js-btnResultsClose"),
+	tagPaypalCancel = document.querySelector(".js-btnCancel");
 var aData4DRC = ["DRC", "2005", "33897500", "17457200", "30711135", "5300706000", "1.94", "0.69", "0.835"],
 	aData4SA = ["SA", "2025", "23000000", "17000000", "6000000", "420000000000", "1", "0.65", "0.28"];
 var {% for i in (1..100) %}aData4Manual{{ i }} = []{% if forloop.last == false %}, {% endif %}{% endfor %};
@@ -64,18 +65,19 @@ tagFormBtnAdd.addEventListener("click", ()=>{
 tagFormBtnCalculate.addEventListener("click", ()=>{
 	if(countSavedRDBs >= 1) {
 		tagFormBtnRefresh.click();
+		if(isAppPaid == true) {
+			doDMIEcalculations();
+			
+			document.querySelector(".calculator-results").classList.add("is-open");
+			
+			document.querySelector(".calculator-results-design .js-here").innerHTML = "";
+			for(var i=1;i<=countSavedRDBs;i++) {
+				const newResultRow = document.createElement("div");
+				newResultRow.innerHTML = "";
+				newResultRow.innerHTML = '<hgroup><h4>'+ window["aData4Result" + i][0] +': </h4><h5>'+ window["aData4Result" + i][1] +'</h5></hgroup><div class="calculator-results-design-data-numbers"><div class="calculator-results-design-data-numbers-lines"><div class="calculator-results-design-data-numbers-lines-div"><span class="calculator-results-design-data-numbers-lines-div-span">Yin: '+ window["aData4Result" + i][2] +'</span></div><div class="calculator-results-design-data-numbers-lines-div"><span class="calculator-results-design-data-numbers-lines-div-span">Yt: '+ window["aData4Result" + i][3] +'</span></div></div><div class="calculator-results-design-data-numbers-pie"><span class="calculator-results-design-data-numbers-pie-span">Yin%:<br />'+ window["aData4Result" + i][4] +'%</span></div></div>';
 
-		doDMIEcalculations();
-		
-		document.querySelector(".calculator-results").classList.add("is-open");
-		
-		document.querySelector(".calculator-results-design .js-here").innerHTML = "";
-		for(var i=1;i<=countSavedRDBs;i++) {
-			const newResultRow = document.createElement("div");
-			newResultRow.innerHTML = "";
-			newResultRow.innerHTML = '<hgroup><h4>'+ window["aData4Result" + i][0] +': </h4><h5>'+ window["aData4Result" + i][1] +'</h5></hgroup><div class="calculator-results-design-data-numbers"><div class="calculator-results-design-data-numbers-lines"><div class="calculator-results-design-data-numbers-lines-div"><span class="calculator-results-design-data-numbers-lines-div-span">Yin: '+ window["aData4Result" + i][2] +'</span></div><div class="calculator-results-design-data-numbers-lines-div"><span class="calculator-results-design-data-numbers-lines-div-span">Yt: '+ window["aData4Result" + i][3] +'</span></div></div><div class="calculator-results-design-data-numbers-pie"><span class="calculator-results-design-data-numbers-pie-span">Yin%:<br />'+ window["aData4Result" + i][4] +'%</span></div></div>';
-
-			newResultRow.classList.add("calculator-results-design-data");	document.querySelector(".calculator-results-design .js-here").appendChild(newResultRow);
+				newResultRow.classList.add("calculator-results-design-data");	document.querySelector(".calculator-results-design .js-here").appendChild(newResultRow);
+			} else { document.querySelector("main") .classList.add("doPaypal"); }
 		}
 	} else { alert("Please save your data, at least one country."); }
 });
@@ -261,6 +263,9 @@ tagFormInput.addEventListener("change",(e)=>{
 	
 		vFileReader.readAsText(vFile);
 	}
+});
+tagPaypalCancel.addEventListener("click", ()=>{
+	document.querySelector("main").classList.remove("doPaypal");
 });
 /*** END EVENTS ***/
 
