@@ -469,7 +469,7 @@ main.doPaypal .paypal { display: flex !important; }
 
 	/*** .d-midWrap ***/
 	.d-midWrap {
-		max-width: 75em;
+		max-width: 80em;
 		margin: auto;
 	}
 /*** END DECORATION ***/
