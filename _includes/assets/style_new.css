@@ -20,7 +20,8 @@ main.doPaypal .paypal { position: relative; z-index: 100; }
 
 /*** COLORS ***/
 .header, .header:before { background-color: #4A4E67; }
-.calculator-nav-button, .calculator-nav-label { background-color: #4A4E67 !important; }
+.calculator-nav-button, .calculator-nav-label,
+.js-RDBs-container label.is-saved { background-color: #4A4E67 !important; }
 
 .header-research-a,
 .section, .section:before,
@@ -35,8 +36,13 @@ main.doPaypal .paypal { position: relative; z-index: 100; }
 .header-hgroup-title,
 .header-hgroup-p,
 #rdb4author:checked ~ main .header-nav-button.is-forCalculator,
-#rdb4calculator:checked ~ main .header-nav-button.is-forAuthor { color: white; }
+#rdb4calculator:checked ~ main .header-nav-button.is-forAuthor,
+.paypal-buttons-cta { color: white; }
+.js-RDBs-container label.is-saved { color: white !important; }
 .calculator-results-design-data-numbers-pie:before { border-color: white; }
+
+.paypal-buttons-cta { background-color: green; }
+.paypal-buttons-cta_wrap span { color: green; }
 /*** END COLORS ***/
 
 /*** FONTS ***/
@@ -104,10 +110,6 @@ main.doPaypal .paypal { position: relative; z-index: 100; }
 	.calculator-fieldset input {
 		width: 100%;
 		display: block;
-	}
-	.calculator-fieldset input {
-		padding: .5em;
-		margin: .75em 0;
 	}
 	
 	.calculator-nav-button,
@@ -185,23 +187,6 @@ main.doPaypal .paypal { position: relative; z-index: 100; }
 		position: absolute; bottom: 0; left: 0; right: 0;
 		text-align: center;
 	}
-	
-	/*
-	.calculator-results { display: flex; }
-	.calculator-results { flex-direction: column; }
-	.calculator-results-table { flex: 1; }
-	.calculator-results {
-		position: absolute !important; top: 0; left: 0;
-		width: 100%; height: 100%;
-
-		background-color: purple;
-	}
-	.calculator-results-table {
-		width: 100%;
-		padding-top: 3em;
-		background-color: green;
-	}
-	*/
 
 	/*** .header ***/
 	.header-nav {
@@ -263,6 +248,7 @@ main.doPaypal .paypal { position: relative; z-index: 100; }
 		padding: .5em 0;
 		text-transform: uppercase;
 	}
+	/*
 	.paypal-content label span {
 		display: inline-block;
 		width: 1em; height: 1em;
@@ -271,14 +257,12 @@ main.doPaypal .paypal { position: relative; z-index: 100; }
 		
 		display: none;
 	}
+	*/
 	.paypal-buttons {
 		padding: 1.8em; padding-top: 1em;
 	}
 	.paypal-buttons-cta {
 		display: inline-block;
-//		padding: 1em !important;
-//		text-transform: uppercase;
-		background-color: green; color: white;
 	}
 	.paypal-buttons-cta_wrap {
 		display: inline-block;
@@ -287,7 +271,6 @@ main.doPaypal .paypal { position: relative; z-index: 100; }
 	.paypal-buttons-cta_wrap span {
 		font-size: .75em;
 		font-variant: small-caps; text-transform: uppercase;
-		color: green;
 	}
 	.paypal-buttons .js-btnCancel {
 		display: inline-block;
@@ -352,6 +335,11 @@ main.doPaypal .paypal { display: flex !important; }
 		.calculator-fieldset div:nth-child(9) input { width: 50%; }
 	
 	.calculator-results-design-data-numbers-pie { height: 7em; }
+	
+	.calculator-fieldset input {
+		padding: .18em .5em;
+		margin: .18em 0 .75em 0;
+	}
 		
 	/*** COMPONENTS: .header ***/
 	.header-research {
@@ -388,13 +376,16 @@ main.doPaypal .paypal { display: flex !important; }
 
 	/*** COMMONS ***/
 	main { display: flex; }
-	.header { width: 30%; }
-	.section { width: 70%; }
-	
 	.section hgroup,
 	.header-research { flex: 1; }
 	
-	html, body { overflow-x: hidden; }
+	.header,
+	.section { max-height: 40em; }
+		html, body { overflow: hidden; }
+	
+	.header { width: 30%; }
+	.section { width: 70%; }
+	
 	
 	/*** COMPONENTS: .about ***/
 	.author { display: flex; }
@@ -429,6 +420,10 @@ main.doPaypal .paypal { display: flex !important; }
 		width: 50vh; height: 50vh;
 	}
 	
+	.calculator-fieldset input {
+		padding: .5em;
+		margin: .75em 0;
+	}
 	.calculator input[name="rdb4data"] {
 		width: 1.8em; height: 1.8em;
 	}
@@ -451,7 +446,7 @@ main.doPaypal .paypal { display: flex !important; }
 	.section:before {
 		content: "";
 		position: absolute; top: 0;
-		width: 1000%; height: 100%;
+		width: 1000%; height: 1000%;
 	}
 	.header:before { right: 0; }
 	.section:before { left: 0; }
@@ -506,10 +501,6 @@ input[readOnly] {
 .js-RDBs-container label {
 	display: inline-block;
 	margin: 0 .5em;
-}
-.js-RDBs-container label.is-saved {
-	background-color: #4A4E67 !important;
-//	background-color: #eee !important;
 }
 .js-RDBs-container label.is-deleted {
 	background-color: red !important;
