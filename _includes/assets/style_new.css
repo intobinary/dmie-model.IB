@@ -356,6 +356,11 @@ main.doPaypal .paypal { display: flex !important; }
 	/*** CSS-HACKS ***/
 	.calculator-fieldset div,
 	.calculator-nav div { padding: 0 !important; }
+	.calculator-nav div:nth-child(1) { padding-top: 1em !important; text-align: right; }
+	
+	.calculator-nav {
+		display: flex; flex-direction: column-reverse;
+	}
 }
 @media screen and (min-width: 50em) {
 	/*** Z-INDEXES ***/
