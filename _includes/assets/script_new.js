@@ -4,7 +4,8 @@ var isAppPaid = false, isFormEmpty = true, isFormValid = false;
 var aArray1=[], aArray2 = [], tempArray = [], tempVar ="", tempElement = "";
 var countManualRDBS = 1, countSavedRDBs = 0, currentManualIndex = "",
 	tagContainer4newManualRDBs = document.querySelector(".js-RDBs-container");
-var tagForm = document.querySelector(".calculator"),
+var tagFormCalculator = document.querySelector(".js-formCalculator"),
+	tagFormLicense = document.querySelector(".js-formLicense"),
 	tagFormBtnAdd = document.querySelector(".js-btnAdd"),
 	tagFormBtnCalculate = document.querySelector(".js-btnCalculate"),
 	tagFormBtnDelete = document.querySelector(".js-btnDelete"),
@@ -37,7 +38,16 @@ var tagFormInputIDcountry = document.querySelector("form fielset input[id='Count
 /*** EVENTS ***/
 setupForm();
 
-tagForm.addEventListener("submit", (e)=>{
+tagFormLicense.addEventListener("submit", (e)=>{
+	e.preventDefault();
+
+	if(isAppPaid == true) {}
+	else {
+		
+	}
+});
+
+tagFormCalculator.addEventListener("submit", (e)=>{
 	e.preventDefault();
 
 	validateFormInputs();

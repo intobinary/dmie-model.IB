@@ -93,7 +93,7 @@
 		<input type="radio" id="rdb4paypalDetails1" name="rdb4paypalDetails" checked />
 		<input type="radio" id="rdb4paypalDetails2" name="rdb4paypalDetails" />
 		<input type="radio" id="rdb4paypalDetails3" name="rdb4paypalDetails" />
-		<main class="d-midWrap">
+		<main class="d-midWrap doPaypal">
 			<header class="header">
 				<hgroup class="header-hgroup">
 					<h1 class="header-hgroup-title">DMIE Model</h1>
@@ -114,7 +114,7 @@
 			<section class="section is-forCalculator">
 				<hgroup><!--Section Calculator--></hgroup>
 				
-				<form id="py-form" class="calculator">
+				<form class="calculator js-formCalculator">
 					<fieldset class="calculator-data">
 						<div class="calculator-data-manual">
 							<span>Manual Inputs</span>
@@ -155,28 +155,28 @@
 							<input type="text" id="country" placeholder="Name of Country" required />
 						</div><div>
 							<label>Year</label>
-							<input type="number" id="year" placeholder="####" required />
+							<input type="number" step="any" id="year" placeholder="####" required />
 						</div><div>
 							<label>WF (Workforce)</label>
-							<input type="number" id="wf" placeholder="########" required />
+							<input type="number" step="any" id="wf" placeholder="########" required />
 						</div><div>
 							<label>FW (Formal Workers)</label>
-							<input type="number" id="fw" placeholder="########" required />
+							<input type="number" step="any" id="fw" placeholder="########" required />
 						</div><div>
 							<label>IW (Informal Workers)</label>
-							<input type="number" id="if" placeholder="########" required />
+							<input type="number" step="any" id="if" placeholder="########" required />
 						</div><div>
 							<label>Yof (Official GDP)</label>
-							<input type="number" id="yof" placeholder="##########" required />
+							<input type="number" step="any" id="yof" placeholder="##########" required />
 						</div><div>
 							<label>FP (Formal Productivity)</label>
-							<input type="number" id="fp" placeholder="###" required />
+							<input type="number" step="any" id="fp" placeholder="###" required />
 						</div><div>
 							<label>IP (Informal Productivity)</label>
-							<input type="number" id="ip" placeholder="###" required />
+							<input type="number" step="any" id="ip" placeholder="###" required />
 						</div><div>
 							<label>OL (Obligatory Levies / Tax Burden)</label>
-							<input type="number" id="ol" placeholder="####" required />
+							<input type="number" step="any" id="ol" placeholder="####" required />
 						</div>
 					</fieldset>
 					
@@ -249,8 +249,14 @@
 				
 				<div class="paypal-buttons">
 					<div class="paypal-buttons-cta_wrap">
-						<span>Pay on Paypal</span><br />
-						<a href="https://www.paypal.com/ncp/payment/BNTVMR66F7J4Y" class="paypal-buttons-cta">Unlock Full App</a>
+						<span>Buy Full Access</span><br />
+						<a href="https://www.paypal.com/ncp/payment/BNTVMR66F7J4Y" class="paypal-buttons-cta">Pay on Paypal</a>
+					</div>
+					<span>OR</span>
+					<div class="paypal-buttons-cta_wrap">
+						<span>Enter Your License Code</span><br />
+						<form class="js-formLicense"><input type="text" placeholder="#### ### ###" />
+						<input type="submit" value="&rarr;" /></form>
 					</div>
 					<span class="js-btnCancel">Cancel</span>
 				</div>
