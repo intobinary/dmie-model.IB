@@ -1,6 +1,7 @@
 /*** DATA ***/
 var vDataSelected = "", vDataToUse = "";
-var isAppPaid = false, isFormEmpty = true, isFormValid = false;
+var isAppPaid = false, isAppSaved = false,
+	isFormEmpty = true, isFormValid = false;
 var aArray1=[], aArray2 = [], tempArray = [], tempVar ="", tempElement = "";
 var countManualRDBS = 1, countSavedRDBs = 0, currentManualIndex = "",
 	tagContainer4newManualRDBs = document.querySelector(".js-RDBs-container");
@@ -41,9 +42,13 @@ setupForm();
 tagFormLicense.addEventListener("submit", (e)=>{
 	e.preventDefault();
 
-	if(isAppPaid == true) {}
+	if(isAppPaid == true) { }
 	else {
-		
+		if(document.querySelector(".js-formLicense input").value == "malala") {
+			isAppPaid = true;
+			document.querySelector("main").classList.remove("doPaypal");
+			tagFormBtnCalculate.click();
+		}
 	}
 });
 
@@ -88,7 +93,7 @@ tagFormBtnCalculate.addEventListener("click", ()=>{
 
 				newResultRow.classList.add("calculator-results-design-data");	document.querySelector(".calculator-results-design .js-here").appendChild(newResultRow);
 			}
-		} else { document.querySelector("main") .classList.add("doPaypal"); }
+		} else { document.querySelector("main").classList.add("doPaypal"); }
 	} else { alert("Please save your data, at least one country."); }
 });
 
