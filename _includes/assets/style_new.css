@@ -133,6 +133,7 @@ main.doPaypal .paypal { position: relative; z-index: 100; }
 		padding: 1.8em;
 		
 		overflow-y: scroll !important;
+		overflow-y: auto !important;
 		
 		background-color: #4A4E67;
 	}
@@ -274,7 +275,6 @@ main.doPaypal .paypal { position: relative; z-index: 100; }
 	}
 	.paypal-buttons .js-btnCancel {
 		display: inline-block;
-//		padding: 1em !important;
 		background-color: #AAA;
 	}
 /*** END COMPONENTS ***/
@@ -361,6 +361,30 @@ main.doPaypal .paypal { display: flex !important; }
 	.calculator-nav {
 		display: flex; flex-direction: column-reverse;
 	}
+	
+	.paypal-buttons-cta_wrap:nth-child(3) { text-align: left !important; }
+	.paypal-buttons-cta_wrap:nth-child(3) > span { margin-left: .75em !important; }
+	
+	/*** VIEWPORT ***/
+	.calculator-data-presets * { display: none !important; }
+	
+	
+	.paypal-buttons-cta_wrap > span span { display: none !important; }
+	.paypal-buttons-cta_wrap input[type="text"] {
+		width: 100% !important;
+		padding: .25em .75em !important;
+	}
+	.paypal-buttons-cta_wrap input[type="submit"] {
+		height: 1em !important;
+		padding: 0 !important;
+	}
+	
+	.js-here { padding-top: 7em; }
+	.calculator-results > div { padding: .5em !important; }
+	.calculator-results-design-data-numbers-lines-div span { padding: .5em .75em !important; }
+	.calculator-results-design-data-numbers-pie { height: 5em; position: relative !important; }
+	.calculator-results-design-data-numbers-pie:before { border-width: 1.5em !important; }
+	.calculator-results-design-data-numbers-pie span { bottom: .5em; left: 2.1em; text-align: left; }
 }
 @media screen and (min-width: 50em) {
 	/*** Z-INDEXES ***/

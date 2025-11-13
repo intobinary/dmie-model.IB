@@ -44,7 +44,7 @@ tagFormLicense.addEventListener("submit", (e)=>{
 
 	if(isAppPaid == true) { }
 	else {
-		if(document.querySelector(".js-formLicense input").value == "malala") {
+		if(document.querySelector(".js-formLicense input").value == "MALALA") {
 			isAppPaid = true;
 			document.querySelector("main").classList.remove("doPaypal");
 			tagFormBtnCalculate.click();
