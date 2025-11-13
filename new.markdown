@@ -1,4 +1,4 @@
 ---
-layout: new
+layout: v2
 permalink: /new/
 ---
