@@ -66,7 +66,7 @@ main.doPaypal .paypal { position: relative; z-index: 100; }
 .js-btnDownload { background-image: url("/assets/images/icon_download_white.png"); }
 .js-btnSave { background-image: url("/assets/images/icon_save_white.png"); }
 .js-btnAdd { background-image: url("/assets/images/icon_add_white.png"); }
-.js-manualNav * { text-indent: -9999px; }
+.js-manualNav * {// text-indent: -9999px; }
 .js-manualNav * {
 	background-position: center;
 	background-repeat: no-repeat;
@@ -452,6 +452,7 @@ main.doPaypal .paypal { display: flex !important; }
 	.calculator-fieldset input {
 		padding: .5em;
 		margin: .75em 0;
+		margin: .75em 0;
 	}
 	.calculator input[name="rdb4data"] {
 		width: 1.8em; height: 1.8em;
@@ -486,6 +487,9 @@ main.doPaypal .paypal { display: flex !important; }
 	.paypal_dock { max-height: 70vh; }
 	.paypal-content { min-height: 10em; }
 	.paypal-buttons .js-btnCancel { margin-left: 1em; }
+	
+	/*** SANDBOX ***/
+	.calculator-data-presets { display: none !important; }
 }
 /*** END MEDIA-QUERIES ***/
 
@@ -558,9 +562,5 @@ input[readOnly] {
 }
 .js-RDBs-container label.is-deleted {
 	background-color: red !important;
-}
-
-.js-manualNav {
-	display: inline-block;
 }
 /*** TO DELETE ***/

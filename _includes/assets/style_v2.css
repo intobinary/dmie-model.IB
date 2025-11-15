@@ -20,6 +20,11 @@ html, body, main { width: 100%; height: 100%; }
 .menu { background-color: #4A4E67; }
 
 .menu-form input[type="submit"] { background-color: #F7E9E8; }
+
+	.menu-veil {
+		position: absolute; top: 0; left: 0;
+		width: 100%; height: 100%;
+	}
 /*** END COLORS ***/
 
 /*** FONTS ***/
@@ -41,7 +46,25 @@ html, body, main { width: 100%; height: 100%; }
 	body { overflow-x: hidden; }
 
 	/*** .menu ***/
-	.menu { overflow-y: scroll; }
+	.menu {
+		position: absolute; top: 0;
+			height: 100%;
+		overflow-y: scroll;
+	}
+	.menu label { position: absolute; }
+	.menu-form input,
+	.menu-form textarea {
+		width: 100%;
+		padding: .25em .5em;
+		margin: .25em 0;
+	}
+		.menu-form input[type="submit"] { padding: .25em 1em; }
+	.menu-form div:last-child { display: inline-block !important; }
+	.menu-form fieldset { padding: 1.8em 0; }
+	
+	.menu-veil {
+		width: 100%; height: 100%;
+	}
 /*** END COMPONENTS ***/
 
 /*** INTERACTIVITY ***/
@@ -57,7 +80,16 @@ html, body, main { width: 100%; height: 100%; }
 /*** MEDIA-QUERIES ***/
 @media screen and (max-width: 50em) {
 	/*** FONTS ***/
+	* { font-size: 14px; }
+	.menu-title { font-size: 1.8em; }
 
+	/*** COMPONENTS: .menu ***/
+	.menu {
+		width: 85%;
+		padding: 0 1em;
+	}
+	.menu label { top: 1em; right: 1em; }
+	.menu-contacts { padding: 1.8em 0; }
 }
 @media screen and (min-width: 50em) {
 	/*** FONTS ***/
@@ -68,53 +100,34 @@ html, body, main { width: 100%; height: 100%; }
 	.menu-contacts { display: flex; }
 	.menu-contacts > div:nth-child(2) { flex-direction: column; }
 	.menu-contacts > div { flex: 1; }
-	
-	
+
 	.menu {
-		position: absolute; top: 0;
-		width: 75%; height: 100%;
+		width: 75%;
 		padding: 0 3.5em;
 	}
-	.menu-title { padding: 1.8em 0; }
-	.menu label {
-		position: absolute; top: 3em; right: 3em;
-	}
-	
-	.menu-form { width: 40%; }
-	.menu-form div span,
-	.menu-form div input {
-		display: block;
-	}
-	.menu-form input,
-	.menu-form textarea {
-		width: 100%;
-		padding: .25em .5em;
-		margin: .25em 0;
-	}
-		.menu-form input[type="submit"] { padding: .25em 1em; }
-	.menu-form textarea { min-height: 10em; }
-	.menu-form div:last-child { display: inline-block !important; }
-	.menu-form div:nth-child(1) {
-		padding-right: 1em;
-	}
-	.menu-form div:nth-child(1),
-	.menu-form div:nth-child(2) {
-		width: 50%;
-		display: inline-block;
-	}
-	.menu-form fieldset { padding: 1.8em 0; }
-	
+	.menu label { top: 3em; right: 3em; }	
 	.menu-contacts { padding: 3em 0; }
 	.menu-contacts > div:nth-child(3) span:nth-child(1) { margin-right: 1em; }
 	
 	.menu-text p { padding: 1em 0; }
 	
-	.menu-veil {
-		position: absolute; top: 0; left: 0;
-		width: 100%; height: 100%;
+	/*** VIEWPORT ***/
+	.menu-title { padding: 1.8em 0; }
+	.menu-form { width: 40%; }
+	.menu-form textarea { min-height: 10em; }
+	.menu-form div:nth-child(1) { padding-right: 1em; }
+	.menu-form div:nth-child(1),
+	.menu-form div:nth-child(2) {
+		width: 50%;
+		display: inline-block;
 	}
 	
-	/*** SANDBOX ***/
+	/*** Qs ***/
+	.menu-form div span,
+	.menu-form div input {
+//		display: block;
+	}
+
 }
 /*** END MEDIA-QUERIES ***/
 
