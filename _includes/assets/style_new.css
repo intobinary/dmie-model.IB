@@ -563,6 +563,7 @@ input[readOnly] {
 .js-RDBs-container label.is-deleted {
 	background-color: red !important;
 }
+.js-inputFile { display: none !important; }
 
 
 
