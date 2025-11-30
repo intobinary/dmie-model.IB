@@ -66,7 +66,7 @@ main.doPaypal .paypal { position: relative; z-index: 100; }
 .js-btnDownload { background-image: url("/assets/images/icon_download_white.png"); }
 .js-btnSave { background-image: url("/assets/images/icon_save_white.png"); }
 .js-btnAdd { background-image: url("/assets/images/icon_add_white.png"); }
-.js-manualNav * {// text-indent: -9999px; }
+.js-manualNav * { text-indent: -9999px; }
 .js-manualNav * {
 	background-position: center;
 	background-repeat: no-repeat;
@@ -570,6 +570,8 @@ input[readOnly] {
 /*
 .calculator-data-manual_wrap { flex-direction: column-reverse; }
 .js-manualNav * {
+	text-indent: initial !important;
+	
 	width: initial !important; aspect-ratio: initial !important;
 	background-size: auto 80% !important;
 	background-position: 1.8% center;
