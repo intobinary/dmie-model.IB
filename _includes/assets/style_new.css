@@ -567,6 +567,7 @@ input[readOnly] {
 
 
 /*** NEW ***/
+/*
 .calculator-data-manual_wrap { flex-direction: column-reverse; }
 .js-manualNav * {
 	width: initial !important; aspect-ratio: initial !important;
@@ -579,4 +580,5 @@ input[readOnly] {
 	padding-left: 1.8em;
 }
 .js-manualNav *:last-child { padding-left: initial !important; }
+*/
 /*** TO DELETE ***/
