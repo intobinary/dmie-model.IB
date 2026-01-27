@@ -1,0 +1,173 @@
+---
+layout: default
+---
+		<input type="checkbox" id="chbx4menu" name="chbx4menu" />
+		<input type="checkbox" id="chbx4results" name="chbx4results" />
+		<main>
+			<nav>
+			<div class="menu"><div>
+				<h3 class="menu-title">About Donatien Malala</h3>
+				<label for="chbx4menu" class="u-btn">x</label>
+				
+				<div class="menu-text">
+					<p>"Effective economic research connects data to society by uncovering the hidden structures that shape people’s lives."</p>
+					
+					<p>Donatien Malala is a renowned economist whose work focuses on understanding and quantifying the parts of the economy that traditional models overlook. His research brings clarity to complex economic systems, turning invisible activity into measurable insight.</p>
+					
+					<p>His contributions include the development of the DMIE Model (Diophantine Model of Informal Economy), a groundbreaking approach introduced in his research that offers a new way to estimate the informal economy through mathematical structures.</p>
+
+					<p>He is known for being precise, innovative, and deeply thoughtful; qualities that are the strength of his work. In coding the calculator for him, every variable was examined; the DMIE-Model Calculator is built with precision.</p>
+
+					<p>The project combines mathematical rigor with real-world relevance, producing models that are not only analytically strong but practically valuable for policymakers, development institutions, and fellow researchers.</p>
+					
+					<p>Donatien Malala’s research legacy continues to expand through collaborations with global scholars, policy advisors, and institutions exploring the dynamics of emerging and informal markets.</p>
+				</div>
+				
+				<div class="menu-contacts">
+					<div class="CSScentered">
+						<span>donatienmalala@gmail.com</span>
+					</div>
+					<div class="CSScentered">
+						<span>Donatien: (+27) 63 047 8534</span>
+						<span>Madam Ella: (+27) 63 047 8534</span>
+					</div>
+					<div class="CSScentered">
+						<span class="u-btn is-icon CSScentered">IG</span>
+						<span class="u-btn is-icon CSScentered">FB</span>
+					</div>
+				</div>
+				
+				<form class="menu-form">
+					<span>Contact Us</span>
+					<fieldset>
+						<div>
+							<span>Name:</span>
+							<input type="text" placeholder="Ms Jane Doe" />
+						</div><div>
+							<span>Email:</span>
+							<input type="email" placeholder="janedoe@gmail.com" />
+						</div>
+						
+						<div>
+							<span>Message:</span>
+							<textarea placeholder="AAA"></textarea>
+						</div>
+						
+						<div>
+							<input type="submit" value="Send" />
+						</div>
+					</fieldset>
+				</form>
+				
+				<footer class="menu-footer">&copy; Copyrights 2025: <a href="https://intobinary.org" class="CSSunderline">Into Binary</a>. All rights reserved.</footer>
+			</div></div>
+			<label for="chbx4menu" class="menu-veil"></label>
+			</nav>
+			
+			<header class="header CSSmidWrap">
+				<nav>
+					<h1>DMIE MODEL CALCULATOR</h1>
+					<label for="chbx4menu" class="u-btn">v</label>
+				</nav>
+				
+				<div>
+					<p>Did you know that you can estimate a country's informal economy with a simple math equation? Discover the DMIE Model.</p>
+				</div>
+			</header>
+			
+			<section class="v4 CSSmidWrap">
+				<section class="calculator">
+					<fieldset class="calculator-data">
+						<div class="calculator-data-manual">
+							<!--
+							<span>Manual Inputs</span>
+							-->
+							<div class="calculator-data-manual_wrap">
+
+							<div class="js-RDBs-container">
+								<label><input type="radio" id="rdb4dataManual1" name="rdb4data" onclick="rdbBtnIsClicked(this)" checked />1</label>
+							</div>
+							
+							<span class="CSSspacer"></span>
+							
+							<div class="js-manualNav">
+								<span class="js-btnAdd" title="Add Additional Country">add a country</span>
+								<span class="js-btnDelete" title="Clear Form/Unsave Data">Clear Form/Unsave Data</span>
+								<input type="submit" class="js-btnSave" value="Save Country's Data" title="Save Country's Data" />
+								<span class="js-btnRefresh" title="Clean All Data">Clean Up</span>
+								<span class="js-btnDownload" title="Download as CSV File">Download Data</span>
+								<label for="hiddenFile" class="js-btnImport" title="Upload Custom CSV File">Upload PDF</label>
+								<input type="file" id="hiddenFile" class="js-inputFile" style="" accept=".csv" />
+							
+								<!--
+								<span class="js-btnAdd" title="Add Additional Country"></span>
+								<span class="js-btnDelete" title="Clear Form/Unsave Data"></span>
+								<input type="submit" class="js-btnSave" value="" title="Save Country's Data" />
+								<span class="js-btnRefresh" title="Clean All Data"></span>
+								<span class="js-btnDownload" title="Download as CSV File"></span>
+								<label for="hiddenFile" class="js-btnImport" title="Upload Custom CSV File"></label>
+								<input type="file" id="hiddenFile" class="js-inputFile" style="display: none !important" accept=".csv" />
+								-->
+							</div>
+							</div>
+						</div>
+						<!--
+						<div class="calculator-data-presets">
+							<span>Data Presets</span>
+							<br /><br />
+							<label><input type="radio" id="rdb4dataPresetDRC" name="rdb4data" onclick="rdbBtnIsClicked(this)" />DRC</label>
+							<label><input type="radio" id="rdb4dataPresetSA" name="rdb4data" onclick="rdbBtnIsClicked(this)" />SA</label>
+
+							<span class="calculator-data-presets-map"></span>
+						</div>
+						-->
+					</fieldset>
+					
+					<fieldset class="calculator-fieldset">
+						<div>
+							<label id="py-output">Country</label>
+							<input type="text" id="country" placeholder="Name of Country" required />
+						</div><div>
+							<label>Year</label>
+							<input type="number" step="any" id="year" placeholder="####" required />
+						</div><div>
+							<label>WF (Workforce)</label>
+							<input type="number" step="any" id="wf" placeholder="########" required />
+						</div><div>
+							<label>FW (Formal Workers)</label>
+							<input type="number" step="any" id="fw" placeholder="########" required />
+						</div><div>
+							<label>IW (Informal Workers)</label>
+							<input type="number" step="any" id="if" placeholder="########" required />
+						</div><div>
+							<label>Yof (Official GDP)</label>
+							<input type="number" step="any" id="yof" placeholder="##########" required />
+						</div><div>
+							<label>FP (Formal Productivity)</label>
+							<input type="number" step="any" id="fp" placeholder="###" required />
+						</div><div>
+							<label>IP (Informal Productivity)</label>
+							<input type="number" step="any" id="ip" placeholder="###" required />
+						</div><div>
+							<label>OL (Obligatory Levies / Tax Burden)</label>
+							<input type="number" step="any" id="ol" placeholder="####" required />
+						</div>
+					</fieldset>
+					
+					<div>
+						<label for="chbx4results">AAA</label>
+						<span class="CSSspacer"></span>
+						
+						<input type="submit" value="CALCULATE" />
+					</div>
+				</section>
+				
+				<section class="results">
+					Results
+				</section>
+			</section>
+			
+			<footer class="footer CSSmidWrap">
+				&copy; Copyrights 2026: <a href="https://intobinary.org">Into Binary</a>. All rights reversed.
+			</footer>
+		</main>

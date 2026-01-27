@@ -9,6 +9,17 @@ html, body, main { width: 100%; height: 100%; }
 	user-select:none;
 		-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;
 }
+
+input,
+textarea {
+	width: 100%;
+	padding: .25em .5em;
+	margin: .25em 0;
+}
+	.v4 input[type="submit"] { width: auto; }
+	input[type="submit"] { padding: .25em 1em; }
+
+.v4 input[type="radio"] { display: inline-block; }
 /*** END CANCEL ***/
 
 /*** Z-INDEXES ***/
@@ -17,11 +28,14 @@ html, body, main { width: 100%; height: 100%; }
 /*** END Z-INDEXES ***/
 
 /*** COLORS ***/
-.calculator,
-.menu,
-.results { background-color: #4A4E67; }
+.v4,
+.menu { background-color: #CAC7C1; }
 
-.menu-form input[type="submit"] { background-color: #F7E9E8; }
+html {// background-color: #F7F7F4; }
+html { background-color: white; }
+
+.js-manualNav *,
+input[type="submit"] { background-color: #04EA60; }
 
 	.menu-veil {
 		position: absolute; top: 0; left: 0;
@@ -35,7 +49,9 @@ html, body, main { width: 100%; height: 100%; }
 .header label,
 .menu label { font-size: 1.8em; }
 
-.header { text-align: center; }
+.footer,
+.header p { text-align: center; }
+.footer a { text-decoration: underline; }
 /*** END FONTS ***/
 
 /*** UTILITIES ***/
@@ -51,12 +67,19 @@ html, body, main { width: 100%; height: 100%; }
 /*** COMPONENTS ***/
 	/*** COMMONS ***/
 	body { overflow-x: hidden; }
-	.header label,
 	.menu label { position: absolute; }
 	
 	main > section { position: relative; }
 	
+	.v4 { border-radius: .4em; overflow: hidden; }
+	
+	/*** .footer ***/
+	.footer { padding: 1em; }
+	
 	/*** .header ***/
+	.header nav { display: flex; }
+	.header nav h1 { flex: 1; }
+	
 	.header { position: relative; }
 
 	/*** .menu ***/
@@ -65,13 +88,6 @@ html, body, main { width: 100%; height: 100%; }
 			height: 100%;
 		overflow-y: scroll;
 	}
-	.menu-form input,
-	.menu-form textarea {
-		width: 100%;
-		padding: .25em .5em;
-		margin: .25em 0;
-	}
-		.menu-form input[type="submit"] { padding: .25em 1em; }
 	.menu-form div:last-child { display: inline-block !important; }
 	
 	.menu-veil {
@@ -82,6 +98,29 @@ html, body, main { width: 100%; height: 100%; }
 	.results {
 		position: absolute; top: 0;
 	}
+	
+	/*** .v4 ***/
+	.v4 .calculator > div,
+	.v4 .calculator-data-manual_wrap { display: flex; }
+
+	.v4 {
+		min-height: 8em;
+		padding: 1em;
+	}
+	
+	.v4 .js-RDBs-container label * { vertical-align: middle; }
+	.v4 input[type="radio"] {
+		display: inline-block;
+		width: 1.8em !important; aspect-ratio: 1/1;
+	}
+	
+	.js-manualNav * {
+		text-indent: -9999px;
+
+		width: 1.8em !important; aspect-ratio: 1/1;
+		display: inline-block; vertical-align: middle;
+	}
+	
 /*** END COMPONENTS ***/
 
 /*** INTERACTIVITY ***/
@@ -104,7 +143,6 @@ html, body, main { width: 100%; height: 100%; }
 	.menu-title { font-size: 1.8em; }
 	
 	/*** COMMONS ***/
-	.header label,
 	.menu label { top: .5em; right: .5em; }
 
 	/*** COMPONENTS: .menu ***/
@@ -118,24 +156,22 @@ html, body, main { width: 100%; height: 100%; }
 	.menu-footer { padding: 1em 0 1.8em 0; }
 	.menu-form div { margin-top: 1em; }
 	.menu-text p { padding: .5em 0; }
+	
+	/*** COMPONENTS: .v4 ***/
+	.v4 .calculator-fieldset div:nth-child(7) input,
+	.v4 .calculator-fieldset div:nth-child(8) input,
+	.v4 .calculator-fieldset div:nth-child(9) input { width: 50%; }
 }
 @media screen and (min-width: 50em) {
 	/*** FONTS ***/
 	* { font-size: 18px; }
 	.menu-title { font-size: 1.8em; }
+	.header div p { font-size: 3.4em; }
 	
 	/*** COMMONS ***/
-	main { display: flex; }
-	main header { flex: 1; max-width: 40%; }
-	main > section { flex: 2; min-width: 60%; }
-	.header label,
 	.menu label { top: 1em; right: 1em; }
-	.header { max-width: 50%; }
-	
-	main > section { min-width: 30em; }
-	.calculator,
-	.header,
-	.results { width: 100%; height: 100%; }
+	.v4 .calculator > div,
+	.v4 .calculator-fieldset div { padding: .5em; }
 
 	/*** COMPONENTS: .calculator ***/
 	.calculator {
@@ -164,6 +200,17 @@ html, body, main { width: 100%; height: 100%; }
 	.menu-text p { padding: 1em 0; }
 	
 	/*** COMPONENTS: .results ***/
+
+	/*** COMPONENTS: .v4 ***/
+	.v4 .calculator-fieldset div {
+		width: 50%;
+		display: inline-block;
+	}
+	.v4 .calculator-fieldset div:nth-child(7),
+	.v4 .calculator-fieldset div:nth-child(8),
+	.v4 .calculator-fieldset div:nth-child(9) { width: 33.333%; }
+	.v4 .calculator-fieldset div input { display: block; }
+	.v4 .calculator-fieldset div:nth-child(2) input { width: 50%; }
 	
 	/*** VIEWPORT ***/
 	.menu-form { width: 40%; }
@@ -190,8 +237,18 @@ html, body, main { width: 100%; height: 100%; }
 		align-items: center; justify-content: center;
 	}
 	
+	/*** .CSSmidWrap ***/
+	.CSSmidWrap {
+		width: 100%; max-width: 70em;
+		display: block;
+		margin: auto;
+	}
+		.v4.CSSmidWrap { max-width: 60em; }
+	
 	/*** .CSSunderline ***/
 	.CSSunderline { text-decoration: underline; }
+	
+	.CSSspacer { flex: 1 !important; }
 /*** END TOOLS ***/
 
 /*** SANDBOX ***/
