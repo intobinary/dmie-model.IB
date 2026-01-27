@@ -54,6 +54,22 @@ input[type="submit"] { background-color: #04EA60; }
 .footer a { text-decoration: underline; }
 /*** END FONTS ***/
 
+/*** MEDIA ***/
+.js-btnRefresh { background-image: url("/assets/images/icon_refresh_white.png"); }
+.js-btnDelete { background-image: url("/assets/images/icon_close_white.png"); }
+.js-btnImport { background-image: url("/assets/images/icon_folder_white.png"); }
+.js-btnDownload { background-image: url("/assets/images/icon_download_white.png"); }
+.js-btnSave { background-image: url("/assets/images/icon_save_white.png"); }
+.js-btnAdd { background-image: url("/assets/images/icon_add_white.png"); }
+.js-manualNav * { text-indent: -9999px; }
+	.js-manualNav *:last-child { display: none; }
+.js-manualNav * {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 80%;
+}
+/*** END MEDIA ***/
+
 /*** UTILITIES ***/
 	/*** .u-btn ***/
 	.u-btn.is-icon {
@@ -124,6 +140,8 @@ input[type="submit"] { background-color: #04EA60; }
 /*** END COMPONENTS ***/
 
 /*** INTERACTIVITY ***/
+.js-RDBs-container input,
+.js-manualNav *,
 .u-btn { cursor: pointer; }
  
 .menu { right: -100%; }
