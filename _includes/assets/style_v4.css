@@ -1,5 +1,6 @@
 /*** CANCEL ***/
-html, body, main { width: 100%; height: 100%; }
+html, body { width: 100%; height: 100%; }
+main { min-height: 100%; }
 
 *::selection {
     fill: none;
@@ -24,44 +25,53 @@ textarea {
 
 /*** Z-INDEXES ***/
 .menu-veil { position: relative; z-index: 10; }
-.menu { position: relative; z-index: 20; }
+.menu { position: relative; z-index: 18; }
+
+main.doPaypal .paypal { position: relative; z-index: 100; }
 /*** END Z-INDEXES ***/
 
 /*** COLORS ***/
+.js-manualNav *,
+input[type="submit"],
+.paypal-buttons-cta,
+.v4 .calculator-results-design-nav span { background-color: #04EA60; }
+
 .v4,
-.menu { background-color: #CAC7C1; }
+.v4 .calculator-results-design,
+.menu,
+.paypal_dock { background-color: #CAC7C1; }
 
 html {// background-color: #F7F7F4; }
-html { background-color: white; }
 
-.js-manualNav *,
-input[type="submit"] { background-color: #04EA60; }
+.paypal { background-color: rgba(255, 255, 255, .7); }
 
-	.menu-veil {
-		position: absolute; top: 0; left: 0;
-		width: 100%; height: 100%;
-	}
+html,
+.v4 .calculator-results-design-data-numbers-lines-div { background-color: white; }
+.v4 .calculator-results-design-data hgroup,
+.v4 .calculator-results-design-data-numbers-pie-span,
+.paypal-buttons-cta,
+.v4 input[type="submit"] { color: white; }
+.calculator-results-design-data-numbers-pie:before { border-color: white; }
 /*** END COLORS ***/
 
 /*** FONTS ***/
 * { font-family: "Arial Black"; }
 
-.header label,
-.menu label { font-size: 1.8em; }
-
 .footer,
-.header p { text-align: center; }
+.header div { text-align: center; }
+.v4 .js-RDBs-container,
+.v4 .js-manualNav { text-align: right; }
 .footer a { text-decoration: underline; }
 /*** END FONTS ***/
 
 /*** MEDIA ***/
-.js-btnRefresh { background-image: url("/assets/images/icon_refresh_white.png"); }
-.js-btnDelete { background-image: url("/assets/images/icon_close_white.png"); }
+.js-btnClearAll { background-image: url("/assets/images/icon_closeAll_white.png"); }
+.js-btnDelete { background-image: url("/assets/images/icon_close1_white.png"); }
 .js-btnImport { background-image: url("/assets/images/icon_folder_white.png"); }
 .js-btnDownload { background-image: url("/assets/images/icon_download_white.png"); }
 .js-btnSave { background-image: url("/assets/images/icon_save_white.png"); }
 .js-btnAdd { background-image: url("/assets/images/icon_add_white.png"); }
-.js-manualNav * { text-indent: -9999px; }
+.js-manualNav * { text-indent: -9999px !important; color: transparent !important; }
 	.js-manualNav *:last-child { display: none; }
 .js-manualNav * {
 	background-position: center;
@@ -85,6 +95,7 @@ input[type="submit"] { background-color: #04EA60; }
 	body { overflow-x: hidden; }
 	.menu label { position: absolute; }
 	
+	main { padding: 1em; }
 	main > section { position: relative; }
 	
 	.v4 { border-radius: .4em; overflow: hidden; }
@@ -98,16 +109,76 @@ input[type="submit"] { background-color: #04EA60; }
 	
 	.header { position: relative; }
 
+	.header div { padding: 4em 0; }
+	.header div * {// display: inline; }
+
+
 	/*** .menu ***/
 	.menu {
 		position: absolute; top: 0;
-			height: 100%;
 		overflow-y: scroll;
 	}
+		.menu, .menu > div { height: 100%; }
 	.menu-form div:last-child { display: inline-block !important; }
 	
 	.menu-veil {
+		position: absolute; top: 0; left: 0;
 		width: 100%; height: 100%;
+	}
+	
+	/*** .paypal ***/
+	.paypal_dock { display: flex; flex-direction: column; }
+	.paypal-content { flex: 1; }
+	.paypal_dock,
+	.paypal-buttons .js-btnCancel,
+	.paypal-buttons-cta {
+		border-radius: .25em;
+		border-radius: 1em;
+	}
+	
+	.paypal {
+		position: fixed !important; top: 0; left: 0;
+		width: 100%; height: 100%;
+	}
+	.paypal_dock {
+		max-width: 90%;
+	}
+	.paypal-title {
+		padding: .75em 1em; padding-bottom: .5em;
+//		font-size: 1.8em;
+		text-transform: uppercase;
+	}
+	.paypal-content {
+		padding: .5em 1.8em;
+		overflow-y: auto;
+	}
+	.paypal-details-sublist {
+		padding-left: 1.8em;
+	}
+	.paypal-content label {
+		display: inline-block;
+		padding: .5em 0;
+		text-transform: uppercase;
+	}
+	.paypal-buttons {
+		padding-top: 1em;
+		
+//		background-color: green;
+	}
+	.paypal-buttons-cta {
+		display: inline-block;
+	}
+	.paypal-buttons-cta_wrap {
+		display: inline-block;
+		text-align: center;
+	}
+	.paypal-buttons-cta_wrap span {
+		font-size: .75em !important;
+		font-variant: small-caps; text-transform: uppercase;
+	}
+	.paypal-buttons .js-btnCancel {
+		display: inline-block;
+		background-color: #AAA;
 	}
 	
 	/*** .results ***/
@@ -116,39 +187,116 @@ input[type="submit"] { background-color: #04EA60; }
 	}
 	
 	/*** .v4 ***/
-	.v4 .calculator > div,
-	.v4 .calculator-data-manual_wrap { display: flex; }
+	.v4 .calculator footer { display: flex; }
+	.v4 .calculator footer { align-items: flex-end; }
 
 	.v4 {
 		min-height: 8em;
 		padding: 1em;
 	}
 	
+	.v4 .calculator footer img { width: auto; height: 1.8em; }
+	.v4 .calculator .calculator-fieldset label { display: block; }
+
 	.v4 .js-RDBs-container label * { vertical-align: middle; }
 	.v4 input[type="radio"] {
 		display: inline-block;
-		width: 1.8em !important; aspect-ratio: 1/1;
+		width: 1.8em; height: 1.8em;
 	}
 	
 	.js-manualNav * {
 		text-indent: -9999px;
 
-		width: 1.8em !important; aspect-ratio: 1/1;
+		width: 1.8em; height: 1.8em;
 		display: inline-block; vertical-align: middle;
+	}
+	
+	
+	.calculator-results-design {
+		position: absolute !important; top: 0; left: 0;
+		width: 100%; height: 100%;
+		display: block;
+		padding: 1.8em;
+		
+		overflow-y: scroll !important;
+		overflow-y: auto !important;
+	}
+	
+	.calculator-results-design-nav {
+		position: absolute; top: 0; right: 0;
+	}
+	.calculator-results-design-nav span {
+		cursor: pointer;
+		display: inline-block;
+		padding: .5em;
+		margin-top: 1em; margin-right: 1em;
+	}
+	
+	.calculator-results-design-data {
+		margin-bottom: 1.8em;
+	}
+	.calculator-results-design-data hgroup {
+		margin-bottom: 1em;
+	}
+	.calculator-results-design-data hgroup h4,
+	.calculator-results-design-data hgroup h5 {
+		font-size: 1.8em;
+		display: inline;
+	}
+	
+	.calculator-results-design-data-numbers-lines-div {
+		text-align: right;
+		border-radius: 4em; overflow: hidden;
+	}
+	.calculator-results-design-data-numbers-lines-div:nth-child(1) { margin-bottom: 1em; }
+	.calculator-results-design-data-numbers-lines-div-span {
+		display: inline-block;
+		min-width: 30%;
+		padding: 1em 1.8em;
+	}
+	.calculator-results-design-data-numbers-pie {
+		position: relative;
+		width: auto; aspect-ratio: 2/1;
+		overflow: hidden;
+	}
+	.calculator-results-design-data-numbers-pie:before {
+		content: ""; position: absolute; top: 0; left: 0;
+		width: auto; height: 100%; aspect-ratio: 1/1;
+		border-radius: 50%;
+		
+		border-width: 3em; border-style: solid;
+//		opacity: .5;
+	}
+	.calculator-results-design-data-numbers-pie-span {
+		position: absolute; bottom: 0; left: 0; right: 0;
+		text-align: center;
 	}
 	
 /*** END COMPONENTS ***/
 
 /*** INTERACTIVITY ***/
+.paypal-buttons .js-btnCancel,
+.paypal-buttons-cta,
+.u-btn,
 .js-RDBs-container input,
-.js-manualNav *,
-.u-btn { cursor: pointer; }
+.js-manualNav * { cursor: pointer; }
  
 .menu { right: -100%; }
 #chbx4menu:checked ~ main .menu { right: 0; }
 
 .menu-veil { display: none; }
 #chbx4menu:checked ~ main .menu-veil { display: block; }
+
+.calculator-results { display: none; }
+.calculator-results.is-open { display: block; }
+
+.paypal { display: none !important; }
+main.doPaypal .paypal { display: flex !important; }
+
+.paypal-details-sublist { display: none; }
+{% for i in (1..10) %}
+#rdb4paypalDetails{{ i }}:checked ~ main .paypal-details-list-item:nth-child({{ i }}) .paypal-details-sublist,{% endfor %}
+.jekyllPlaceholderClassname { display: block; }
 
 .results { right: -100%; }
 #chbx4results:checked ~ main .results { right: 0; }
@@ -158,47 +306,84 @@ input[type="submit"] { background-color: #04EA60; }
 @media screen and (max-width: 50em) {
 	/*** FONTS ***/
 	* { font-size: 14px; }
-	.menu-title { font-size: 1.8em; }
-	
-	/*** COMMONS ***/
-	.menu label { top: .5em; right: .5em; }
+	.header label,
+	.header div p,
+	.header nav h1,
+	.menu label,
+	.menu-title,
+	.paypal-title { font-size: 1.18em; }
+	.header div h1 { font-size: 1.8em; }
 
 	/*** COMPONENTS: .menu ***/
 	.menu {
 		width: 85%;
 		padding: 0 1em;
 	}
+	.menu label { top: .5em; right: .5em; }
+	
 	.menu-contacts { padding: 1.8em 0; }
-
 	.menu-title { padding: 1em 0; }
 	.menu-footer { padding: 1em 0 1.8em 0; }
 	.menu-form div { margin-top: 1em; }
 	.menu-text p { padding: .5em 0; }
 	
+	/*** COMPONENTS: .paypal ***/
+	.paypal-buttons .js-btnCancel,
+	.paypal-buttons-cta { padding: .5em; }
+	.paypal_dock { max-height: 90vh; }
+	.paypal-content { max-height: 30vh; }
+	.paypal-buttons { padding: 1em; }
+	.paypal-buttons .js-btnCancel { margin-top: 1em; }
+	
 	/*** COMPONENTS: .v4 ***/
 	.v4 .calculator-fieldset div:nth-child(7) input,
 	.v4 .calculator-fieldset div:nth-child(8) input,
 	.v4 .calculator-fieldset div:nth-child(9) input { width: 50%; }
+	
+	.v4 .calculator-fieldset div label { margin-top: 1em; }
+	
+	.calculator-results-design-data-numbers-pie { height: 7em; }
+	
+	/*** INTERACTIVITY ***/
+	.v4 .calculator footer img.is-big { display: none; }
+	
+	/*** CSS-HACKS ***/
+	.paypal-buttons-cta_wrap:nth-child(3) { text-align: left !important; }
+	.paypal-buttons-cta_wrap:nth-child(3) > span { margin-left: .75em !important; }
+	
+	/*** VIEWPORT ***/
+	.paypal-buttons-cta_wrap > span span { display: none !important; }
+	.paypal-buttons-cta_wrap input[type="text"] {
+		width: 100% !important;
+		padding: .25em .75em !important;
+	}
+	.paypal-buttons-cta_wrap input[type="submit"] {
+		height: 1em !important;
+		padding: 0 !important;
+	}
+	
+	.js-here { padding-top: 7em; }
+	.calculator-results > div { padding: .5em !important; }
+	.calculator-results-design-data-numbers-lines-div span { padding: .5em .75em !important; }
+	.calculator-results-design-data-numbers-pie { height: 5em; position: relative !important; }
+	.calculator-results-design-data-numbers-pie:before { border-width: 1.5em !important; }
+	.calculator-results-design-data-numbers-pie span { bottom: .5em; left: 2.1em; text-align: left; }
 }
 @media screen and (min-width: 50em) {
 	/*** FONTS ***/
 	* { font-size: 18px; }
-	.menu-title { font-size: 1.8em; }
-	.header div p { font-size: 3.4em; }
+	.header label,
+	.header div p,
+	.header nav h1,
+	.menu label,
+	.menu-title,
+	.paypal-title { font-size: 1.8em; }
+	.header div h1 { font-size: 3.4em; }
 	
 	/*** COMMONS ***/
 	.menu label { top: 1em; right: 1em; }
-	.v4 .calculator > div,
+	.v4 .calculator footer,
 	.v4 .calculator-fieldset div { padding: .5em; }
-
-	/*** COMPONENTS: .calculator ***/
-	.calculator {
-	}
-	
-	/*** COMPONENTS: .header ***/
-	.header {
-		padding: 3em;
-	}
 
 	/*** COMPONENTS: .menu ***/
 	.menu-contacts { display: flex; }
@@ -217,9 +402,21 @@ input[type="submit"] { background-color: #04EA60; }
 	.menu-form div { margin-top: 1.8em; }
 	.menu-text p { padding: 1em 0; }
 	
+	/*** COMPONENTS: .paypal ***/
+	.paypal-buttons { display: flex; align-items: center; }
+
+	.paypal-buttons { padding: 1.8em; }
+	.paypal-buttons .js-btnCancel,
+	.paypal-buttons-cta { padding: 1em; }
+	.paypal_dock { max-height: 70vh; }
+	.paypal-content { min-height: 10em; }
+	.paypal-buttons .js-btnCancel { margin-left: 1em; }
+	
 	/*** COMPONENTS: .results ***/
 
 	/*** COMPONENTS: .v4 ***/
+	.v4 .calculator-data-manual_wrap { display: flex; }
+
 	.v4 .calculator-fieldset div {
 		width: 50%;
 		display: inline-block;
@@ -230,6 +427,19 @@ input[type="submit"] { background-color: #04EA60; }
 	.v4 .calculator-fieldset div input { display: block; }
 	.v4 .calculator-fieldset div:nth-child(2) input { width: 50%; }
 	
+	.v4 .calculator-fieldset div label { margin-top: .5em; }
+	
+	/*** INTERACTIVITY ***/
+	.v4 .calculator footer img.is-small { display: none; }
+	
+	.calculator-results-design-data-numbers { display: flex; }
+	.calculator-results-design-data-numbers-lines { flex: 1; }
+	
+	.calculator-results-design-data-numbers-pie {
+		height: 7em;
+		margin-left: 7em;
+	}
+	
 	/*** VIEWPORT ***/
 	.menu-form { width: 40%; }
 	.menu-form textarea { min-height: 10em; }
@@ -239,6 +449,8 @@ input[type="submit"] { background-color: #04EA60; }
 		width: 50%;
 		display: inline-block;
 	}
+	
+	.js-manualNav * {// margin-left: .8em; }
 	
 	/*** Qs ***/
 	.menu-form div span,
@@ -279,3 +491,28 @@ input[readOnly] {
 	cursor: initial !important;
 }
 /*** SANDBOX ***/
+
+/*** SANDBOX ***/
+.paypal-buttons > div,
+.paypal-buttons > span { display: inline-block; }
+.paypal-buttons form {
+	position: relative;
+}
+.paypal-buttons form input[type="text"] {
+	width: 13em;
+	padding: 1em;
+	border-radius: 1em;
+	
+	background-color: #eee;
+	box-shadow: 0 0 .5em #000 inset;
+}
+.paypal-buttons form input[type="submit"] {
+	position: absolute; top: 0; bottom: 0; right: .5em;
+	display: inline-block; margin: auto;
+	width: 1.8em; height: 2.5em;
+	border-radius: .5em;
+
+	background-color: black; color: white;
+	box-shadow: 0 0 .1em #000;
+}
+/*** END SANDBOX ***/
