@@ -471,7 +471,7 @@ main.doPaypal .paypal { display: flex !important; }
 	width: 100vw; height: 100vh;
 	
 	background-color: #eee;
-	background-image: url("/assets/images/math_background.gif");
+	background-image: url("/assets/images/math_background.png");
 	background-size: cover !important;
 }
 .d-background:before {
