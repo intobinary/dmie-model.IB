@@ -98,7 +98,7 @@ html,
 
 /*** COMPONENTS ***/
 	/*** COMMONS ***/
-	body { overflow-x: hidden; }
+	main { overflow-x: hidden; }
 	.menu label { position: absolute; }
 	
 	main > section { position: relative; }
@@ -216,6 +216,7 @@ html,
 		display: inline-block; vertical-align: middle;
 	}
 	
+	.calculator-data-manual_wrap { width: 100%; }
 	
 	.calculator-results-design {
 		position: absolute !important; top: 0; left: 0;
@@ -422,7 +423,7 @@ main.doPaypal .paypal { display: flex !important; }
 	/*** COMPONENTS: .results ***/
 
 	/*** COMPONENTS: .v4 ***/
-	.v4 .calculator-data-manual_wrap { display: flex; }
+	.v4 .calculator-data-manual_wrap { display: flex !important; }
 
 	.v4 .calculator-fieldset div {
 		width: 50%;
