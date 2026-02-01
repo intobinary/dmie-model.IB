@@ -193,6 +193,7 @@ html,
 	
 	/*** .v4 ***/
 	.v4 .calculator footer { display: flex; }
+	.v4 .calculator-data-manual_wrap { display: flex !important; }
 	.v4 .calculator footer { align-items: flex-end; }
 
 	.v4 {
@@ -215,8 +216,6 @@ html,
 		width: 1.8em; height: 1.8em;
 		display: inline-block; vertical-align: middle;
 	}
-	
-	.calculator-data-manual_wrap { width: 100%; }
 	
 	.calculator-results-design {
 		position: absolute !important; top: 0; left: 0;
