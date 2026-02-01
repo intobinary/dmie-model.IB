@@ -98,7 +98,7 @@ html,
 
 /*** COMPONENTS ***/
 	/*** COMMONS ***/
-	main { overflow-x: hidden; }
+	body, html { overflow-x: hidden; }
 	.menu label { position: absolute; }
 	
 	main > section { position: relative; }
