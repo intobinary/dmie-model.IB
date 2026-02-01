@@ -24,8 +24,13 @@ textarea {
 /*** END CANCEL ***/
 
 /*** Z-INDEXES ***/
-.menu-veil { position: relative; z-index: 10; }
-.menu { position: relative; z-index: 18; }
+.d-background { position: relative; z-index: 8; }
+.footer,
+.header,
+.v4 { position: relative; z-index: 18; }
+
+.menu-veil { position: relative; z-index: 28; }
+.menu { position: relative; z-index: 38; }
 
 main.doPaypal .paypal { position: relative; z-index: 100; }
 /*** END Z-INDEXES ***/
@@ -459,6 +464,24 @@ main.doPaypal .paypal { display: flex !important; }
 	}
 }
 /*** END MEDIA-QUERIES ***/
+
+/*** DECORATION ***/
+.d-background {
+	position: fixed; top: 0; left: 0;
+	width: 100vw; height: 100vh;
+	
+	background-color: #eee;
+	background-image: url("/assets/images/math_background.gif");
+	background-size: cover !important;
+}
+.d-background:before {
+	content: ""; 
+	position: absolute; top: 0; left: 0;
+	width: 100%; height: 100%;
+	
+	background-color: white; opacity: .6;
+}
+/*** END DECORATION ***/
 
 /*** TOOLS ***/
 	/*** .CSScentered ***/
