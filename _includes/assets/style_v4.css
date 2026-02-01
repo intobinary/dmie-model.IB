@@ -466,11 +466,6 @@ main.doPaypal .paypal { display: flex !important; }
 /*** END MEDIA-QUERIES ***/
 
 /*** DECORATION ***/
-html, body, main { width: 100% !important; height: 100% !important; }
-body, main { min-height: 100% !important; }
-body {
-	background-color: yellow;
-}
 .d-background {
 	position: fixed; top: 0; left: 0;
 	width: 100vw; height: 100vh;
