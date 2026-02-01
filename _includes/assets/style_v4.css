@@ -60,6 +60,7 @@ html,
 /*** END COLORS ***/
 
 /*** FONTS ***/
+@font-face { font-family: "Arial Black"; src: url("/assets/fonts/ariblk.ttf"); }
 * { font-family: "Arial Black"; }
 
 .footer,
@@ -100,7 +101,6 @@ html,
 	body { overflow-x: hidden; }
 	.menu label { position: absolute; }
 	
-	main { padding: 1em; }
 	main > section { position: relative; }
 	
 	.v4 { border-radius: .4em; overflow: hidden; }
@@ -320,6 +320,7 @@ main.doPaypal .paypal { display: flex !important; }
 	.header div h1 { font-size: 1.8em; }
 
 	/*** COMPONENTS: .menu ***/
+	main { padding: 1.8em; }
 	.menu {
 		width: 85%;
 		padding: 0 1em;
@@ -386,6 +387,7 @@ main.doPaypal .paypal { display: flex !important; }
 	.header div h1 { font-size: 3.4em; }
 	
 	/*** COMMONS ***/
+	main { padding: 1em; }
 	.menu label { top: 1em; right: 1em; }
 	.v4 .calculator footer,
 	.v4 .calculator-fieldset div { padding: .5em; }
