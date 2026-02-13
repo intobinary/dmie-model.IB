@@ -129,6 +129,7 @@ html,
 		.menu, .menu > div { height: 100%; }
 	.menu-form div:last-child { display: inline-block !important; }
 	
+	.menu-form textarea { min-height: 10em; }
 	.menu-veil {
 		position: absolute; top: 0; left: 0;
 		width: 100%; height: 100%;
@@ -335,6 +336,8 @@ main.doPaypal .paypal { display: flex !important; }
 	.header div h1 { font-size: 1.8em; }
 
 	/*** COMPONENTS: .menu ***/
+	.menu-contacts > div:nth-child(2) { flex-direction: column !important; }
+	
 	main { padding: 1.8em; }
 	.menu {
 		width: 85%;
@@ -347,6 +350,8 @@ main.doPaypal .paypal { display: flex !important; }
 	.menu-footer { padding: 1em 0 1.8em 0; }
 	.menu-form div { margin-top: 1em; }
 	.menu-text p { padding: .5em 0; }
+		/*** VIEWPORT: .menu-contacts ***/
+		.menu-contacts > div:nth-child(2) { margin: 1em 0; }
 	
 	/*** COMPONENTS: .paypal ***/
 	.paypal-buttons .js-btnCancel,
@@ -470,7 +475,6 @@ main.doPaypal .paypal { display: flex !important; }
 	
 	/*** VIEWPORT ***/
 	.menu-form { width: 40%; }
-	.menu-form textarea { min-height: 10em; }
 	.menu-form div:nth-child(1) { padding-right: 1em; }
 	.menu-form div:nth-child(1),
 	.menu-form div:nth-child(2) {
