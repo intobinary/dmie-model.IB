@@ -586,6 +586,15 @@ input[readOnly] {
 /*** SANDBOX ***/
 
 /*** SANDBOX ***/
+.v4 .calculator-nav-button {
+	padding-left: 1.8em;
+	
+	background-image: url("/assets/images/icon_nasa_white.png");
+	background-size: auto 80%;
+	background-position: .18em center;
+	background-repeat: no-repeat;
+}
+
 .paypal-buttons > div,
 .paypal-buttons > span { display: inline-block; }
 .paypal-buttons form {
