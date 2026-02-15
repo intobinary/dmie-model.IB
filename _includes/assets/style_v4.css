@@ -25,6 +25,7 @@ textarea {
 
 /*** Z-INDEXES ***/
 .d-background { position: relative; z-index: 8; }
+.compliance,
 .footer,
 .header,
 .v4 { position: relative; z-index: 18; }
@@ -41,6 +42,7 @@ input[type="submit"],
 .paypal-buttons-cta,
 .v4 .calculator-results-design-nav span,
 .v4 .js-RDBs-container label.is-saved { background-color: #04EA60; }
+.compliance {// background-color: rgba(4, 234, 96, .4); }
 
 .v4,
 .v4 .calculator-results-design,
@@ -60,16 +62,20 @@ html,
 .paypal-buttons-cta,
 .v4 input[type="submit"] { color: white; }
 .calculator-results-design-data-numbers-pie:before { border-color: white; }
+
+.compliance { background-color: rgba(0, 0, 0, .1); }
 /*** END COLORS ***/
 
 /*** FONTS ***/
 @font-face { font-family: "Arial Black"; src: url("/assets/fonts/ariblk.ttf"); }
 * { font-family: "Arial Black"; }
 
+.compliance,
 .footer,
 .header div { text-align: center; }
 .v4 .js-RDBs-container,
 .v4 .js-manualNav { text-align: right; }
+.compliance-check a,
 .footer a { text-decoration: underline; }
 /*** END FONTS ***/
 
@@ -108,6 +114,17 @@ html,
 	
 	.v4 { border-radius: .4em; overflow: hidden; }
 	
+	/*** .compliance ***/
+	.header,
+	.v4 {// display: none !important; }
+	.compliance {
+		margin: 1.8em auto !important;
+	}
+	.compliance-check {
+		border-style: solid; border-color: black;
+	}
+	.compliance-check:nth-child(1) { border-width: 0; }
+	
 	/*** .footer ***/
 	.footer { padding: 1em; }
 	
@@ -117,7 +134,7 @@ html,
 	
 	.header { position: relative; }
 
-	.header div { padding: 4em 0; }
+	.header div { padding: 4em 0; padding-bottom: 0; }
 	.header div * {// display: inline; }
 
 
@@ -334,6 +351,19 @@ main.doPaypal .paypal { display: flex !important; }
 	.menu-title,
 	.paypal-title { font-size: 1.18em; }
 	.header div h1 { font-size: 1.8em; }
+	
+	/*** COMPONENTS: .compliance ***/
+	.compliance { padding: 1em 1.7em; }
+	.compliance-check {
+		padding: .1em;
+		border-width: .1em 0 0 0;
+	}
+		/*** VIEWPORT: .compliance ***/
+		.compliance-check {
+			padding: 1em;
+		}
+		.compliance-check:nth-child(1) { padding-top: .3em; }
+		.compliance-check:nth-child(3) { padding-bottom: .3em; }
 
 	/*** COMPONENTS: .menu ***/
 	.menu-contacts > div:nth-child(2) { flex-direction: column !important; }
@@ -417,6 +447,19 @@ main.doPaypal .paypal { display: flex !important; }
 	.menu label { top: 1em; right: 1em; }
 	.v4 .calculator footer,
 	.v4 .calculator-fieldset div { padding: .5em; }
+
+	/*** COMPONENTS: .compliance ***/
+	.compliance { padding: 1.8em; }
+	.compliance-check {
+		padding: .3em;
+		border-width: 0 0 0 .1em;
+	}
+		/*** VIEWPORT: .compliance ***/
+		.compliance-check { display: inline-block; vertical-align: middle; }
+		.compliance-check:nth-child(1) { width: 25%; }
+		.compliance-check:nth-child(2) { width: 30%; }
+		.compliance-check:nth-child(3) { width: 45%; }
+		.compliance-check br { display: none; }
 
 	/*** COMPONENTS: .menu ***/
 	.menu-contacts { display: flex; }
