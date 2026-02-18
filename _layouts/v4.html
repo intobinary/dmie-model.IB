@@ -39,23 +39,25 @@ layout: default
 					</div>
 				</div>
 				
-				<form class="menu-form">
+				<form class="menu-form" action="https://formspree.io/f/mlgwlerl" method="POST">
 					<span>Contact Us</span>
+					<hgroup class="menu-form_alert"></hgroup>
 					<fieldset>
 						<div>
 							<span>Name:</span>
-							<input type="text" placeholder="Full Name" />
+							<input type="text" name="name" placeholder="Full Name" />
 						</div><div>
 							<span>Email:</span>
-							<input type="email" placeholder="example@gmail.com" />
+							<input type="email" name="email" placeholder="example@gmail.com" />
 						</div>
 						
 						<div>
 							<span>Message:</span>
-							<textarea placeholder="Type Your Message Here"></textarea>
+							<textarea name="message" placeholder="Type Your Message Here"></textarea>
 						</div>
 						
 						<div>
+							<input type="text" name="_gotcha" style="display:none">
 							<input type="submit" value="Send" />
 						</div>
 					</fieldset>

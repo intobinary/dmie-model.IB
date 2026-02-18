@@ -5,7 +5,9 @@ var isAppPaid = false, isAppSaved = false,
 var aArray1=[], aArray2 = [], tempArray = [], tempVar ="", tempElement = "";
 var countManualRDBS = 1, countSavedRDBs = 0, currentManualIndex = 0,
 	tagContainer4newManualRDBs = document.querySelector(".js-RDBs-container");
-var tagFormCalculator = document.querySelector(".js-formCalculator"),
+var tagMenuForm = document.querySelector(".menu-form"),
+	tagMenuFormAccept = document.querySelector(".menu-form_accept"),
+	tagFormCalculator = document.querySelector(".js-formCalculator"),
 	tagFormLicense = document.querySelector(".js-formLicense"),
 	tagFormBtnAdd = document.querySelector(".js-btnAdd"),
 	tagFormBtnCalculate = document.querySelector(".js-btnCalculate"),
@@ -398,4 +400,54 @@ function saveNewManualInputs(i) {
 function doEmptyForm() {
 	tagsFormInputs.forEach(iTag=>{ iTag.value = ""; });
 }
+
+/*
+function sendEmail(e) {
+  // Stop normal form submit (page reload)
+  if (e && e.preventDefault) e.preventDefault();
+
+  const form = document.querySelector(".menu-form");
+  const statusEl = document.querySelector(".menu-form_accept");
+
+  if (!form) return false;
+
+  const setStatus = (msg) => {
+    if (statusEl) statusEl.textContent = msg;
+  };
+
+  setStatus("Submitting…");
+
+  const formData = new FormData(form);
+  const payload = Object.fromEntries(formData.entries());
+
+  fetch("https://formspree.io/f/YOUR_FORM_ID", {
+    method: "POST",
+    headers: {
+      "Accept": "application/json",
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(payload)
+  })
+  .then(async (res) => {
+    let data = {};
+    try { data = await res.json(); } catch (_) {}
+
+    if (res.ok) {
+      form.reset();
+      setStatus("Submission received.");
+    } else {
+      const msg = (data && data.errors && data.errors[0] && data.errors[0].message)
+        ? data.errors[0].message
+        : "Submission failed. Please try again.";
+      setStatus(msg);
+    }
+  })
+  .catch(() => {
+    setStatus("Network error. Try again.");
+  });
+
+  // IMPORTANT: returning false prevents the browser from submitting normally
+  return false;
+}
+*/
 /*** END FUNCTIONS ***/
