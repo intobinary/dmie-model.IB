@@ -1,6 +1,4 @@
 /*** CANCEL ***/
-html, body { width: 100%; height: 100%; }
-main { min-height: 100%; }
 
 *::selection {
     fill: none;
@@ -140,7 +138,7 @@ html,
 
 	/*** .menu ***/
 	.menu {
-		position: absolute; top: 0;
+		position: fixed; top: 0;
 		overflow-y: scroll;
 	}
 		.menu, .menu > div { height: 100%; }
@@ -459,7 +457,7 @@ main.doPaypal .paypal { display: flex !important; }
 		.compliance-check:nth-child(1) { width: 25%; }
 		.compliance-check:nth-child(2) { width: 30%; }
 		.compliance-check:nth-child(3) { width: 45%; }
-		.compliance-check br { display: none; }
+		.compliance-check br {// display: none; }
 
 	/*** COMPONENTS: .menu ***/
 	.menu-contacts { display: flex; }
@@ -583,9 +581,7 @@ input[readOnly] {
 	color: white !important;
 	cursor: initial !important;
 }
-/*** SANDBOX ***/
 
-/*** SANDBOX ***/
 .v4 .calculator-nav-button {
 	padding-left: 1.8em;
 	
@@ -616,5 +612,9 @@ input[readOnly] {
 
 	background-color: black; color: white;
 	box-shadow: 0 0 .1em #000;
+}
+
+.menu-form {
+//	border: 10px solid green;
 }
 /*** END SANDBOX ***/

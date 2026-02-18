@@ -15,10 +15,12 @@
     -moz-box-sizing: border-box;
     -o-box-sizing: border-box;
     /*user-select:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;*/
+	/*
     tap-highlight-color: transparent;
     -webkit-tap-highlight-color: transparent;
     -moz-tap-highlight-color: transparent;
     -o-tap-highlight-color: transparent;
+	*/
 }
 
 *, *::before, *::after {
