@@ -57,8 +57,7 @@ html,
 .v4 .calculator-results-design-data-numbers-lines-div { background-color: white; }
 .v4 .calculator-results-design-data hgroup,
 .v4 .calculator-results-design-data-numbers-pie-span,
-.paypal-buttons-cta,
-.v4 input[type="submit"] { color: white; }
+.paypal-buttons-cta { color: white; }
 .calculator-results-design-data-numbers-pie:before { border-color: white; }
 
 .compliance { background-color: rgba(0, 0, 0, .1); }
@@ -233,6 +232,7 @@ html,
 		width: 1.8em; height: 1.8em;
 	}
 	
+	.v4 footer input[type="submit"],
 	.js-manualNav * {
 //		text-indent: -9999px;
 
@@ -583,7 +583,7 @@ input[readOnly] {
 }
 
 .v4 .calculator-nav-button {
-	padding-left: 1.8em;
+	padding-left: 1.8em; padding-left: 3em !important;
 	
 	background-image: url("/assets/images/icon_nasa_white.png");
 	background-size: auto 80%;
