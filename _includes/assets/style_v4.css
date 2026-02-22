@@ -26,6 +26,7 @@ textarea {
 .compliance,
 .footer,
 .header,
+.upgrade,
 .v4 { position: relative; z-index: 18; }
 
 .menu-veil { position: relative; z-index: 28; }
@@ -207,6 +208,19 @@ html,
 	/*** .results ***/
 	.results {
 		position: absolute; top: 0;
+	}
+	
+	/*** .upgrade ***/
+	.upgrade { display: none !important; }
+	.upgrade-button,
+	.upgrade_dock { background-color: #AAA; }
+	.upgrade-button {
+		display: inline-block;
+		padding: .75em 1em;
+	}
+	.upgrade header,
+	.upgrade-content {
+		padding: 1em;
 	}
 	
 	/*** .v4 ***/
