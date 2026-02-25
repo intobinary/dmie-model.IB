@@ -71,7 +71,7 @@
 	
 		
 		<link rel="stylesheet" href="/assets/stylesheets/dmie-model-dot-intobinary-dot-org_global.css" />
-		<link rel="stylesheet" href="/assets/stylesheets/dmie-model-dot-intobinary-dot-org_new.css" />
+		<link rel="stylesheet" href="/assets/stylesheets/dmie-model-dot-intobinary-dot-org_v4.css" />
 		<!--
 		<link rel="manifest" href="manifest.json" />
 		-->
@@ -87,64 +87,126 @@
 	<body onload="brython()">
 	-->
 	<body>
-		<input type="radio" id="rdb4calculator" name="rdb4app" checked />
-		<input type="radio" id="rdb4author" name="rdb4app" />
+		<input type="checkbox" id="chbx4menu" name="chbx4menu" />
+		<input type="checkbox" id="chbx4results" name="chbx4results" />
 		
 		<input type="radio" id="rdb4paypalDetails1" name="rdb4paypalDetails" checked />
 		<input type="radio" id="rdb4paypalDetails2" name="rdb4paypalDetails" />
 		<input type="radio" id="rdb4paypalDetails3" name="rdb4paypalDetails" />
-		<main class="d-midWrap">
-			<header class="header">
-				<hgroup class="header-hgroup">
-					<h1 class="header-hgroup-title">DMIE Model</h1>
-					<p class="header-hgroup-p">Did you know that you can estimate a country's informal economy with a simple math equation? Discover the DMIE Model.</p>
-				</hgroup>
+		<main><span class="d-background"></span>
+			<nav>
+			<div class="menu"><div>
+				<h3 class="menu-title">About Donatien Malala</h3>
+				<label for="chbx4menu" class="u-btn">X</label>
 				
-				<nav class="header-nav">
-					<label for="rdb4calculator" class="header-nav-button is-forCalculator">Calculator</label>
-					<label for="rdb4author" class="header-nav-button is-forAuthor">About</label>
+				<div class="menu-text">
+					<p>"Effective economic research connects data to society by uncovering the hidden structures that shape people’s lives."</p>
+					
+					<p>Donatien Malala is a renowned economist whose work focuses on understanding and quantifying the parts of the economy that traditional models overlook. His research brings clarity to complex economic systems, turning invisible activity into measurable insight.</p>
+					
+					<p>His contributions include the development of the DMIE Model (Diophantine Model of Informal Economy), a groundbreaking approach introduced in his research that offers a new way to estimate the informal economy through mathematical structures.</p>
+
+					<p>He is known for being precise, innovative, and deeply thoughtful; qualities that are the strength of his work. In coding the calculator for him, every variable was examined; the DMIE-Model Calculator is built with precision.</p>
+
+					<p>The project combines mathematical rigor with real-world relevance, producing models that are not only analytically strong but practically valuable for policymakers, development institutions, and fellow researchers.</p>
+					
+					<p>Donatien Malala’s research legacy continues to expand through collaborations with global scholars, policy advisors, and institutions exploring the dynamics of emerging and informal markets.</p>
+				</div>
+				
+				<div class="menu-contacts">
+					<div class="CSScentered">
+						<a href="mailto:donatienmalala@gmail.com">donatienmalala@gmail.com</a>
+					</div>
+					<div class="CSScentered">
+						<a href="tel:+243991486525">(+243) 991 486 525</a>
+					</div>
+					<div class="CSScentered">
+						<a href="https://www.facebook.com/donatien.malala/" class="u-btn is-icon CSScentered">FB</a>
+					</div>
+				</div>
+				
+				<form class="menu-form" action="https://formspree.io/f/mlgwlerl" method="POST">
+					<span>Contact Us</span>
+					<hgroup class="menu-form_alert"></hgroup>
+					<fieldset>
+						<div>
+							<span>Name:</span>
+							<input type="text" name="name" placeholder="Full Name" />
+						</div><div>
+							<span>Email:</span>
+							<input type="email" name="email" placeholder="example@gmail.com" />
+						</div>
+						
+						<div>
+							<span>Message:</span>
+							<textarea name="message" placeholder="Type Your Message Here"></textarea>
+						</div>
+						
+						<div>
+							<input type="text" name="_gotcha" style="display:none">
+							<input type="submit" value="Send" />
+						</div>
+					</fieldset>
+				</form>
+				
+				<footer class="menu-footer">&copy; Copyrights 2025: <a href="https://intobinary.org" class="CSSunderline">Into Binary</a>. All rights reserved.</footer>
+			</div></div>
+			<label for="chbx4menu" class="menu-veil"></label>
+			</nav>
+
+			<header class="header CSSmidWrap">
+				<nav>
+					<h1>DMIE MODEL CALCULATOR</h1>
+					<!--<label for="chbx4menu" class="u-btn">&amalg;</label>-->
+					<label for="chbx4menu" class="u-btn"><img src="/assets/images/icon_menu_black.png" style="width: 1.8em;" /></label>
 				</nav>
 				
-				<div class="header-research">
-					<a href="/assets/docs/dmie-model_documents.zip" class="header-research-a" download>Download Documents (.ZIP)</a>
-					<img src="/assets/images/files.png" />
+				<div>
+					<h1>The DMIE Model is an innovative scientific model...</h1>
+					<p>... developed by the economics researcher: Donatien Malala. Did you know that you can estimate a country's informal economy with a simple math equation?</p>
 				</div>
 			</header>
 			
-			<section class="section is-forCalculator">
-				<hgroup><!--Section Calculator--></hgroup>
-				
-				<form class="calculator js-formCalculator">
+			<aside class="compliance CSSmidWrap">
+				<div class="compliance-check">
+					App Recently Audited: <!--<br />&middot;--><br /> <a href="/assets/docs/DMIE_Regulatory_Documents_NEW.pdf">Regulatory Documents</a>
+				</div><div class="compliance-check">
+					Methodologically Grounded: <br /> <a href="/assets/docs/DMIE_Ethical_Use_Standards_NEW.pdf">Ethical Use Standards</a>
+				</div><div class="compliance-check">
+					GDPR & POPIA Compliant: <br /> <a href="/assets/docs/DMIE_Privacy_Policy_NEW.pdf">Privacy Policy</a>
+				</div>
+			</aside>
+			
+			<section class="v4 CSSmidWrap"><form class="calculator js-formCalculator">
 					<fieldset class="calculator-data">
 						<div class="calculator-data-manual">
+							<!--
 							<span>Manual Inputs</span>
+							-->
 							<div class="calculator-data-manual_wrap">
 
 							<div class="js-RDBs-container">
 								<label><input type="radio" id="rdb4dataManual1" name="rdb4data" onclick="rdbBtnIsClicked(this)" checked />1</label>
 							</div>
 							
-							<div class="js-manualNav">
-								<span class="js-btnAdd" title="Add Additional Country">add a country</span>
-								<span class="js-btnDelete" title="Clear Form/Unsave Data">Clear Form/Unsave Data</span>
-								<input type="submit" class="js-btnSave" value="Save Country's Data" title="Save Country's Data" />
-								<span class="js-btnRefresh" title="Clean All Data">Clean Up</span>
-								<span class="js-btnDownload" title="Download as CSV File">Download Data</span>
-								<label for="hiddenFile" class="js-btnImport" title="Upload Custom CSV File">Upload PDF</label>
-								<input type="file" id="hiddenFile" class="js-inputFile" style="" accept=".csv" />
+							<span class="CSSspacer"></span>
 							
-								<!--
-								<span class="js-btnAdd" title="Add Additional Country"></span>
-								<span class="js-btnDelete" title="Clear Form/Unsave Data"></span>
-								<input type="submit" class="js-btnSave" value="" title="Save Country's Data" />
-								<span class="js-btnRefresh" title="Clean All Data"></span>
-								<span class="js-btnDownload" title="Download as CSV File"></span>
-								<label for="hiddenFile" class="js-btnImport" title="Upload Custom CSV File"></label>
-								<input type="file" id="hiddenFile" class="js-inputFile" style="display: none !important" accept=".csv" />
-								-->
+							<div class="js-manualNav">
+								<span class="js-btnAdd" title="Add Additional Country">ADD 1</span>
+								<span class="js-btnDelete" title="Clear Form/Unsave Data">CLEAR 1</span>
+								<input type="submit" class="js-btnSave" value="SAVE 1" title="Save Country's Data" />
+								<br />
+								
+								<label for="hiddenFile" class="js-btnImport" title="Upload Custom CSV File">UPLOAD CSV</label>
+								<span class="js-btnDownload" title="Download as CSV File">DOWNLOAD RESULTS</span>
+								<br /><br />
+								<span class="js-btnClearAll" title="Clean All Data">CLEAN FORM</span>
+
+								<input type="file" id="hiddenFile" class="js-inputFile" style="" accept=".csv" />
 							</div>
 							</div>
 						</div>
+						<!--
 						<div class="calculator-data-presets">
 							<span>Data Presets</span>
 							<br /><br />
@@ -153,47 +215,46 @@
 
 							<span class="calculator-data-presets-map"></span>
 						</div>
+						-->
 					</fieldset>
-				
+					
 					<fieldset class="calculator-fieldset">
 						<div>
-							<label id="py-output">Country</label>
+							<label id="py-output">Country:</label>
 							<input type="text" id="country" placeholder="Name of Country" required />
 						</div><div>
-							<label>Year</label>
+							<label>Year:</label>
 							<input type="number" step="any" id="year" placeholder="####" required />
 						</div><div>
-							<label>WF (Workforce)</label>
+							<label>WF (Workforce):</label>
 							<input type="number" step="any" id="wf" placeholder="########" required />
 						</div><div>
-							<label>FW (Formal Workers)</label>
+							<label>FW (Formal Workers):</label>
 							<input type="number" step="any" id="fw" placeholder="########" required />
 						</div><div>
-							<label>IW (Informal Workers)</label>
+							<label>IW (Informal Workers):</label>
 							<input type="number" step="any" id="if" placeholder="########" required />
 						</div><div>
-							<label>Yof (Official GDP)</label>
+							<label>Yof (Official GDP):</label>
 							<input type="number" step="any" id="yof" placeholder="##########" required />
 						</div><div>
-							<label>FP (Formal Productivity)</label>
+							<label>FP (Formal Productivity):</label>
 							<input type="number" step="any" id="fp" placeholder="###" required />
 						</div><div>
-							<label>IP (Informal Productivity)</label>
+							<label>IP (Informal Productivity):</label>
 							<input type="number" step="any" id="ip" placeholder="###" required />
 						</div><div>
-							<label>OL (Obligatory Levies / Tax Burden)</label>
+							<label>OL (Obligatory Levies / Tax Burden):</label>
 							<input type="number" step="any" id="ol" placeholder="####" required />
 						</div>
 					</fieldset>
 					
-					<nav class="calculator-nav">
-						<div>&copy; Copyrights 2025</div>
-					
-						<div>
-							<input type="submit" id="js-btnCalculate" class="calculator-nav-button js-btnCalculate" value="CALCULATE" />
-							<!--<label class="calculator-nav-label" title="You must be logged in to use the DMIE Model's Calculator">LOG IN TO CALCULATE</label>-->
-						</div>
-					</nav>
+					<footer>
+						<label for="chbx4results"><img src="/assets/images/logo_intobinary_full.png" /><!--<img src="/assets/images/logo_intobinary_favicon.png" class="is-small" />--></label>
+						<span class="CSSspacer"></span>
+						
+						<input type="submit" id="js-btnCalculate" class="calculator-nav-button js-btnCalculate" value="CALCULATE" />
+					</footer>
 					
 					<div class="calculator-results">
 						<div class="calculator-results-design">
@@ -215,22 +276,10 @@
 							</div>
 						</div>
 					</div>
-				</form>
-			</section>
+				</form></section>
 			
-			<section class="section is-forAuthor">
-				<hgroup>
-					<p class="section-hgroup-p">Meet the economist, and researcher behind the <br />DMIE Model's innovation.</p>
-					<h2 class="section-hgroup-author">Donatien Malala</h2>
-				</hgroup>
-				
-				<div class="author">
-					<p>Donatien Malala is a renowed economist. He worked for the Congolese public transport company ONATRA. He acquired extensive experience in logistics analysis, interland transport, port management, human resources, marketing and finance. You can email him at malaladonatien@gmail.com</p>
-					<img src="/assets/images/Malala-Donatien.jpg" />
-				</div>
-			</section>
-		
-			<footer class="paypal d-cssCentered"><div class="paypal_dock">
+			
+			<footer class="paypal CSScentered"><div class="paypal_dock">
 				<h5 class="paypal-title">Unlock Full Calculator for $10</h5>
 
 				<div class="paypal-content">
@@ -269,23 +318,42 @@
 				<div class="paypal-buttons">
 					<div class="paypal-buttons-cta_wrap">
 						<span>Buy Full Access</span><br />
-						<a class="paypal-buttons-cta">Pay on Paypal</a>
+						<a class="paypal-buttons-cta"><del>Pay on Paypal</del></a>
 					</div>
 					<span>OR</span>
 					<div class="paypal-buttons-cta_wrap">
-						<span><span>Enter Your </span>License Code</span><br />
+						<span>Enter License Code</span><br />
 						<form class="js-formLicense"><input type="text" placeholder="#### ### ###" />
 						<input type="submit" value="&rarr;" /></form>
 					</div>
+					<span class="CSSspacer"></span>
 					<span class="js-btnCancel">Cancel</span>
 				</div>
 			</div></footer>
+			
+			<aside class="upgrade">
+				<label class="upgrade-button">Upgrade To Premium</label>
+				<div class="upgrade_dock">
+					<header><h1>DMIE Model Calculator App</h1></header>
+					<div class="upgrade-content">
+						<h5>Unlock Pro Models</h5>
+						<p>Upgrade to access Blackbox, and Blackbox, and Blackbox, and Blackbox, only Blackbox.</p>
+						<div>
+							<a><span>&trademark; </span>Access to Blackbox Models</a>
+							<a><span>&trademark; </span>Faster Responses</a>
+							<a><span>&trademark; </span>Better Reasoning</a>
+						</div>
+						<a href="">Upgrade to Premium</a>
+					</div>
+				</div>
+			</aside>
+			
+			<footer class="footer CSSmidWrap">
+				&copy; Copyrights 2026: <a href="https://intobinary.org">Into Binary</a>. All rights reversed.
+			</footer>
 		</main>
 		
-		<script type="text/javascript" src="/assets/scripts/dmie-model-dot-intobinary-dot-org_new.js"></script>
-		<!--
-		<script type="text/javascript" src="/assets/scripts/brython.min.js"></script>
-		<script type="text/python" src="/assets/scripts/python.py"></script>
-		-->
+		
+		<script type="text/javascript" src="/assets/scripts/dmie-model-dot-intobinary-dot-org_v4.js"></script>
 	</body>
 </html>
