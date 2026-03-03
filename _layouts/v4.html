@@ -3,6 +3,7 @@ layout: default
 ---
 		<input type="checkbox" id="chbx4menu" name="chbx4menu" />
 		<input type="checkbox" id="chbx4results" name="chbx4results" />
+		<input type="checkbox" id="chbx4edu" name="chbx4edu" />
 		{% for i in (1..3) %}
 		<input type="radio" id="rdb4paypalDetails{{ i }}" name="rdb4paypalDetails"{% if forloop.first %} checked{% endif %} />{% endfor %}
 		<main><span class="d-background"></span>
@@ -86,6 +87,14 @@ layout: default
 					Methodologically Grounded: <br /> <a href="/assets/docs/DMIE_Ethical_Use_Standards_NEW.pdf">Ethical Use Standards</a>
 				</div><div class="compliance-check">
 					GDPR & POPIA Compliant: <br /> <a href="/assets/docs/DMIE_Privacy_Policy_NEW.pdf">Privacy Policy</a>
+				</div>
+			</aside>
+			
+			<aside class="edu CSSmidWrap">
+				<label for="chbx4edu" class="edu-button"></label>
+				<br />
+				<div class="edu-content">
+					PS: Please see the <a href="/assets/docs/DMIE_Model_APP_samplecsv.csv" download>sample csv here</a>; the exact format expected for the DMIE Model Calculator.<!-- If you're editing your ".csv" file with text, use commas. If you're editing your ".csv" file with excel, use columns.-->
 				</div>
 			</aside>
 			

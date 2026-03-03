@@ -1,5 +1,4 @@
 /*** CANCEL ***/
-
 *::selection {
     fill: none;
     color: none;
@@ -24,6 +23,7 @@ textarea {
 /*** Z-INDEXES ***/
 .d-background { position: relative; z-index: 8; }
 .compliance,
+.edu,
 .footer,
 .header,
 .upgrade,
@@ -32,6 +32,7 @@ textarea {
 .menu-veil { position: relative; z-index: 28; }
 .menu { position: relative; z-index: 38; }
 
+.edu,
 main.doPaypal .paypal { position: relative; z-index: 100; }
 /*** END Z-INDEXES ***/
 
@@ -62,6 +63,9 @@ html,
 .calculator-results-design-data-numbers-pie:before { border-color: white; }
 
 .compliance { background-color: rgba(0, 0, 0, .1); }
+
+.edu-button,
+.edu-content { background-color: #AAA; }
 /*** END COLORS ***/
 
 /*** FONTS ***/
@@ -74,6 +78,7 @@ html,
 .v4 .js-RDBs-container,
 .v4 .js-manualNav { text-align: right; }
 .compliance-check a,
+.edu-content a,
 .footer a { text-decoration: underline; }
 /*** END FONTS ***/
 
@@ -90,6 +95,13 @@ html,
 	background-position: .21em center;
 	background-repeat: no-repeat;
 	background-size: auto 80%;
+}
+
+.edu-button { background-image: url("/assets/images/icon_important_A.png"); }
+.edu-button {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 60%;
 }
 /*** END MEDIA ***/
 
@@ -110,6 +122,7 @@ html,
 	
 	main > section { position: relative; }
 	
+	.edu-content { border-radius: .4em; }
 	.v4 { border-radius: .4em; overflow: hidden; }
 	
 	/*** .compliance ***/
@@ -122,6 +135,21 @@ html,
 		border-style: solid; border-color: black;
 	}
 	.compliance-check:nth-child(1) { border-width: 0; }
+	
+	/*** .edu ***/
+	.edu {
+		position: fixed; top: 4em; left: 0; right: 0;
+		text-align: right;
+	}
+	.edu-button {
+		display: inline-block;
+		
+		border-radius: 50%;
+	}
+	.edu-content {
+		display: inline-block;
+		padding: 1em;
+	}
 	
 	/*** .footer ***/
 	.footer { padding: 1em; }
@@ -276,7 +304,6 @@ html,
 		position: absolute; top: 0; right: 0;
 	}
 	.calculator-results-design-nav span {
-		cursor: pointer;
 		display: inline-block;
 		padding: .5em;
 		margin-top: 1em; margin-right: 1em;
@@ -325,6 +352,8 @@ html,
 /*** END COMPONENTS ***/
 
 /*** INTERACTIVITY ***/
+.calculator-results-design-nav span,
+.edu-button,
 .paypal-buttons .js-btnCancel,
 .paypal-buttons-cta,
 .u-btn,
@@ -336,6 +365,9 @@ html,
 
 .menu-veil { display: none; }
 #chbx4menu:checked ~ main .menu-veil { display: block; }
+
+.edu-content { display: none; }
+#chbx4edu:checked ~ main .edu-content { display: inline-block; }
 
 .calculator-results { display: none; }
 .calculator-results.is-open { display: block; }
@@ -377,6 +409,11 @@ main.doPaypal .paypal { display: flex !important; }
 		.compliance-check:nth-child(1) { padding-top: .3em; }
 		.compliance-check:nth-child(3) { padding-bottom: .3em; }
 
+	/*** COMPONENTS: .edu ***/
+	.edu { padding: 0 1.8em; }
+	.edu-button { width: 4em; height: 4em; }
+	.edu-content { width: 80%; max-width: 18em; }
+	
 	/*** COMPONENTS: .menu ***/
 	.menu-contacts > div:nth-child(2) { flex-direction: column !important; }
 	
@@ -404,7 +441,6 @@ main.doPaypal .paypal { display: flex !important; }
 	.paypal-buttons .js-btnCancel { margin-top: 1em; }
 	
 	/*** COMPONENTS: .v4 ***/
-	
 	.v4 .calculator-fieldset div:nth-child(7) input,
 	.v4 .calculator-fieldset div:nth-child(8) input,
 	.v4 .calculator-fieldset div:nth-child(9) input { width: 50%; }
@@ -472,6 +508,11 @@ main.doPaypal .paypal { display: flex !important; }
 		.compliance-check:nth-child(2) { width: 30%; }
 		.compliance-check:nth-child(3) { width: 45%; }
 		.compliance-check br {// display: none; }
+
+	/*** COMPONENTS: .edu ***/
+	.edu { padding: 0 1em; }
+	.edu-button { width: 4em; height: 4em; }
+	.edu-content { width: 18em; }
 
 	/*** COMPONENTS: .menu ***/
 	.menu-contacts { display: flex; }
@@ -578,6 +619,7 @@ main.doPaypal .paypal { display: flex !important; }
 		display: block;
 		margin: auto;
 	}
+		.edu.CSSmidWrap,
 		.v4.CSSmidWrap { max-width: 60em; }
 	
 	/*** .CSSunderline ***/
