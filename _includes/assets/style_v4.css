@@ -626,6 +626,11 @@ main.doPaypal .paypal { display: flex !important; }
 	.CSSunderline { text-decoration: underline; }
 	
 	.CSSspacer { flex: 1 !important; }
+	
+	.CSSnoWrap {
+		white-space: nowrap;
+		word-break: keep-all;
+	}
 /*** END TOOLS ***/
 
 /*** SANDBOX ***/
