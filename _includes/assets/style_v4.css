@@ -150,6 +150,7 @@ html,
 		display: inline-block;
 		padding: 1em;
 	}
+	.edu-content p { padding-bottom: 1.8em; }
 	
 	/*** .footer ***/
 	.footer { padding: 1em; }
@@ -412,7 +413,7 @@ main.doPaypal .paypal { display: flex !important; }
 	/*** COMPONENTS: .edu ***/
 	.edu { padding: 0 1.8em; }
 	.edu-button { width: 4em; height: 4em; }
-	.edu-content { width: 80%; max-width: 18em; }
+	.edu-content { width: 100%; max-width: 18em; }
 	
 	/*** COMPONENTS: .menu ***/
 	.menu-contacts > div:nth-child(2) { flex-direction: column !important; }
