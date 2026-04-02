@@ -479,7 +479,9 @@ main.doPaypal .paypal { display: flex !important; }
 	.paypal-buttons .js-btnCancel { margin-top: 1em; }
 	
 	/*** COMPONENTS: .v4 ***/
-	.v4 .calculator-fieldset div:nth-child(7) input,
+	/*
+	.v4 .calculator-fieldset div:nth-child(2) input,
+	.v4 .calculator-fieldset div:nth-child(7) input, */
 	.v4 .calculator-fieldset div:nth-child(8) input,
 	.v4 .calculator-fieldset div:nth-child(9) input { width: 50%; }
 	
