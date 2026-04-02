@@ -29,8 +29,11 @@ textarea {
 .upgrade,
 .v4 { position: relative; z-index: 18; }
 
-.menu-veil { position: relative; z-index: 28; }
-.menu { position: relative; z-index: 38; }
+	.header-stats-list { position: relative; z-index: 28; }
+	.header-stats label, .header-stats p { position: relative; z-index: 38; }
+
+.menu-veil { position: relative; z-index: 48; }
+.menu { position: relative; z-index: 58; }
 
 .edu,
 main.doPaypal .paypal { position: relative; z-index: 100; }
@@ -39,15 +42,17 @@ main.doPaypal .paypal { position: relative; z-index: 100; }
 /*** COLORS ***/
 .js-manualNav *,
 input[type="submit"],
+.header-stats-list-item,
 .paypal-buttons-cta,
 .v4 .calculator-results-design-nav span,
 .v4 .js-RDBs-container label.is-saved { background-color: #04EA60; }
-.compliance {// background-color: rgba(4, 234, 96, .4); }
+.header-stats label { background-color: rgba(4, 234, 96, .4); }
 
 .v4,
 .v4 .calculator-results-design,
 .menu,
 .paypal_dock { background-color: #CAC7C1; }
+.header-stats p {// color: #CAC7C1; }
 
 html {// background-color: #F7F7F4; }
 
@@ -62,7 +67,8 @@ html,
 .paypal-buttons-cta { color: white; }
 .calculator-results-design-data-numbers-pie:before { border-color: white; }
 
-.compliance { background-color: rgba(0, 0, 0, .1); }
+.compliance,
+.header-stats label { background-color: rgba(0, 0, 0, .1); }
 
 .edu-button,
 .edu-content { background-color: #AAA; }
@@ -74,7 +80,7 @@ html,
 
 .compliance,
 .footer,
-.header div { text-align: center; }
+.header-text { text-align: center; }
 .v4 .js-RDBs-container,
 .v4 .js-manualNav { text-align: right; }
 .compliance-check a,
@@ -161,8 +167,23 @@ html,
 	
 	.header { position: relative; }
 
-	.header div { padding: 4em 0; padding-bottom: 0; }
-	.header div * {// display: inline; }
+	.header-text { padding: 4em 0; padding-bottom: 0; }
+	.header-text * {// display: inline; }
+	
+	.header-stats { position: relative; }
+	.header-stats label {
+		position: absolute;
+		padding: .18em .24em;
+	}
+	.header-stats p {
+		position: absolute; left: 0;
+	}
+	.header-stats-list-item {
+		position: relative;
+		padding: .5em;
+		margin: .5em 0;
+	}
+	.header-stats-list-item span { display: block; }
 
 
 	/*** .menu ***/
@@ -355,6 +376,7 @@ html,
 /*** INTERACTIVITY ***/
 .calculator-results-design-nav span,
 .edu-button,
+.header-stats label,
 .paypal-buttons .js-btnCancel,
 .paypal-buttons-cta,
 .u-btn,
@@ -390,12 +412,16 @@ main.doPaypal .paypal { display: flex !important; }
 	/*** FONTS ***/
 	* { font-size: 14px; }
 	.header label,
-	.header div p,
+	.header-text p,
+	.header-stats-list-item span,
 	.header nav h1,
 	.menu label,
 	.menu-title,
 	.paypal-title { font-size: 1.18em; }
-	.header div h1 { font-size: 1.8em; }
+	.header-text h1 { font-size: 1.8em; }
+	
+	/*** COLORS ***/
+	.header-stats p { background-color: #CAC7C1; }
 	
 	/*** COMPONENTS: .compliance ***/
 	.compliance { padding: 1em 1.7em; }
@@ -414,6 +440,17 @@ main.doPaypal .paypal { display: flex !important; }
 	.edu { padding: 0 1.8em; }
 	.edu-button { width: 4em; height: 4em; }
 	.edu-content { width: 100%; max-width: 18em; }
+	
+	/*** COMPONENTS: .header ***/
+	.header-stats-list-item span { margin-bottom: 1em; }
+		.header-stats-list-item:nth-child(1) { width: 42%; left: {{ 100 | minus: 42 }}%; }
+		.header-stats-list-item:nth-child(2) { width: 69%; left: {{ 100 | minus: 69 }}%; }
+		.header-stats-list-item:nth-child(3) { width: 25.5%; left: {{ 100 | minus: 25.5 }}%; }
+	.header-stats p { padding: .5em; }
+		/*** VIEWPORT: .header ***/
+		.header-stats label,
+		.header-stats p { bottom: 8%; left: 1%; }
+		.header-stats p { margin-bottom: 1.5em; }
 	
 	/*** COMPONENTS: .menu ***/
 	.menu-contacts > div:nth-child(2) { flex-direction: column !important; }
@@ -456,6 +493,9 @@ main.doPaypal .paypal { display: flex !important; }
 		.v4 .js-manualNav br { display: none; }
 	
 	/*** INTERACTIVITY ***/
+	.header-stats p { display: none; }
+	#chbx4graph:checked ~ main .header-stats p { display: block; }
+	
 	.v4 .calculator footer img.is-big { display: none; }
 	
 	/*** CSS-HACKS ***/
@@ -484,12 +524,13 @@ main.doPaypal .paypal { display: flex !important; }
 	/*** FONTS ***/
 	* { font-size: 18px; }
 	.header label,
-	.header div p,
+	.header-text p,
+	.header-stats-list-item span,
 	.header nav h1,
 	.menu label,
 	.menu-title,
 	.paypal-title { font-size: 1.8em; }
-	.header div h1 { font-size: 3.4em; }
+	.header-text h1 { font-size: 3.4em; }
 	
 	/*** COMMONS ***/
 	main { padding: 1em; }
@@ -509,6 +550,18 @@ main.doPaypal .paypal { display: flex !important; }
 		.compliance-check:nth-child(2) { width: 30%; }
 		.compliance-check:nth-child(3) { width: 45%; }
 		.compliance-check br {// display: none; }
+		
+	/*** COMPONENTS: .header ***/
+	.header-stats-list-item span { margin-bottom: .5em; }
+		.header-stats-list-item:nth-child(1) { width: 28%; left: {{ 100 | minus: 28 }}%; }
+		.header-stats-list-item:nth-child(2) { width: 46%; left: {{ 100 | minus: 46 }}%; }
+		.header-stats-list-item:nth-child(3) { width: 17%; left: {{ 100 | minus: 17 }}%; }
+	.header-stats p { padding: 1em; }
+		/*** VIEWPORT: .header ***/
+		.header-stats p {
+				bottom: 10%;
+			width: 50%;
+		}
 
 	/*** COMPONENTS: .edu ***/
 	.edu { padding: 0 1em; }
@@ -581,11 +634,8 @@ main.doPaypal .paypal { display: flex !important; }
 	
 	.js-manualNav * {// margin-left: .8em; }
 	
-	/*** Qs ***/
-	.menu-form div span,
-	.menu-form div input {
-//		display: block;
-	}
+	/*** TOOLS ***/
+	.CSSviewportMobile { display: none !important; }
 }
 /*** END MEDIA-QUERIES ***/
 
