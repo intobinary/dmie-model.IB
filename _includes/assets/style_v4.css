@@ -168,7 +168,7 @@ html,
 	.header { position: relative; }
 
 	.header-text { padding: 4em 0; padding-bottom: 0; }
-	.header-text * {// display: inline; }
+	.header-text p { padding: 1.8em 0; }
 	
 	.header-stats { position: relative; }
 	.header-stats label {
