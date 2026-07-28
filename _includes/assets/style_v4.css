@@ -535,7 +535,7 @@ main.doPaypal .paypal { display: flex !important; }
 	.menu label,
 	.menu-title,
 	.paypal-title { font-size: 1.8em; }
-	.header-text h1 { font-size: 3.4em; }
+	.header-text h1 { font-size: 3em; }
 	
 	/*** COMMONS ***/
 	main { padding: 1em; }
