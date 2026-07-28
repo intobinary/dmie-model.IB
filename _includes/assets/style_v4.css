@@ -162,12 +162,15 @@ html,
 	.footer { padding: 1em; }
 	
 	/*** .header ***/
+ .header-text hgroup,
 	.header nav { display: flex; }
+ .header-text hgroup { flex-direction: row-reverse; }
 	.header nav h1 { flex: 1; }
 	
 	.header { position: relative; }
 
 	.header-text { padding: 4em 0; padding-bottom: 0; }
+ .header-text hgroup figure { width: 44%; }
 	.header-text p { padding: 1.8em 0; }
 	
 	.header-stats { position: relative; }
