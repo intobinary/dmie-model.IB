@@ -29,8 +29,8 @@ textarea {
 .upgrade,
 .v4 { position: relative; z-index: 18; }
 
-	.header-stats-list { position: relative; z-index: 28; }
-	.header-stats label, .header-stats p { position: relative; z-index: 38; }
+	.stats-list { position: relative; z-index: 28; }
+	.stats label, .stats p { position: relative; z-index: 38; }
 
 .menu-veil { position: relative; z-index: 48; }
 .menu { position: relative; z-index: 58; }
@@ -42,17 +42,17 @@ main.doPaypal .paypal { position: relative; z-index: 100; }
 /*** COLORS ***/
 .js-manualNav *,
 input[type="submit"],
-.header-stats-list-item,
+.stats-list-item,
 .paypal-buttons-cta,
 .v4 .calculator-results-design-nav span,
 .v4 .js-RDBs-container label.is-saved { background-color: #04EA60; }
-.header-stats label { background-color: rgba(4, 234, 96, .4); }
+.stats label { background-color: rgba(4, 234, 96, .4); }
 
 .v4,
 .v4 .calculator-results-design,
 .menu,
 .paypal_dock { background-color: #CAC7C1; }
-.header-stats p {// color: #CAC7C1; }
+.stats p {// color: #CAC7C1; }
 
 html {// background-color: #F7F7F4; }
 
@@ -68,7 +68,7 @@ html,
 .calculator-results-design-data-numbers-pie:before { border-color: white; }
 
 .compliance,
-.header-stats label { background-color: rgba(0, 0, 0, .1); }
+.stats label { background-color: rgba(0, 0, 0, .1); }
 
 .edu-button,
 .edu-content { background-color: #AAA; }
@@ -173,20 +173,20 @@ html,
  .header-text hgroup figure { width: 44%; }
 	.header-text p { padding: 1.8em 0; }
 	
-	.header-stats { position: relative; }
-	.header-stats label {
+	.stats { position: relative; }
+	.stats label {
 		position: absolute;
 		padding: .18em .24em;
 	}
-	.header-stats p {
+	.stats p {
 		position: absolute; left: 0;
 	}
-	.header-stats-list-item {
+	.stats-list-item {
 		position: relative;
 		padding: .5em;
 		margin: .5em 0;
 	}
-	.header-stats-list-item span { display: block; }
+	.stats-list-item span { display: block; }
 
 
 	/*** .menu ***/
@@ -379,7 +379,7 @@ html,
 /*** INTERACTIVITY ***/
 .calculator-results-design-nav span,
 .edu-button,
-.header-stats label,
+.stats label,
 .paypal-buttons .js-btnCancel,
 .paypal-buttons-cta,
 .u-btn,
@@ -416,7 +416,7 @@ main.doPaypal .paypal { display: flex !important; }
 	* { font-size: 14px; }
 	.header label,
 	.header-text p,
-	.header-stats-list-item span,
+	.stats-list-item span,
 	.header nav h1,
 	.menu label,
 	.menu-title,
@@ -424,7 +424,7 @@ main.doPaypal .paypal { display: flex !important; }
 	.header-text h1 { font-size: 1.8em; }
 	
 	/*** COLORS ***/
-	.header-stats p { background-color: #CAC7C1; }
+	.stats p { background-color: #CAC7C1; }
 	
 	/*** COMPONENTS: .compliance ***/
 	.compliance { padding: 1em 1.7em; }
@@ -445,15 +445,15 @@ main.doPaypal .paypal { display: flex !important; }
 	.edu-content { width: 100%; max-width: 18em; }
 	
 	/*** COMPONENTS: .header ***/
-	.header-stats-list-item span { margin-bottom: 1em; }
-		.header-stats-list-item:nth-child(1) { width: 42%; left: {{ 100 | minus: 42 }}%; }
-		.header-stats-list-item:nth-child(2) { width: 69%; left: {{ 100 | minus: 69 }}%; }
-		.header-stats-list-item:nth-child(3) { width: 25.5%; left: {{ 100 | minus: 25.5 }}%; }
-	.header-stats p { padding: .5em; }
+	.stats-list-item span { margin-bottom: 1em; }
+		.stats-list-item:nth-child(1) { width: 42%; left: {{ 100 | minus: 42 }}%; }
+		.stats-list-item:nth-child(2) { width: 69%; left: {{ 100 | minus: 69 }}%; }
+		.stats-list-item:nth-child(3) { width: 25.5%; left: {{ 100 | minus: 25.5 }}%; }
+	.stats p { padding: .5em; }
 		/*** VIEWPORT: .header ***/
-		.header-stats label,
-		.header-stats p { bottom: 8%; left: 1%; }
-		.header-stats p { margin-bottom: 1.5em; }
+		.stats label,
+		.stats p { bottom: 8%; left: 1%; }
+		.stats p { margin-bottom: 1.5em; }
 	
 	/*** COMPONENTS: .menu ***/
 	.menu-contacts > div:nth-child(2) { flex-direction: column !important; }
@@ -498,8 +498,8 @@ main.doPaypal .paypal { display: flex !important; }
 		.v4 .js-manualNav br { display: none; }
 	
 	/*** INTERACTIVITY ***/
-	.header-stats p { display: none; }
-	#chbx4graph:checked ~ main .header-stats p { display: block; }
+	.stats p { display: none; }
+	#chbx4graph:checked ~ main .stats p { display: block; }
 	
 	.v4 .calculator footer img.is-big { display: none; }
 	
@@ -530,7 +530,7 @@ main.doPaypal .paypal { display: flex !important; }
 	* { font-size: 18px; }
 	.header label,
 	.header-text p,
-	.header-stats-list-item span,
+	.stats-list-item span,
 	.header nav h1,
 	.menu label,
 	.menu-title,
@@ -557,13 +557,13 @@ main.doPaypal .paypal { display: flex !important; }
 		.compliance-check br {// display: none; }
 		
 	/*** COMPONENTS: .header ***/
-	.header-stats-list-item span { margin-bottom: .5em; }
-		.header-stats-list-item:nth-child(1) { width: 28%; left: {{ 100 | minus: 28 }}%; }
-		.header-stats-list-item:nth-child(2) { width: 46%; left: {{ 100 | minus: 46 }}%; }
-		.header-stats-list-item:nth-child(3) { width: 17%; left: {{ 100 | minus: 17 }}%; }
-	.header-stats p { padding: 1em; }
+	.stats-list-item span { margin-bottom: .5em; }
+		.stats-list-item:nth-child(1) { width: 28%; left: {{ 100 | minus: 28 }}%; }
+		.stats-list-item:nth-child(2) { width: 46%; left: {{ 100 | minus: 46 }}%; }
+		.stats-list-item:nth-child(3) { width: 17%; left: {{ 100 | minus: 17 }}%; }
+	.stats p { padding: 1em; }
 		/*** VIEWPORT: .header ***/
-		.header-stats p {
+		.stats p {
 				bottom: 10%;
 			width: 50%;
 		}
@@ -641,6 +641,8 @@ main.doPaypal .paypal { display: flex !important; }
 	
 	/*** TOOLS ***/
 	.CSSviewportMobile { display: none !important; }
+	
+	
 }
 /*** END MEDIA-QUERIES ***/
 

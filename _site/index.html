@@ -81,6 +81,8 @@
 		
 		<link rel="canonical" href="https://intobinary.org" />
 		<link rel="shortlink" href="https://intobinary.org" />
+		
+		
 	</head>
 	
 	<!--
@@ -164,21 +166,26 @@
 				</nav>
 				
 				<div class="header-text">
-					<h1>The DMIE Model is an innovative scientific model...</h1>
-					<p>... developed by the economics researcher: Donatien Malala. Did you know that you can estimate a country's informal economy with a simple math equation?</p>
+							<hgroup>
+										<h1>DMIE: "Diophantine Model of Informal Economy"</h1>
+										<figure><img src="xJekyll/data.png" /></figure>
+							</hgroup>
+					<p>The DMIE Model is an innovative scientific model developed by the economics researcher: Donatien Malala. Did you know that you can estimate a country's informal economy with a simple math equation?</p>
 				</div>
-				
-				<div class="header-stats">
+			</header>
+			
+			<section class="CSSmidWrap">
+				<div class="stats">
 					<label for="chbx4graph" class="CSSviewportMobile">info*</label>
 					<p>Informal sector levels differ significantly between national economic structures, indicating how regulatory conditions and economic organization affect participation outside formal systems.</p>
 					
-					<ul class="header-stats-list">
-						<li class="header-stats-list-item"><span>28%</span> Bulgaria</li>
-						<li class="header-stats-list-item"><span>46%</span> Peru</li>
-						<li class="header-stats-list-item"><span>17%</span> Sweden</li>
+					<ul class="stats-list">
+						<li class="stats-list-item"><span>28%</span> Bulgaria</li>
+						<li class="stats-list-item"><span>46%</span> Peru</li>
+						<li class="stats-list-item"><span>17%</span> Sweden</li>
 					</ul>
 				</div>
-			</header>
+			</section>
 			
 			<aside class="compliance CSSmidWrap">
 				<div class="compliance-check">
@@ -196,7 +203,7 @@
 				<div class="edu-content">
 					<p>PS: Please see the <a href="/assets/docs/DMIE_Model_APP_samplecsv.csv" download>sample csv here</a>; the exact format expected for the DMIE Model Calculator.<!-- If you're editing your ".csv" file with text, use commas. If you're editing your ".csv" file with excel, use columns.--></p>
 					
-					<img src="/assets/images/edu_2.png" />
+					<img src="/xJekyll/edu_3.png" />
 				</div>
 			</aside>
 			
@@ -262,13 +269,13 @@
 							<input type="number" step="any" id="yof" placeholder="##########" required />
 						</div><div>
 							<label>FP (Formal Productivity):</label>
-							<input type="number" step="any" id="fp" placeholder="###" required />
+							<input type="number" step="any" id="fp" placeholder="####" required />
 						</div><div>
 							<label>IP (Informal Productivity):</label>
-							<input type="number" step="any" id="ip" placeholder="###" required />
+							<input type="number" step="any" id="ip" placeholder="####" required />
 						</div><div>
 							<label>OL (Obligatory Levies / Tax Burden):</label>
-							<input type="number" step="any" id="ol" placeholder="####" required />
+							<input type="number" step="any" id="ol" placeholder="###" required />
 						</div>
 					</fieldset>
 					
@@ -289,11 +296,11 @@
 									<hgroup><h4>DRC: </h4><h5>2025</h5></hgroup>
 									<div class="calculator-results-design-data-numbers">
 										<div class="calculator-results-design-data-numbers-lines">
-											<div class="calculator-results-design-data-numbers-lines-div"><span class="calculator-results-design-data-numbers-lines-div-span">Yin: 100</span></div>
-											<div class="calculator-results-design-data-numbers-lines-div"><span class="calculator-results-design-data-numbers-lines-div-span">Yt: 100</span></div>
+											<div class="calculator-results-design-data-numbers-lines-div"><span class="calculator-results-design-data-numbers-lines-div-span">Yin: </span></div>
+											<div class="calculator-results-design-data-numbers-lines-div"><span class="calculator-results-design-data-numbers-lines-div-span">Yt: </span></div>
 										</div>
 										
-										<div class="calculator-results-design-data-numbers-pie"><span class="calculator-results-design-data-numbers-pie-span">Yin%:<br />1</span></div>
+										<div class="calculator-results-design-data-numbers-pie"><span class="calculator-results-design-data-numbers-pie-span">Yin%:<br /></span></div>
 									</div>
 								</div>
 							</div>
@@ -319,12 +326,11 @@
 							</ul>
 						</li>
 						<li class="paypal-details-list-item">
-							<label for="rdb4paypalDetails2">(2/3) Secured Checkout Powered by PayPal</label>
+							<label for="rdb4paypalDetails2">(2/3) Secured EFT Payment</label>
 							<ul class="paypal-details-sublist">
 								<li class="paypal-details-sublist-item">&rarr; Refunds available.</li>
-								<li class="paypal-details-sublist-item">&rarr; Immediate access after payment confirmation.</li>
-								<li class="paypal-details-sublist-item">&rarr; You will receive your "License Key PDF Certificate" by email.</li>
 								<li class="paypal-details-sublist-item">&rarr; App compatible with Windows, MacOS, and Web version.</li>
+								<li class="paypal-details-sublist-item">&rarr; You will receive your "License Key PDF Certificate" after payment confirmation</li>
 							</ul>
 						</li>
 						<li class="paypal-details-list-item">
@@ -340,8 +346,9 @@
 				
 				<div class="paypal-buttons">
 					<div class="paypal-buttons-cta_wrap">
-						<span>Buy Full Access</span><br />
-						<a class="paypal-buttons-cta"><del>Pay on Paypal</del></a>
+	       <span>[download payment details]</span>
+<br />
+						<a href="/assets/images/dmie_certificate.png" class="paypal-buttons-cta" download>BUY FULL ACCESS</a>
 					</div>
 					<span>OR</span>
 					<div class="paypal-buttons-cta_wrap">
@@ -372,11 +379,12 @@
 			</aside>
 			
 			<footer class="footer CSSmidWrap">
-				&copy; Copyrights 2026: <a href="https://intobinary.org">Into Binary</a>. All rights reversed.
+				&copy; Copyrights 2026: <a href="https://intobinary.org">Into Binary</a>. All rights reserved.
 			</footer>
 		</main>
 		
 		
 		<script type="text/javascript" src="/assets/scripts/dmie-model-dot-intobinary-dot-org_v4.js"></script>
+
 	</body>
 </html>

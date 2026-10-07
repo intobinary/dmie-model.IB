@@ -1,0 +1,34 @@
+---
+layout: default
+---
+		<input type="checkbox" id="chbx4menu" name="chbx4menu" />
+		<input type="checkbox" id="chbx4edu" name="chbx4edu" />
+		<main>{% include components/menu.html %}
+
+			<header class="header CSSmidWrap">
+				<nav>
+					<h1>DMIE MODEL CALCULATOR</h1>
+					<!--<label for="chbx4menu" class="u-btn">&amalg;</label>-->
+					<label for="chbx4menu" class="u-btn"><img src="/assets/images/icon_menu_black.png" style="width: 1.8em;" /></label>
+				</nav>
+				
+				<div class="header-text">
+							<hgroup>
+										<h1>DMIE's {{ page.title }}</h1>
+							</hgroup>
+					<p>{{ page.description }}</p>
+				</div>
+			</header>
+
+			<section class="doc">
+				<embed src="/assets/docs/DMIE_{{ page.url | remove: '/' | remove: '.html' | replace: '-', '_' }}_NEW.pdf" type="application/pdf" width="100%" height="100%" />
+								
+				<!--
+				<iframe src="xJekyll_dmiemodel/DMIE_Ethical_Use_Standards_NEW.pdf" width="100%" height="600px" style="border:none"></iframe>
+				-->
+			</section>			
+
+			<footer class="footer CSSmidWrap">
+				&copy; Copyrights 2026: <a href="https://intobinary.org">Into Binary</a>. All rights reserved.
+			</footer>
+		</main>
