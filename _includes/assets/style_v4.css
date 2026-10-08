@@ -165,6 +165,7 @@ html,
  .header-text hgroup,
 	.header nav { display: flex; }
  .header-text hgroup { flex-direction: row-reverse; }
+ .header-text hgroup { align-items: center; }
 	.header nav h1 { flex: 1; }
 	
 	.header { position: relative; }
