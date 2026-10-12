@@ -7,7 +7,7 @@ layout: default
 		<input type="checkbox" id="chbx4edu" name="chbx4edu" />
 		{% for i in (1..3) %}
 		<input type="radio" id="rdb4paypalDetails{{ i }}" name="rdb4paypalDetails"{% if forloop.first %} checked{% endif %} />{% endfor %}
-		<main>{% include components/menu.html %}
+		<main>{% include components/menu.html %}{% include components/cookies.html %}
 
 			<header class="header CSSmidWrap">
 				<nav>

@@ -156,7 +156,241 @@
 				<footer class="menu-footer">&copy; Copyrights 2025: <a href="https://intobinary.org" class="CSSunderline">Into Binary</a>. All rights reserved.</footer>
 			</div></div>
 			<label for="chbx4menu" class="menu-veil"></label>
-			</nav>
+			</nav><!--
+<script>
+	localStorage.removeItem('m_cookie_consent');
+	document.cookie = 'm_cookie_consent=; max-age=0; path=/';
+</script>
+-->
+
+<section class="m-cookies_wrap CSScentered" role="dialog" aria-modal="true" hidden><section class="m-cookies" aria-labelledby="m-cookies-title">
+  <h2 class="m-cookies__title" id="m-cookies-title">We Value Your Privacy</h2>
+  <p class="m-cookies__intro">You can manage your cookie preferences below.</p>
+
+  <label class="m-cookies__row">
+    <span class="m-cookies__label">Essential Cookies <small>(Always On)</small></span>
+    <input class="m-cookies__input" type="checkbox" checked disabled>
+    <span class="m-cookies__switch" aria-hidden="true"></span>
+  </label>
+
+  <label class="m-cookies__row">
+    <span class="m-cookies__label">Analytics Cookies</span>
+    <input class="m-cookies__input" type="checkbox" name="analytics">
+    <span class="m-cookies__switch" aria-hidden="true"></span>
+  </label>
+
+  <label class="m-cookies__row">
+    <span class="m-cookies__label">Marketing Cookies</span>
+    <input class="m-cookies__input" type="checkbox" name="marketing">
+    <span class="m-cookies__switch" aria-hidden="true"></span>
+  </label>
+
+  <div class="m-cookies__actions">
+    <button class="m-cookies__btn m-cookies__btn--save" type="button">Save Settings</button>
+    <button class="m-cookies__btn m-cookies__btn--decline" type="button">Decline</button>
+  </div>
+</section></section>
+
+<style>
+	.m-cookies_wrap {
+		position: fixed; top: 0; left: 0; z-index: 999;
+		width: 100%; height: 100%;
+	}
+	.m-cookies_wrap[hidden] { display: none !important; }
+
+  .m-cookies {
+    --mc-green: #03EA60;
+    --mc-green-dark: #02b84c;
+    --mc-ink: #000;
+    --mc-muted: #5f6368;
+    --mc-line: #e6e8e6;
+    --mc-off: #c9ccc9;
+    --mc-bg: #fff;
+
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 340px;
+    padding: 24px;
+    background: var(--mc-bg);
+    color: var(--mc-ink);
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.14);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  }
+  .m-cookies *,
+  .m-cookies *::before,
+  .m-cookies *::after { box-sizing: border-box; }
+
+  .m-cookies .m-cookies__title {
+    margin: 0 0 8px;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .m-cookies .m-cookies__intro {
+    margin: 0 0 16px;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: var(--mc-muted);
+  }
+
+  .m-cookies .m-cookies__row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 14px 0;
+    border-top: 1px solid var(--mc-line);
+    cursor: pointer;
+  }
+  .m-cookies .m-cookies__label { font-size: 0.95rem; font-weight: 500; }
+  .m-cookies .m-cookies__label small { font-weight: 400; color: var(--mc-muted); font-size: 0.75rem; }
+
+  .m-cookies .m-cookies__input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+  }
+  .m-cookies .m-cookies__switch {
+    position: relative;
+    flex: 0 0 auto;
+    width: 46px;
+    height: 26px;
+    border-radius: 999px;
+    background: var(--mc-off);
+    transition: background 0.2s ease;
+  }
+  .m-cookies .m-cookies__switch::after {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease;
+  }
+  .m-cookies .m-cookies__input:checked + .m-cookies__switch { background: var(--mc-green); }
+  .m-cookies .m-cookies__input:checked + .m-cookies__switch::after { transform: translateX(20px); }
+  .m-cookies .m-cookies__input:disabled + .m-cookies__switch { opacity: 0.9; }
+  .m-cookies .m-cookies__input:disabled ~ .m-cookies__switch,
+  .m-cookies .m-cookies__row:has(.m-cookies__input:disabled) { cursor: default; }
+  .m-cookies .m-cookies__input:focus-visible + .m-cookies__switch {
+    outline: 3px solid var(--mc-ink);
+    outline-offset: 2px;
+  }
+
+  .m-cookies .m-cookies__actions {
+    display: grid;
+    gap: 10px;
+    margin-top: 8px;
+    padding-top: 16px;
+    border-top: 1px solid var(--mc-line);
+  }
+  .m-cookies .m-cookies__btn {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 6px;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .m-cookies .m-cookies__btn--save {
+    background: var(--mc-green);
+    border: 1px solid var(--mc-green);
+    color: var(--mc-ink);
+  }
+  .m-cookies .m-cookies__btn--save:hover { background: var(--mc-green-dark); border-color: var(--mc-green-dark); }
+  .m-cookies .m-cookies__btn--decline {
+    background: #fff;
+    border: 1px solid #c9ccc9;
+    color: var(--mc-ink);
+  }
+  .m-cookies .m-cookies__btn--decline:hover { border-color: var(--mc-ink); }
+  .m-cookies .m-cookies__btn:focus-visible { outline: 3px solid var(--mc-ink); outline-offset: 2px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .m-cookies .m-cookies__switch,
+    .m-cookies .m-cookies__switch::after,
+    .m-cookies .m-cookies__btn { transition: none; }
+  }
+</style>
+
+<script>
+  (function () {
+    var KEY = 'm_cookie_consent';
+    var root = document.querySelector('.m-cookies_wrap');
+    if (!root) return;
+
+    var analytics = root.querySelector('input[name="analytics"]');
+    var marketing = root.querySelector('input[name="marketing"]');
+
+    // Read a saved choice: first-party cookie, then localStorage as a fallback.
+    function read() {
+      try {
+        var m = document.cookie.match(new RegExp('(?:^|; )' + KEY + '=([^;]*)'));
+        if (m) return JSON.parse(decodeURIComponent(m[1]));
+      } catch (e) {}
+      try {
+        var v = localStorage.getItem(KEY);
+        if (v) return JSON.parse(v);
+      } catch (e) {}
+      return null;
+    }
+
+    // Save the choice for 12 months in both places.
+    function write(choice) {
+      var s = JSON.stringify(choice);
+      try {
+        document.cookie = KEY + '=' + encodeURIComponent(s) +
+          '; max-age=31536000; path=/; SameSite=Lax' +
+          (location.protocol === 'https:' ? '; Secure' : '');
+      } catch (e) {}
+      try { localStorage.setItem(KEY, s); } catch (e) {}
+    }
+
+    function announce(choice) {
+      document.dispatchEvent(new CustomEvent('cookie-consent', { detail: choice }));
+    }
+
+    function save(a, m) {
+      var choice = { essential: true, analytics: !!a, marketing: !!m, date: new Date().toISOString() };
+      write(choice);
+      root.hidden = true;
+      announce(choice);
+    }
+
+    root.querySelector('.m-cookies__btn--save').addEventListener('click', function () {
+      save(analytics.checked, marketing.checked);
+    });
+
+    root.querySelector('.m-cookies__btn--decline').addEventListener('click', function () {
+      analytics.checked = false;
+      marketing.checked = false;
+      save(false, false);
+    });
+
+    // Optional: a footer link can reopen the popup, e.g. <a href="#" data-cookie-settings>Cookie settings</a>
+    document.addEventListener('click', function (e) {
+      var t = e.target.closest && e.target.closest('[data-cookie-settings]');
+      if (t) { e.preventDefault(); root.hidden = false; }
+    });
+
+    // Already chosen before: stay hidden and just tell the site what was allowed.
+    var saved = read();
+    if (saved) {
+      announce(saved);
+    } else {
+      // First visit: show the popup.
+      root.hidden = false;
+    }
+  })();
+</script>
 
 			<header class="header CSSmidWrap">
 				<nav>
