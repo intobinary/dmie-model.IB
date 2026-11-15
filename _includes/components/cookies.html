@@ -6,30 +6,30 @@
 -->
 
 <section class="m-cookies_wrap CSScentered" role="dialog" aria-modal="true" hidden><section class="m-cookies" aria-labelledby="m-cookies-title">
-  <h2 class="m-cookies__title" id="m-cookies-title">We Value Your Privacy</h2>
-  <p class="m-cookies__intro">You can manage your cookie preferences below.</p>
+  <h2 class="m-cookies__title" id="m-cookies-title">{{ page.cookiesHeader[0] }}</h2>
+  <p class="m-cookies__intro">{{ page.cookiesHeader[1] }}</p>
 
   <label class="m-cookies__row">
-    <span class="m-cookies__label">Essential Cookies <small>(Always On)</small></span>
+    <span class="m-cookies__label">{{ page.cookiesDetails[0] }}</span>
     <input class="m-cookies__input" type="checkbox" checked disabled>
     <span class="m-cookies__switch" aria-hidden="true"></span>
   </label>
 
   <label class="m-cookies__row">
-    <span class="m-cookies__label">Analytics Cookies</span>
+    <span class="m-cookies__label">{{ page.cookiesDetails[1] }}</span>
     <input class="m-cookies__input" type="checkbox" name="analytics">
     <span class="m-cookies__switch" aria-hidden="true"></span>
   </label>
 
   <label class="m-cookies__row">
-    <span class="m-cookies__label">Marketing Cookies</span>
+    <span class="m-cookies__label">{{ page.cookiesDetails[2] }}</span>
     <input class="m-cookies__input" type="checkbox" name="marketing">
     <span class="m-cookies__switch" aria-hidden="true"></span>
   </label>
 
   <div class="m-cookies__actions">
-    <button class="m-cookies__btn m-cookies__btn--save" type="button">Save Settings</button>
-    <button class="m-cookies__btn m-cookies__btn--decline" type="button">Decline</button>
+    <button class="m-cookies__btn m-cookies__btn--save" type="button">{{ page.cookiesCTA1 }}</button>
+    <button class="m-cookies__btn m-cookies__btn--decline" type="button">{{ page.cookiesCTA2 }}</button>
   </div>
 </section></section>
 
