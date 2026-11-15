@@ -2,6 +2,9 @@ collections:
   app:
     output: true
     permalink: /:path/
+  gdpr:
+    output: true
+    permalink: /:path/
   localization:
     output: true
     permalink: /:path/
@@ -13,6 +16,12 @@ defaults:
       type: "app"
     values:
       layout: "app"
+  -
+    scope:
+      path: ""
+      type: "gdpr"
+    values:
+      layout: "gdpr"
   -
     scope:
       path: ""

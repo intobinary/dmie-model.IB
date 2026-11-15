@@ -43,11 +43,11 @@ layout: default
 			
 			<aside class="compliance CSSmidWrap">
 				<div class="compliance-check">
-					{{ page.complianceCheck1[0] }}: <!--<br />&middot;--><br /> <a href="/{{ page.complianceCheck1[1] | downcase | replace: ' ', '-' }}/">{{ page.complianceCheck1[1] }}</a>
+					{{ page.complianceCheck1[0] }}: <!--<br />&middot;--><br /> <a href="/{{ page.complianceCheck1[1] | downcase | replace: ' ', '-' | slugify: 'latin' }}/">{{ page.complianceCheck1[1] }}</a>
 				</div><div class="compliance-check">
-					{{ page.complianceCheck2[0] }}: <br /> <a href="/{{ page.complianceCheck2[1] | downcase | replace: ' ', '-' }}/">{{ page.complianceCheck2[1] }}</a>
+					{{ page.complianceCheck2[0] }}: <br /> <a href="/{{ page.complianceCheck2[1] | downcase | replace: ' ', '-' | slugify: 'latin' }}/">{{ page.complianceCheck2[1] }}</a>
 				</div><div class="compliance-check">
-					{{ page.complianceCheck3[0] }}: <br /> <a href="/{{ page.complianceCheck3[1] | downcase | replace: ' ', '-' }}/">{{ page.complianceCheck3[1] }}</a>
+					{{ page.complianceCheck3[0] }}: <br /> <a href="/{{ page.complianceCheck3[1] | downcase | replace: ' ', '-' | slugify: 'latin' }}/">{{ page.complianceCheck3[1] }}</a>
 				</div>
 			</aside>
 			
