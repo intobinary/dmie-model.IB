@@ -2,6 +2,9 @@ collections:
   app:
     output: true
     permalink: /:path/
+  localization:
+    output: true
+    permalink: /:path/
     
 defaults:
   -
@@ -10,3 +13,9 @@ defaults:
       type: "app"
     values:
       layout: "app"
+  -
+    scope:
+      path: ""
+      type: "localization"
+    values:
+      layout: "localization"

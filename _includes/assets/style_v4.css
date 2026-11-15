@@ -144,7 +144,7 @@ html,
 	
 	/*** .edu ***/
 	.edu {
-		position: fixed; top: 4em; left: 0; right: 0;
+		position: fixed; top: 7em; left: 0; right: 0;
 		text-align: right;
 	}
 	.edu-button {
@@ -165,6 +165,7 @@ html,
  .header-text hgroup,
 	.header nav { display: flex; }
  .header-text hgroup { flex-direction: row-reverse; }
+ .header nav,
  .header-text hgroup { align-items: center; }
 	.header nav h1 { flex: 1; }
 	
@@ -418,7 +419,7 @@ main.doPaypal .paypal { display: flex !important; }
 	.header label,
 	.header-text p,
 	.stats-list-item span,
-	.header nav h1,
+	.header nav h1 a,
 	.menu label,
 	.menu-title,
 	.paypal-title { font-size: 1.18em; }
@@ -452,6 +453,8 @@ main.doPaypal .paypal { display: flex !important; }
 		.stats-list-item:nth-child(3) { width: 25.5%; left: {{ 100 | minus: 25.5 }}%; }
 	.stats p { padding: .5em; }
 		/*** VIEWPORT: .header ***/
+		.header nav label { text-indent: -9999px; }
+		
 		.stats label,
 		.stats p { bottom: 8%; left: 1%; }
 		.stats p { margin-bottom: 1.5em; }
@@ -532,7 +535,7 @@ main.doPaypal .paypal { display: flex !important; }
 	.header label,
 	.header-text p,
 	.stats-list-item span,
-	.header nav h1,
+	.header nav h1 a,
 	.menu label,
 	.menu-title,
 	.paypal-title { font-size: 1.8em; }
@@ -692,6 +695,11 @@ main.doPaypal .paypal { display: flex !important; }
 	}
 /*** END TOOLS ***/
 
+/*** CSS-HACKS ***/
+.edu { pointer-events: none; }
+.edu * { pointer-events: initial; }
+/*** END CSS-HACKS ***/
+
 /*** SANDBOX ***/
 input:-webkit-autofill {
 	box-shadow: 0 0 0 1000px white inset !important;
@@ -737,4 +745,29 @@ input[readOnly] {
 .menu-form {
 //	border: 10px solid green;
 }
+
+.header nav label {
+	padding: .4em;
+	
+	
+	font-size: 1em;
+	display: flex; align-items: center;
+}
+.header nav ul {
+	margin: 0 1em;
+	
+	display: flex; flex-direction: column; justify-content: center;
+}
+.header nav ul a {
+	width: 2.3em;
+	padding: .4em;
+}
+.header nav label,
+.header nav ul li.is-active a {  background-color: rgba(0, 0, 0, .1); }
+.header nav label:hover,
+.header nav label:active,
+.header nav label:focus,
+.header nav ul a:hover,
+.header nav ul a:active,
+.header nav ul a:focus { background-color: #AAA !important; }
 /*** END SANDBOX ***/

@@ -1,0 +1,243 @@
+---
+layout: default
+---
+		<input type="checkbox" id="chbx4menu" name="chbx4menu" />
+		<input type="checkbox" id="chbx4results" name="chbx4results" />
+		<input type="checkbox" id="chbx4graph" name="chbx4graph" />
+		<input type="checkbox" id="chbx4edu" name="chbx4edu" />
+		{% for i in (1..3) %}
+		<input type="radio" id="rdb4paypalDetails{{ i }}" name="rdb4paypalDetails"{% if forloop.first %} checked{% endif %} />{% endfor %}
+		<main>{% include components/menu.html %}{% include components/cookies.html %}
+
+			<header class="header CSSmidWrap">
+				<nav>
+					<h1><a href="/">{{ page.headerH1 }}</a></h1>
+					
+					<ul><li{% if page.url == '/en/' %} class="is-active"{% endif %}><a href="/en/">EN</a></li><li{% if page.url == '/fr/' %} class="is-active"{% endif %}><a href="/fr/">FR</a></li></ul>
+					
+					<!--<label for="chbx4menu" class="u-btn">&amalg;</label>-->
+					<label for="chbx4menu" class="u-btn"><img src="/assets/images/icon_menu_black.png" style="width: 1.8em;" />&nbsp; Menu</label>
+				</nav>
+				
+				<div class="header-text">
+							<hgroup>
+										<h1>{{ page.headerH2 }}</h1>
+										<figure><img src="/xJekyll/data.png" /></figure>
+							</hgroup>
+					<p>{{ page.headerH3 }}</p>
+				</div>
+			</header>
+			
+			<section class="CSSmidWrap">
+				<div class="stats">
+					<label for="chbx4graph" class="CSSviewportMobile">info*</label>
+					<p>{{ page.dataTip }}</p>
+					
+					<ul class="stats-list">
+						<li class="stats-list-item"><span>28%</span> {{ page.dataCountries[0] }}</li>
+						<li class="stats-list-item"><span>46%</span> {{ page.dataCountries[1] }}</li>
+						<li class="stats-list-item"><span>17%</span> {{ page.dataCountries[2] }}</li>
+					</ul>
+				</div>
+			</section>
+			
+			<aside class="compliance CSSmidWrap">
+				<div class="compliance-check">
+					{{ page.complianceCheck1[0] }}: <!--<br />&middot;--><br /> <a href="/{{ page.complianceCheck1[1] | downcase | replace: ' ', '-' }}/">{{ page.complianceCheck1[1] }}</a>
+				</div><div class="compliance-check">
+					{{ page.complianceCheck2[0] }}: <br /> <a href="/{{ page.complianceCheck2[1] | downcase | replace: ' ', '-' }}/">{{ page.complianceCheck2[1] }}</a>
+				</div><div class="compliance-check">
+					{{ page.complianceCheck3[0] }}: <br /> <a href="/{{ page.complianceCheck3[1] | downcase | replace: ' ', '-' }}/">{{ page.complianceCheck3[1] }}</a>
+				</div>
+			</aside>
+			
+			<aside class="edu CSSmidWrap">
+				<label for="chbx4edu" class="edu-button"></label>
+				<br />
+				<div class="edu-content">
+					<p>{{ page.calculatorTip }}</p>
+					
+					<img src="/assets/images/calculatorTip_{{ page.url | remove: '/' }}.png" />
+				</div>
+			</aside>
+			
+			<section class="v4 CSSmidWrap"><form class="calculator js-formCalculator">
+					<fieldset class="calculator-data">
+						<div class="calculator-data-manual">
+							<!--
+							<span>Manual Inputs</span>
+							-->
+							<div class="calculator-data-manual_wrap">
+
+							<div class="js-RDBs-container">
+								<label><input type="radio" id="rdb4dataManual1" name="rdb4data" onclick="rdbBtnIsClicked(this)" checked />1</label>
+							</div>
+							
+							<span class="CSSspacer"></span>
+							
+							<div class="js-manualNav">
+								<span class="js-btnAdd CSSnoWrap" title="{{ page.calculatorNav1[1] }}">{{ page.calculatorNav1[0] }}</span>
+								<span class="js-btnDelete CSSnoWrap" title="{{ page.calculatorNav2[1] }}">{{ page.calculatorNav2[0] }}</span>
+								<input type="submit" class="js-btnSave CSSnoWrap" value="{{ page.calculatorNav3[0] }}" title="{{ page.calculatorNav3[1] }}" />
+								<br />
+								
+								<label for="hiddenFile" class="jsWbtnImport CSSnoWrap" title="{{ page.calculatorNav4[1] }}">{{ page.calculatorNav4[0] }}</label>
+								<span class="js-btnDownload CSSnoWrap" title="{{ page.calculatorNav5[1] }}">{{ page.calculatorNav5[0] }}</span>
+								<br /><br />
+								<span class="js-btnClearAll CSSnoWrap" title="{{ page.calculatorNav6[1] }}">{{ page.calculatorNav6[0] }}</span>
+
+								<input type="file" id="hiddenFile" class="js-inputFile CSSnoWrap" style="" accept=".csv" />
+							</div>
+							</div>
+						</div>
+						<!--
+						<div class="calculator-data-presets">
+							<span>Data Presets</span>
+							<br /><br />
+							<label><input type="radio" id="rdb4dataPresetDRC" name="rdb4data" onclick="rdbBtnIsClicked(this)" />DRC</label>
+							<label><input type="radio" id="rdb4dataPresetSA" name="rdb4data" onclick="rdbBtnIsClicked(this)" />SA</label>
+
+							<span class="calculator-data-presets-map"></span>
+						</div>
+						-->
+					</fieldset>
+					
+					<fieldset class="calculator-fieldset">
+						<div>
+							<label id="py-output">{{ page.calculatorMath[0] }}:</label>
+							<input type="text" id="country" placeholder="{{ page.calculatorMath[0] }}" required />
+						</div><div>
+							<label>{{ page.calculatorMath[1] }}:</label>
+							<input type="number" step="any" id="year" placeholder="####" required />
+						</div><div>
+							<label>{{ page.calculatorMath[2] }}:</label>
+							<input type="number" step="any" id="wf" placeholder="########" required />
+						</div><div>
+							<label>{{ page.calculatorMath[3] }}:</label>
+							<input type="number" step="any" id="fw" placeholder="########" required />
+						</div><div>
+							<label>{{ page.calculatorMath[4] }}:</label>
+							<input type="number" step="any" id="if" placeholder="########" required />
+						</div><div>
+							<label>{{ page.calculatorMath[5] }}:</label>
+							<input type="number" step="any" id="yof" placeholder="##########" required />
+						</div><div>
+							<label>{{ page.calculatorMath[6] }}:</label>
+							<input type="number" step="any" id="fp" placeholder="####" required />
+						</div><div>
+							<label>{{ page.calculatorMath[7] }}:</label>
+							<input type="number" step="any" id="ip" placeholder="####" required />
+						</div><div>
+							<label>{{ page.calculatorMath[8] }}:</label>
+							<input type="number" step="any" id="ol" placeholder="###" required />
+						</div>
+					</fieldset>
+					
+					<footer>
+						<label for="chbx4results"><img src="/assets/images/logo_intobinary_full.png" /><!--<img src="/assets/images/logo_intobinary_favicon.png" class="is-small" />--></label>
+						<span class="CSSspacer"></span>
+						
+						<input type="submit" id="js-btnCalculate" class="calculator-nav-button js-btnCalculate" value="{{ page.calculatorCTA1 }}" />
+					</footer>
+					
+					<div class="calculator-results">
+						<div class="calculator-results-design">
+							<nav class="calculator-results-design-nav">
+								<span class="js-btnResultsDownload">{{ page.calculatorCTA2 }}</span><span class="js-btnResultsClose">X</span>
+							</nav>
+							<div class="js-here">
+								<div class="calculator-results-design-data">
+									<hgroup><h4>DRC: </h4><h5>2025</h5></hgroup>
+									<div class="calculator-results-design-data-numbers">
+										<div class="calculator-results-design-data-numbers-lines">
+											<div class="calculator-results-design-data-numbers-lines-div"><span class="calculator-results-design-data-numbers-lines-div-span">Yin: </span></div>
+											<div class="calculator-results-design-data-numbers-lines-div"><span class="calculator-results-design-data-numbers-lines-div-span">Yt: </span></div>
+										</div>
+										
+										<div class="calculator-results-design-data-numbers-pie"><span class="calculator-results-design-data-numbers-pie-span">Yin%:<br /></span></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form></section>
+			
+			
+			<footer class="paypal CSScentered"><div class="paypal_dock">
+				<h5 class="paypal-title">{{ page.pricingH1 }}</h5>
+
+				<div class="paypal-content">
+					<p>{{ page.pricingH2 }}</p>
+
+					<div class="paypal-details"><ol class="paypal-details-list">
+						<li class="paypal-details-list-item">
+							<label for="rdb4paypalDetails1">{{ page.pricingDetails1[0] }}</label>
+							<ul class="paypal-details-sublist">
+								<li class="paypal-details-sublist-item">&rarr; {{ page.pricingDetails1[1] }}</li>
+								<li class="paypal-details-sublist-item">&rarr; {{ page.pricingDetails1[2] }}</li>
+								<li class="paypal-details-sublist-item">&rarr; {{ page.pricingDetails1[3] }}</li>
+								<li class="paypal-details-sublist-item">&rarr; {{ page.pricingDetails1[4] }}</li>
+							</ul>
+						</li>
+						<li class="paypal-details-list-item">
+							<label for="rdb4paypalDetails2">{{ page.pricingDetails2[0] }}</label>
+							<ul class="paypal-details-sublist">
+								<li class="paypal-details-sublist-item">&rarr; {{ page.pricingDetails2[1] }}</li>
+								<li class="paypal-details-sublist-item">&rarr; {{ page.pricingDetails2[2] }}</li>
+								<li class="paypal-details-sublist-item">&rarr; {{ page.pricingDetails2[3] }}</li>
+							</ul>
+						</li>	
+						<li class="paypal-details-list-item">
+							<label for="rdb4paypalDetails3">{{ page.pricingDetails3[0] }}</label>
+							<ul class="paypal-details-sublist">
+								<li class="paypal-details-sublist-item">&rarr; {{ page.pricingDetails3[1] }}</li>
+								<li class="paypal-details-sublist-item">&rarr; {{ page.pricingDetails3[2] }}</li>
+								<li class="paypal-details-sublist-item">&rarr; {{ page.pricingDetails3[3] }}</li>
+							</ul>
+						</li>
+					</ol></div>
+				</div>
+				
+				<div class="paypal-buttons">
+					<div class="paypal-buttons-cta_wrap">
+	       <span>[{{ page.pricingNav[0] }}]</span>
+<br />
+						<a href="/assets/images/dmie_certificate.png" class="paypal-buttons-cta" download>{{ page.pricingCTA1 }}</a>
+					</div>
+					<span>{{ page.pricingNav[1] }}</span>
+					<div class="paypal-buttons-cta_wrap">
+						<span>{{ page.pricingNav[2] }}</span><br />
+						<form class="js-formLicense"><input type="text" placeholder="#### ### ###" />
+						<input type="submit" value="&rarr;" /></form>
+					</div>
+					<span class="CSSspacer"></span>
+					<span class="js-btnCancel">{{ page.pricingCTA2 }}</span>
+				</div>
+			</div></footer>
+			
+			<!--
+			<aside class="upgrade">
+				<label class="upgrade-button">Upgrade To Premium</label>
+				<div class="upgrade_dock">
+					<header><h1>DMIE Model Calculator App</h1></header>
+					<div class="upgrade-content">
+						<h5>Unlock Pro Models</h5>
+						<p>Upgrade to access Blackbox, and Blackbox, and Blackbox, and Blackbox, only Blackbox.</p>
+						<div>
+							<a><span>&trademark; </span>Access to Blackbox Models</a>
+							<a><span>&trademark; </span>Faster Responses</a>
+							<a><span>&trademark; </span>Better Reasoning</a>
+						</div>
+						<a href="">Upgrade to Premium</a>
+					</div>
+				</div>
+			</aside>
+			-->
+			
+			<footer class="footer CSSmidWrap">
+				&copy; Copyrights 2027: <a href="https://intobinary.org">Into Binary</a>. {{ page.copyrights }}
+			</footer>
+		</main>
+		
+		
+		<script type="text/javascript" src="/assets/scripts/dmie-model-dot-intobinary-dot-org_v4.js"></script>

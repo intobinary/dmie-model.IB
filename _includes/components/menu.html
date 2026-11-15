@@ -1,21 +1,21 @@
 <span class="d-background"></span>
 			<nav>
 			<div class="menu"><div>
-				<h3 class="menu-title">About Donatien Malala</h3>
+				<h3 class="menu-title">{{ page.menuTitle }}</h3>
 				<label for="chbx4menu" class="u-btn">X</label>
 				
 				<div class="menu-text">
-					<p>"Effective economic research connects data to society by uncovering the hidden structures that shape people’s lives."</p>
+					<p>{{ page.menuP1 }}</p>
 					
-					<p>Donatien Malala is a renowned economist whose work focuses on understanding and quantifying the parts of the economy that traditional models overlook. His research brings clarity to complex economic systems, turning invisible activity into measurable insight.</p>
+					<p>{{ page.menuP2 }}</p>
 					
-					<p>His contributions include the development of the DMIE Model (Diophantine Model of Informal Economy), a groundbreaking approach introduced in his research that offers a new way to estimate the informal economy through mathematical structures.</p>
+					<p>{{ page.menuP3 }}</p>
 
-					<p>He is known for being precise, innovative, and deeply thoughtful; qualities that are the strength of his work. In coding the calculator for him, every variable was examined; the DMIE-Model Calculator is built with precision.</p>
+					<p>{{ page.menuP4 }}</p>
 
-					<p>The project combines mathematical rigor with real-world relevance, producing models that are not only analytically strong but practically valuable for policymakers, development institutions, and fellow researchers.</p>
+					<p>{{ page.menuP5 }}</p>
 					
-					<p>Donatien Malala’s research legacy continues to expand through collaborations with global scholars, policy advisors, and institutions exploring the dynamics of emerging and informal markets.</p>
+					<p>{{ page.menuP6 }}</p>
 				</div>
 				
 				<div class="menu-contacts">
@@ -31,30 +31,30 @@
 				</div>
 				
 				<form class="menu-form" action="https://formspree.io/f/mlgwlerl" method="POST">
-					<span>Contact Us</span>
+					<span>{{ page.menuFormTitle }}</span>
 					<hgroup class="menu-form_alert"></hgroup>
 					<fieldset>
 						<div>
-							<span>Name:</span>
-							<input type="text" name="name" placeholder="Full Name" />
+							<span>{{ page.menuFormInput1[0] }}:</span>
+							<input type="text" name="name" placeholder="{{ page.menuFormInput1[1] }}" />
 						</div><div>
 							<span>Email:</span>
 							<input type="email" name="email" placeholder="example@gmail.com" />
 						</div>
 						
 						<div>
-							<span>Message:</span>
-							<textarea name="message" placeholder="Type Your Message Here"></textarea>
+							<span>{{ page.menuFormInput3[0] }}:</span>
+							<textarea name="message" placeholder="{{ page.menuFormInput3[1] }}"></textarea>
 						</div>
 						
 						<div>
 							<input type="text" name="_gotcha" style="display:none">
-							<input type="submit" value="Send" />
+							<input type="submit" value="{{ page.menuFormButton }}" />
 						</div>
 					</fieldset>
 				</form>
 				
-				<footer class="menu-footer">&copy; Copyrights 2025: <a href="https://intobinary.org" class="CSSunderline">Into Binary</a>. All rights reserved.</footer>
+				<footer class="menu-footer">&copy; Copyrights 2027: <a href="https://intobinary.org" class="CSSunderline">Into Binary</a>. {{ page.copyrights }}</footer>
 			</div></div>
 			<label for="chbx4menu" class="menu-veil"></label>
 			</nav>
