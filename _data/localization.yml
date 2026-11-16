@@ -1,0 +1,12 @@
+en:
+    headerH1: "DMIE Model Calculator"
+    headerH2: "DMIE: Diophantine Model of Informal Economy"
+    headerDescription: "The DMIE Model is an innovative scientific model developed by the economics researcher: Donatien Malala. Did you know that you can estimate a country's informal economy with a simple math equation?"
+    menu: ["features", "solutions", "pricing", "resources"]
+    menuButtonLocalization: "View Site in English"
+fr:
+    headerH1: "Calculateur DMIE Model"
+    headerH2: "DMIE : Modèle Diophantien de l'Economie Informelle"
+    headerDescription: "Le modèle DMIE est un modèle scientifique innovant développé par le chercheur en économie Donatien Malala. Saviez-vous que l'on peut estimer l'économie informelle d'un pays avec une simple équation mathématique ?"
+    menu: ["fonctionnalités", "solutions", "tarifs", "ressources"]
+    menuButtonLocalization: "Voir le site en français"

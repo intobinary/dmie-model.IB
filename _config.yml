@@ -8,6 +8,9 @@ collections:
   localization:
     output: true
     permalink: /:path/
+  marketing:
+    output: true
+    permalink: /marketing/:path/
     
 defaults:
   -

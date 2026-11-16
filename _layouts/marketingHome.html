@@ -1,0 +1,53 @@
+---
+layout: marketing
+---
+		<main>
+			{% include components/marketing_menu.html %}
+			
+			<section class="master">
+				<h2>{{ site.data.localization.[page.lang].headerH2 }}</h2>
+				<p>{{ site.data.localization.[page.lang].headerDescription }}</p>
+				<nav>
+					<a href="/marketing/{{ page.lang }}/{{ site.data.localization.[page.lang].menu[2] }}/" class="u-btn_cta">View Pricing</a>
+					<a href="/auth/" class="u-btn_cta">Log In</a>
+				</nav>
+				
+				<!--
+				<img src="/assets/images/dmiedashboard_3.png" />
+				-->
+			</section>
+			
+			<section class="master_ext">
+				<img src="/assets/images/dmiedashboard_3.png" />
+				<span></span>
+			</section>
+			
+			<section class="team">
+				<article>
+					<img src="/assets/images/Donatien-Malala-Economist-and-Researcher.png" />
+					<hgroup>
+						<span>Mr. Donatien Malala</span>
+						<p>{{ page.DonatienMalala }}</p>
+					</hgroup>
+				</article>
+				<article>
+					<img src="/assets/images/Donatien-Malala-Economist-and-Researcher.png" />
+					<hgroup>
+						<span>Madam Ella Malala</span>
+						<p>{{ page.EllaMalala }}</p>
+					</hgroup>
+				</article>
+			</section>
+			
+			<aside class="compliance">
+				<div class="compliance-check">
+					{{ page.complianceCheck1[0] }}: <!--<br />&middot;--><br /> <a href="/{{ page.complianceCheck1[1] | downcase | replace: ' ', '-' | slugify: 'latin' }}/">{{ page.complianceCheck1[1] }}</a>
+				</div><div class="compliance-check">
+					{{ page.complianceCheck2[0] }}: <br /> <a href="/{{ page.complianceCheck2[1] | downcase | replace: ' ', '-' | slugify: 'latin' }}/">{{ page.complianceCheck2[1] }}</a>
+				</div><div class="compliance-check">
+					{{ page.complianceCheck3[0] }}: <br /> <a href="/{{ page.complianceCheck3[1] | downcase | replace: ' ', '-' | slugify: 'latin' }}/">{{ page.complianceCheck3[1] }}</a>
+				</div>
+			</aside>
+			
+			<footer><p>&copy; Copyrights 2027: <a>Donatien Malala</a>. All rights reserved.</p></footer>
+		</main>

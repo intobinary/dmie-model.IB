@@ -1,0 +1,71 @@
+/*** COLORS ***/
+.compliance,
+.master, .master_ext span,
+.team img { background-color: #eee; }
+/*** END COLORS ***/
+
+/*** FONTS ***/
+footer,
+.master, .master_ext { text-align: center; }
+
+.compliance { text-align: center; }
+.compliance a { text-decoration: underline; }
+/*** END FONTS ***/
+
+/*** COMPONENTS ***/
+	/*** COMMONS ***/
+	.master, .master_ext { padding: 1.8em; }
+	.master_ext span { border-radius: 0 0 50% 50%; }
+	
+	.compliance { margin: 1.8em 0; }
+	
+	/*** .compliance ***/
+	.compliance {
+		padding: 1.8em;
+	}
+
+	/*** .master ***/
+	.master_ext {
+		position: relative;
+	}
+	.master_ext span {
+		position: absolute; top: 0; left: 0;
+		width: 100%; height: 100%;
+	}
+	.master p { margin: 3em 0; }
+		/*** CSS-HACKS: .masters ***/
+		.master { padding-bottom: 0 !important; }
+		.master_ext { padding-top: 0 !important; }
+		
+	/*** .team ***/
+	.team,
+	.team article { display: flex; }
+	
+	.team img { padding: 1.8em 1em 0 1em; }
+	.team span,
+	.team p { padding: 1em; }
+/*** END COMPONENTS ***/
+
+/*** MEDIA-QUERIES ***/
+@media screen and (max-width: 50em) {
+	/*** FONTS ***/
+}
+@media screen and (min-width: 50em) {
+	/*** FONTS ***/
+	.master h2 { font-size: 3em; }
+	
+	/*** COMPONENTS: .compliance ***/
+	.compliance { display: flex; }
+	.compliance-check { flex: 1; }
+
+	.compliance-check:nth-child(2),
+	.compliance-check:nth-child(3) { border-left: .1em solid #AAA; }
+
+	/*** COMPONENTS: .masters ***/
+	.master { padding-left: 7em; padding-right: 7em; }
+	.master_ext { margin-bottom: 7em; }
+	
+	/*** COMPONENTS: .team ***/
+	.team img { width: 34%; }
+}
+/*** END MEDIA-QUERIES ***/

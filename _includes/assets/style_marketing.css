@@ -1,0 +1,121 @@
+/*** Z-INDEXES ***/
+.master_ext span { position: relative; z-index: 9; }
+.master_ext img { position: relative; z-index: 19; }
+/*** END Z-INDEXES ***/
+
+/*** COLORS ***/
+.u-btn_cta { background-color: #04EA60; }
+
+.menu { background-color: #eee; }
+
+.u-btn_link.is-active,
+.u-btn_link:hover,
+.u-btn_link:active,
+.u-btn_link:focus { background-color: rgba(0, 0, 0, .1); }
+/*** END COLORS ***/
+
+/*** FONTS ***/
+@font-face { font-family: "Arial Black"; src: url("/assets/fonts/ariblk.ttf"); }
+* { font-family: "Arial Black"; }
+
+.menu .u-btn_link { font-size: .7em; }
+
+.menu-items a { text-transform: capitalize; }
+/*** END FONTS ***/
+
+/*** MEDIA ***/
+html { background-image: url("/assets/images/math_background.png"); }
+	html { background-size: cover; background-color: #eee; }
+	body { background-color: rgba(255, 255, 255, .96); }
+/*** END MEDIA ***/
+
+/*** UTILITIES ***/
+	/*** .u-btn ***/
+	.u-btn_cta {
+		padding: .7em 1em;
+		margin: 0 .4em;
+	}
+	.u-btn_link {
+		width: 2.3em;
+		padding: .4em;
+	}
+/*** END UTILITIES ***/
+
+/*** MIXINS ***/
+/*** END MIXINS ***/
+
+/*** COMPONENTS ***/
+	/*** COMMONS ***/
+	body { padding: 4em; }
+	.menu { padding: 1.8em; }
+
+	.menu {// border-radius: 1em 1em 0 0; }
+	
+	/*** .menu ***/
+	.menu,
+	.menu-items { display: flex; }
+	.menu { align-items: center; }
+	.menu-items { justify-content: center; }
+	.menu-items { flex: 1; }
+	
+	.menu-items li {
+		padding: 0 1em; 
+	}
+/*** END COMPONENTS ***/
+
+/*** INTERACTIVITY ***/
+ { cursor: pointer; }
+/*** END INTERACTIVITY ***/
+
+/*** MEDIA-QUERIES ***/
+@media screen and (max-width: 50em) {
+	/*** FONTS ***/
+	* { font-size: 14px; }
+}
+@media screen and (min-width: 50em) {
+	/*** FONTS ***/
+	* { font-size: 18px; }
+	.menu h1 { font-size: 1.7em; }
+}
+/*** END MEDIA-QUERIES ***/
+
+/*** DECORATION ***/
+.d-background {
+	position: fixed; top: 0; left: 0;
+	width: 100vw; height: 100vh;
+	
+	background-color: #eee;
+	background-image: url("/assets/images/math_background.png");
+	background-size: cover !important;
+}
+.d-background:before {
+	content: ""; 
+	position: absolute; top: 0; left: 0;
+	width: 100%; height: 100%;
+	
+	background-color: white; opacity: .96;
+}
+/*** END DECORATION ***/
+
+/*** TOOLS ***/
+	/*** .CSScentered ***/
+	.CSScentered {
+		display: flex;
+		align-items: center; justify-content: center;
+	}
+	
+	/*** .CSSmidWrap ***/
+	.CSSmidWrap {
+		width: 100%; max-width: 70em;
+		display: block;
+		margin: auto;
+	}
+
+	/*** .CSS ***/
+	.CSSunderline { text-decoration: underline; }
+	.CSSspacer { flex: 1 !important; }
+	.CSSnoWrap {
+		white-space: nowrap;
+		word-break: keep-all;
+	}
+/*** END TOOLS ***/

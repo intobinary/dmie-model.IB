@@ -1,0 +1,10 @@
+			<nav class="menu">
+				<h1>{{ site.data.localization.[page.lang].headerH1 }}</h1>
+				
+				<ul class="menu-items">{% for item in site.data.localization.[page.lang].menu %}
+					<li><a href="/{{ item }}_{{ page.lang }}">{{ item }}</a></li>{% endfor %}
+				</ul>
+				
+				<a href="/auth/" class="u-btn_cta">Account</a>
+				<ul><li><a href="{{ page.localization_en }}" class="u-btn_link{% if page.url contains page.localization_en %} is-active{% endif %}" title="{{ site.data.localization.en.menuButtonLocalization }}">EN</a></li><li><a href="{{ page.localization_fr }}" class="u-btn_link{% if page.url contains page.localization_fr %} is-active{% endif %}" title="{{ site.data.localization.fr.menuButtonLocalization }}">FR</a></li></ul>
+			</nav>
