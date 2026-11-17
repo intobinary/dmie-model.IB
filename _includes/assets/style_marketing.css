@@ -47,6 +47,11 @@ html { background-image: url("/assets/images/math_background.png"); }
 
 /*** COMPONENTS ***/
 	/*** COMMONS ***/
+	main {
+		max-width: 79em;
+		display: block;
+		margin: auto;
+	}
 	.menu { padding: 1.8em; }
 
 	.menu {// border-radius: 1em 1em 0 0; }
