@@ -9,7 +9,9 @@ img {
 .compliance,
 .empire article,
 .master, .master_ext span,
-.team img { background-color: #eee; }
+.team { background-color: #eee; }
+
+.team img { background-color: rgba(0, 0, 0, .1); }
 /*** END COLORS ***/
 
 /*** FONTS ***/
@@ -69,6 +71,9 @@ footer,
 	.master p { margin: 3em 0; }
 		
 	/*** .team ***/
+	.team {
+		padding: 1.8em;
+	}
 	.team img { padding: 1.8em 1em 0 1em; }
 	.team span,
 	.team p { padding: 1em; }
@@ -126,8 +131,15 @@ footer,
 	/*** COMPONENTS: .team ***/
 		/*** VIEWPORT: .team ***/
 		.team,
-		.team article { display: flex; }
+		.team article,
+		.team hgroup { display: flex; }
+		.team hgroup { flex-direction: column; }
+		.team hgroup span { flex: 1; }
 
-		.team img { width: 23%; }
+		.team img { width: 34%; }
+		/*** CSS-HACKS: .team ***/
+		.team { gap: 1.8em; }
+		.team article:first-child { flex-direction: row-reverse; }
+		.team article:first-child { text-align: right; }
 }
 /*** END MEDIA-QUERIES ***/
