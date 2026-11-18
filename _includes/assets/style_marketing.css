@@ -29,6 +29,10 @@
 html { background-image: url("/assets/images/math_background.png"); }
 	html { background-size: cover; background-color: #eee; }
 	body { background-color: rgba(255, 255, 255, .96); }
+
+.u-users ul li:nth-child(3) img { background-color: rgba(0, 0, 0, .1); }
+.u-users ul li:nth-child(2) img { background-color: rgba(0, 0, 0, .4); }
+.u-users ul li:nth-child(1) img { background-color: rgba(0, 0, 0, .7); }
 /*** END MEDIA ***/
 
 /*** UTILITIES ***/
@@ -41,6 +45,16 @@ html { background-image: url("/assets/images/math_background.png"); }
 		width: 2.3em;
 		padding: .4em;
 	}
+	
+	/*** .u-users ***/
+	.u-users,
+	.u-users ul { display: flex; }
+	.u-users ul { align-items: center; }
+	.u-users ul,
+	.u-users img { flex: 1; }
+	
+	.u-users figcaption { padding: 0 .4em; }
+	
 /*** END UTILITIES ***/
 
 /*** MIXINS ***/
@@ -106,6 +120,10 @@ html { background-image: url("/assets/images/math_background.png"); }
 	* { font-size: 18px; }
 	.m-section-hgroup h3 { font-size: 3em; }
 	.menu h1 { font-size: 1.7em; }
+	
+	/*** UTILITIES: .u-users ***/
+		/*** CSS-HACKS: .u-users ***/ 
+		.u-users img { max-height: 2.3em; }
 	
 	/*** MIXINS: .m-section ***/
 	.m-section-hgroup { padding: 0 7em; }
