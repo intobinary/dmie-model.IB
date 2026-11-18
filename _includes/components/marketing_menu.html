@@ -1,8 +1,8 @@
 			<nav class="menu">
 				<h1>{{ site.data.localization.[page.lang].headerH1 }}</h1>
-
-				<ul class="menu-items">{% for item in site.data.localization.[page.lang].menu %}
-					<li><a href="/marketing/{{ page.lang }}/{% if forloop.index != 1 %}{{ item }}/{% endif %}"{% if page.slug contains item %} class="is-active"{% endif %}>{{ item }}</a></li>{% endfor %}
+				
+				<ul class="menu-items">{% for item in site.data.localization.[page.lang].menu %}{% assign vItem = item | downcase | slugify: 'latin' %}
+					<li><a href="/marketing/{{ page.lang }}/{% if forloop.index != 1 %}{{ item }}/{% endif %}"{% if page.slug contains vItem %} class="is-active"{% endif %}>{{ item }}</a></li>{% endfor %}
 				</ul>
 				
 				<a href="/auth/" class="u-btn_cta">Account</a>
