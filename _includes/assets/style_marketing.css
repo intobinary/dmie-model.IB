@@ -20,6 +20,7 @@
 
 .menu .u-btn_link { font-size: .7em; }
 
+.m-section-hgroup { text-align: center; }
 .menu-items a.is-active { text-decoration: underline; }
 .menu-items a { text-transform: capitalize; }
 /*** END FONTS ***/
@@ -43,6 +44,13 @@ html { background-image: url("/assets/images/math_background.png"); }
 /*** END UTILITIES ***/
 
 /*** MIXINS ***/
+	/*** .m-section ***/
+	.m-section-hgroup {// margin-bottom: 4em; }
+	.m-section-hgroup span {
+		display: block;
+		padding: 1em 0;
+	}
+	
 /*** END MIXINS ***/
 
 /*** COMPONENTS ***/
@@ -76,7 +84,11 @@ html { background-image: url("/assets/images/math_background.png"); }
 @media screen and (max-width: 50em) {
 	/*** FONTS ***/
 	* { font-size: 14px; }
+	.m-section-hgroup h3 { font-size: 1.6em; }
 	.menu h1 { font-size: 1.2em; }
+	
+	/*** MIXINS: .m-section ***/
+	.m-section-content { padding: 1.8em 0; }
 	
 	/*** COMPONENTS: COMMONS ***/
 	body { padding: 1em; }
@@ -92,7 +104,12 @@ html { background-image: url("/assets/images/math_background.png"); }
 @media screen and (min-width: 50em) {
 	/*** FONTS ***/
 	* { font-size: 18px; }
+	.m-section-hgroup h3 { font-size: 3em; }
 	.menu h1 { font-size: 1.7em; }
+	
+	/*** MIXINS: .m-section ***/
+	.m-section-hgroup { padding: 0 7em; }
+	.m-section-content { padding: 3em 0; }
 	
 	/*** COMPONENTS: COMMONS ***/
 	body { padding: 4em; }
