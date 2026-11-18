@@ -21,7 +21,10 @@
 .menu .u-btn_link { font-size: .7em; }
 
 .m-section-hgroup { text-align: center; }
-.menu-items a.is-active { text-decoration: underline; }
+.menu-items a.is-active,
+.menu-items a:hover,
+.menu-items a:active,
+.menu-items a:focus { text-decoration: underline; }
 .menu-items a { text-transform: capitalize; }
 /*** END FONTS ***/
 

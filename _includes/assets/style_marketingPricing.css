@@ -1,0 +1,162 @@
+/*** CANCEL ***/
+img {
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+/*** END CANCEL ***/
+
+/*** COLORS ***/
+.compliance,
+.empire article,
+.master, .master_ext span,
+.team { background-color: #eee; }
+
+.team img { background-color: rgba(0, 0, 0, .1); }
+/*** END COLORS ***/
+
+/*** FONTS ***/
+footer,
+.master, .master_ext { text-align: center; }
+
+.compliance { text-align: center; }
+.compliance a { text-decoration: underline; }
+/*** END FONTS ***/
+
+/*** MEDIA ***/
+.empire img,
+.team img { background-position: center bottom; }
+/*** END MEDIA ***/
+
+/*** COMPONENTS ***/
+	/*** COMMONS ***/
+	.master, .master_ext { padding: 1.8em; }
+	.master_ext span { border-radius: 0 0 50% 50%; }
+	
+	.compliance { margin: 1.8em 0; }
+	
+	/*** .compliance ***/
+	
+	/*** .empire ***/
+	.empire,
+	.empire article,
+	.empire hgroup { display: flex; }
+	.empire hgroup { flex-direction: column; }
+	.empire article,
+	.empire cite { flex: 1; }
+	.empire { gap: .1em; }
+	
+	.empire article {
+		padding: 0 1em;
+	}
+	.empire hgroup {
+		padding: 1.8em 1em;
+	}
+	.empire hgroup cite,
+	.empire hgroup cite span {
+		display: block;
+	}
+	.empire hgroup cite {
+//		margin-bottom: 3em;
+	}
+	.empire img { width: 9em; }
+	
+	/*** .features ***/
+	.features ul { display: flex; }
+	.features ul { flex-wrap: wrap; }
+	
+	.features ul li { padding: 1em .5em; }
+
+	/*** .master ***/
+	.master_ext {
+		position: relative;
+	}
+	.master_ext span {
+		position: absolute; top: 0; left: 0;
+		width: 100%; height: 100%;
+	}
+	.master p { margin: 3em 0; }
+
+	.master nav a { margin: 1em; }
+		
+	/*** .team ***/
+	.team {
+		padding: 1.8em;
+	}
+	.team img { padding: 1.8em 1em 0 1em; }
+	.team span,
+	.team p { padding: 1em; }
+/*** END COMPONENTS ***/
+
+/*** MEDIA-QUERIES ***/
+@media screen and (max-width: 50em) {
+	/*** FONTS ***/
+	.master h2 { font-size: 1.6em; }
+	
+	/*** COMPONENTS: .compliance ***/
+	.compliance { padding: .4em 1.8em; }
+	.compliance-check:nth-child(1),
+	.compliance-check:nth-child(2) { border-bottom: .1em solid #AAA; }
+	.compliance-check { padding: 1em 0; }
+	
+	/*** COMPONENTS: .empire ***/
+		/*** VIEWPORT: .empire ***/
+		.empire,
+		.empire article { flex-direction: column; }
+		.empire article { align-items: center; }
+		
+		.empire p { padding-top: 1.8em; }
+		
+	/*** COMPONENTS: .features ***/
+	.features ul li { flex: 0 0 50%; }
+	
+	/*** COMPONENTS: .masters ***/
+	.master_ext { margin-bottom: 4em; }
+		/*** VIEWPORT: .masters ***/
+		.master_ext { padding: initial !important; }
+		
+	/*** COMPONENTS: .team ***/
+		/*** VIEWPORT: .team ***/
+		.team hgroup { padding: 1.2em 0; }
+}
+@media screen and (min-width: 50em) {
+	/*** FONTS ***/
+	.master h2 { font-size: 3em; }
+	
+	/*** COMPONENTS: .compliance ***/
+	.compliance { padding: 1.8em; }
+	.compliance-check:nth-child(2),
+	.compliance-check:nth-child(3) { border-left: .1em solid #AAA; }
+		/*** VIEWPORT: .compliance ***/
+		.compliance { display: flex; }
+		.compliance-check { flex: 1; }
+		
+	/*** COMPONENTS: .features ***/
+	.features ul li { flex: 0 0 33.3333%; }
+
+	/*** COMPONENTS: .masters ***/
+	.master_ext { margin-bottom: 7em; }
+		/*** VIEWPORT: .master ***/
+		.master nav { display: flex; }
+		.master nav { justify-content: center; }
+		
+		.master { padding-left: 7em; padding-right: 7em; }
+		
+		/*** CSS-HACKS: .masters ***/
+		.master { padding-bottom: 0 !important; }
+		.master_ext { padding-top: 0 !important; }
+	
+	/*** COMPONENTS: .team ***/
+		/*** VIEWPORT: .team ***/
+		.team,
+		.team article,
+		.team hgroup { display: flex; }
+		.team hgroup { flex-direction: column; }
+		.team hgroup span { flex: 1; }
+
+		.team img { width: 34%; }
+		/*** CSS-HACKS: .team ***/
+		.team { gap: 1.8em; }
+		.team article:first-child { flex-direction: row-reverse; }
+		.team article:first-child { text-align: right; }
+}
+/*** END MEDIA-QUERIES ***/

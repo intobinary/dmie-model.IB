@@ -2,7 +2,7 @@
 				<h1>{{ site.data.localization.[page.lang].headerH1 }}</h1>
 
 				<ul class="menu-items">{% for item in site.data.localization.[page.lang].menu %}
-					<li><a href="/marketing/{{ page.lang }}/{% if forloop.index != 1 %}{{ item }}/{% endif %}"{% if page.url contains item %} class="is-active"{% elsif page.name contains "home" and forloop.index == 1 %} class="is-active"{% endif %}>{{ item }}</a></li>{% endfor %}
+					<li><a href="/marketing/{{ page.lang }}/{% if forloop.index != 1 %}{{ item }}/{% endif %}"{% if page.slug contains item %} class="is-active"{% endif %}>{{ item }}</a></li>{% endfor %}
 				</ul>
 				
 				<a href="/auth/" class="u-btn_cta">Account</a>
