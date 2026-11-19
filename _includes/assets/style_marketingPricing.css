@@ -1,162 +1,139 @@
-/*** CANCEL ***/
-img {
-	background-repeat: no-repeat;
-	background-size: contain;
-}
-/*** END CANCEL ***/
-
 /*** COLORS ***/
-.compliance,
-.empire article,
-.master, .master_ext span,
-.team { background-color: #eee; }
+.freetrial,
+.pricing ul > li:nth-child(2) > a,
+.pricing ul > li:nth-child(2) > span { background-color: #04EA60; }
 
-.team img { background-color: rgba(0, 0, 0, .1); }
+.freetrial .u-btn_cta { background-color: white; }
+
+.benefits ul li,
+.master,
+.pricing ul > li { background-color: #eee; }
+
+.pricing ul a { background-color: rgba(0, 0, 0, .1); }
 /*** END COLORS ***/
 
 /*** FONTS ***/
-footer,
-.master, .master_ext { text-align: center; }
+.benefits ul li,
+.freetrial nav,
+.pricing ul a,
+.pricing ul p { text-align: center; }
 
-.compliance { text-align: center; }
-.compliance a { text-decoration: underline; }
+.pricing ul a:hover,
+.pricing ul a:active,
+.pricing ul a:focus { text-decoration: underline; }
 /*** END FONTS ***/
 
 /*** MEDIA ***/
-.empire img,
-.team img { background-position: center bottom; }
+.benefits ul span { background-size: auto 69%; }
 /*** END MEDIA ***/
 
 /*** COMPONENTS ***/
 	/*** COMMONS ***/
-	.master, .master_ext { padding: 1.8em; }
-	.master_ext span { border-radius: 0 0 50% 50%; }
+	.master { padding: 1.8em; }
+	.master { border-radius: 0 0 25% 25%; }
 	
-	.compliance { margin: 1.8em 0; }
-	
-	/*** .compliance ***/
-	
-	/*** .empire ***/
-	.empire,
-	.empire article,
-	.empire hgroup { display: flex; }
-	.empire hgroup { flex-direction: column; }
-	.empire article,
-	.empire cite { flex: 1; }
-	.empire { gap: .1em; }
-	
-	.empire article {
-		padding: 0 1em;
+	/*** .benefits ***/
+	.benefits ul li {
+		padding: 1em 1.2em;
 	}
-	.empire hgroup {
-		padding: 1.8em 1em;
+	.benefits ul h4 { padding-bottom: 1em; }
+	.benefits ul span {
+		display: inline-block;
+		width: 3em; height: 3em;
 	}
-	.empire hgroup cite,
-	.empire hgroup cite span {
+	
+	/*** .freetrial ***/
+	.freetrial { padding-left: 1.8em; padding-right: 1.8em; }
+	
+	/*** .pricing ***/
+	.pricing ul > li { display: flex; }
+	.pricing ul > li{ flex-direction: column; }
+	.pricing ul > li { align-items: center; }
+	.pricing ul ol { flex: 1; }
+	
+	.pricing ul > li { padding: 1em 1.2em; }
+	.pricing ul a,
+	.pricing ul li > span {
+		padding: .4em .7em;
+	}
+	.pricing ul a {
+		width: 100%;
 		display: block;
 	}
-	.empire hgroup cite {
-//		margin-bottom: 3em;
-	}
-	.empire img { width: 9em; }
-	
-	/*** .features ***/
-	.features ul { display: flex; }
-	.features ul { flex-wrap: wrap; }
-	
-	.features ul li { padding: 1em .5em; }
-
-	/*** .master ***/
-	.master_ext {
+	.pricing ul p,
+	.pricing ul li > span { margin-bottom: 1em; }
+	.pricing ul ol,
+	.pricing ul ol li { width: 100%; }
+	.pricing ul ol { padding: 1em 0; }
+	.pricing ul ol li {
 		position: relative;
+		padding-left: 1.1em;
 	}
-	.master_ext span {
+	.pricing ul ol li:after {
+		content: "*";
 		position: absolute; top: 0; left: 0;
-		width: 100%; height: 100%;
+		width: 1em; height: 1em;
 	}
-	.master p { margin: 3em 0; }
-
-	.master nav a { margin: 1em; }
-		
-	/*** .team ***/
-	.team {
-		padding: 1.8em;
-	}
-	.team img { padding: 1.8em 1em 0 1em; }
-	.team span,
-	.team p { padding: 1em; }
+	
 /*** END COMPONENTS ***/
 
 /*** MEDIA-QUERIES ***/
 @media screen and (max-width: 50em) {
 	/*** FONTS ***/
 	.master h2 { font-size: 1.6em; }
+		/*** VIEWPORT: FONTS ***/
+		.master { text-align: center; }
 	
-	/*** COMPONENTS: .compliance ***/
-	.compliance { padding: .4em 1.8em; }
-	.compliance-check:nth-child(1),
-	.compliance-check:nth-child(2) { border-bottom: .1em solid #AAA; }
-	.compliance-check { padding: 1em 0; }
+	/*** COMMONS ***/
+	.benefits ul li:nth-child(2),
+	.pricing ul > li:nth-child(2) { margin: 1.2em 0; }
 	
-	/*** COMPONENTS: .empire ***/
-		/*** VIEWPORT: .empire ***/
-		.empire,
-		.empire article { flex-direction: column; }
-		.empire article { align-items: center; }
-		
-		.empire p { padding-top: 1.8em; }
-		
-	/*** COMPONENTS: .features ***/
-	.features ul li { flex: 0 0 50%; }
+	/*** COMPONENTS: .freetrial ***/
+	.freetrial {
+		padding-top: 1.4em;
+		margin-bottom: 1.4em;
+	}
+	.freetrial nav .u-btn_cta { margin: 1em 0; }
 	
 	/*** COMPONENTS: .masters ***/
-	.master_ext { margin-bottom: 4em; }
-		/*** VIEWPORT: .masters ***/
-		.master_ext { padding: initial !important; }
-		
-	/*** COMPONENTS: .team ***/
-		/*** VIEWPORT: .team ***/
-		.team hgroup { padding: 1.2em 0; }
+	.master { margin-bottom: 4em; }
 }
 @media screen and (min-width: 50em) {
 	/*** FONTS ***/
 	.master h2 { font-size: 3em; }
+	.pricing ul p span { font-size: 1.8em; }
 	
-	/*** COMPONENTS: .compliance ***/
-	.compliance { padding: 1.8em; }
-	.compliance-check:nth-child(2),
-	.compliance-check:nth-child(3) { border-left: .1em solid #AAA; }
-		/*** VIEWPORT: .compliance ***/
-		.compliance { display: flex; }
-		.compliance-check { flex: 1; }
+	/*** COMMONS ***/
+	.benefits ul li:nth-child(2),
+	.pricing ul > li:nth-child(2) { margin: 0 1.5em; }
+	
+	/*** COMPONENTS: .benefits ***/
+		/*** VIEWPORT: .benefits ***/
+		.benefits ul { display: flex; }
 		
-	/*** COMPONENTS: .features ***/
-	.features ul li { flex: 0 0 33.3333%; }
+	/*** COMPONENTS: .freetrial ***/
+	.freetrial {
+		padding-top: 3em;
+		margin-bottom: 1.8em;
+	}
+	.freetrial nav .u-btn_cta { margin: 0 1em; }
 
 	/*** COMPONENTS: .masters ***/
-	.master_ext { margin-bottom: 7em; }
+	.master { margin-bottom: 7em; }
 		/*** VIEWPORT: .master ***/
-		.master nav { display: flex; }
-		.master nav { justify-content: center; }
-		
-		.master { padding-left: 7em; padding-right: 7em; }
-		
-		/*** CSS-HACKS: .masters ***/
-		.master { padding-bottom: 0 !important; }
-		.master_ext { padding-top: 0 !important; }
-	
-	/*** COMPONENTS: .team ***/
-		/*** VIEWPORT: .team ***/
-		.team,
-		.team article,
-		.team hgroup { display: flex; }
-		.team hgroup { flex-direction: column; }
-		.team hgroup span { flex: 1; }
+		.master,
+		.master figure { display: flex; }
+		.master figure { flex-direction: column; }
+		.master figure { align-items: center; }
 
-		.team img { width: 34%; }
-		/*** CSS-HACKS: .team ***/
-		.team { gap: 1.8em; }
-		.team article:first-child { flex-direction: row-reverse; }
-		.team article:first-child { text-align: right; }
+		.master { padding-left: 7em; padding-right: 7em; }
+		.master figure { width: 59%; }
+		
+	/*** COMPONENTS: .pricing ***/
+		/*** VIEWPORT: .pricing ***/
+		.freetrial nav,
+		.pricing ul { display: flex; }
+		.freetrial nav { justify-content: center; }
+		.pricing ul > li { flex: 1; }
 }
 /*** END MEDIA-QUERIES ***/

@@ -1,3 +1,11 @@
+/*** CANCEL ***/
+* {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+}
+/*** END CANCEL ***/
+
 /*** Z-INDEXES ***/
 .master_ext span { position: relative; z-index: 9; }
 .master_ext img { position: relative; z-index: 19; }
@@ -20,11 +28,15 @@
 
 .menu .u-btn_link { font-size: .7em; }
 
+footer,
 .m-section-hgroup { text-align: center; }
 .menu-items a.is-active,
 .menu-items a:hover,
 .menu-items a:active,
-.menu-items a:focus { text-decoration: underline; }
+.menu-items a:focus,
+.u-btn_cta:hover,
+.u-btn_cta:active,
+.u-btn_cta:focus { text-decoration: underline; }
 .menu-items a { text-transform: capitalize; }
 /*** END FONTS ***/
 
