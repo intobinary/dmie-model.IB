@@ -30,6 +30,7 @@
 
 footer,
 .m-section-hgroup { text-align: center; }
+.u-users figcaption { text-align: left; }
 .menu-items a.is-active,
 .menu-items a:hover,
 .menu-items a:active,

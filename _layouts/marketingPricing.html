@@ -10,7 +10,7 @@ layout: marketing
 				<figure>
 					<img src="/assets/images/dmiedashboard_3.png" />
 					
-					<a href="/auth/" class="u-btn_cta">Start a Free Trial</a>
+					<a href="/auth/" class="u-btn_cta">{{ site.data.localization.[page.lang].ctaFreetrial[0] }}</a>
 				</figure>
 			</section>
 			
@@ -23,18 +23,18 @@ layout: marketing
 				<ul class="m-section-content">
 					<li>
 						<span style="background-image: url('/assets/images/logo_intobinary_favicon.png'); "></span>
-						<h4>Collaborate in Real-Time</h4>
-						<p>Work together live with comments, edits, and updates synced instantly across your team.</p>
+						<h4>{{ page.benefits1[0] }}</h4>
+						<p>{{ page.benefits1[1] }}</p>
 					</li>
 					<li>
 						<span style="background-image: url('/assets/images/logo_intobinary_favicon.png'); "></span>
-						<h4>Automate Workflows</h4>
-						<p>Create no-code automation to streamline tasks, approvals, and notifications effortlessly.</p>
+						<h4>{{ page.benefits2[0] }}</h4>
+						<p>{{ page.benefits2[1] }}</p>
 					</li>
 					<li>
 						<span style="background-image: url('/assets/images/logo_intobinary_favicon.png'); "></span>
-						<h4>Analytics & Insitghts</h4>
-						<p>Track performance with clear metrics, reports, and dashboards that keep you informed.</p>
+						<h4>{{ page.benefits3[0] }}</h4>
+						<p>{{ page.benefits3[1] }}</p>
 					</li>
 				</ul>
 			</section>
@@ -47,44 +47,44 @@ layout: marketing
 				
 				<ul class="m-section-content">
 					<li>
-						<span>Starter</span>
-						<p><span>$9</span>/mo</p>
+						<span>{{ page.pricingCta1[0] }}</span>
+						<p>{{ page.pricingDetails1[0] }}</p>
 						
 						<ol>
-							<li>For 1 member</li>
-							<li>Core collaboration tools</li>
-							<li>Basic Integrations</li>
-							<li>Email Support</li>
+							<li>{{ page.pricingDetails1[1] }}</li>
+							<li>{{ page.pricingDetails1[2] }}</li>
+							<li>{{ page.pricingDetails1[3] }}</li>
+							<li>{{ page.pricingDetails1[4] }}</li>
 						</ol>
 
-						<a>Get Started</a>
+						<a>{{ page.pricingCta1[1] }}</a>
   					</li>
 					<li>
-						<span>Most Popular</span>
-						<p><span>$49</span>/mo</p>
+						<span>{{ page.pricingCta2[0] }}</span>
+						<p>{{ page.pricingDetails2[0] }}</p>
 						
 						<ol>
-							<li>Up to 25 team members</li>
-							<li>Advanced automation & workflows</li>
-							<li>Advanced analytics & reports</li>
-							<li>Custom integrations</li>
-							<li>Priority 24/7 support</li>
+							<li>{{ page.pricingDetails2[1] }}</li>
+							<li>{{ page.pricingDetails2[2] }}</li>
+							<li>{{ page.pricingDetails2[3] }}</li>
+							<li>{{ page.pricingDetails2[4] }}</li>
+							<li>{{ page.pricingDetails2[5] }}</li>
 						</ol>
 						
-						<a>Bring the Whole Team</a>
+						<a>{{ page.pricingCta2[1] }}</a>
   					</li>
 					<li>
-						<span>Enterprise</span>
-						<p><span>Custom</span><br />For larger organizations</p>
+						<span>{{ page.pricingCta3[0] }}</span>
+						<p>{{ page.pricingDetails3[0] }}</p>
 						
 						<ol>
-							<li>Unlimited team members</li>
-							<li>SSO & advanced security</li>
-							<li>Dedicated account manager</li>
-							<li>Custom SLA & onboarding</li>
+							<li>{{ page.pricingDetails3[1] }}</li>
+							<li>{{ page.pricingDetails3[2] }}</li>
+							<li>{{ page.pricingDetails3[3] }}</li>
+							<li>{{ page.pricingDetails3[4] }}</li>
 						</ol>
 						
-						<a>Contact Sales</a>
+						<a>{{ page.pricingCta3[1] }}</a>
   					</li>
 				</ul>
 			</section>
@@ -96,7 +96,7 @@ layout: marketing
 				</hgroup>
 				
 				<nav class="m-section-content">
-					<a href="/marketing/{{ page.lang }}/{{ site.data.localization.[page.lang].menu[1] }}/" class="u-btn_cta">Start a Free Trial</a>
+					<a href="/marketing/{{ page.lang }}/{{ site.data.localization.[page.lang].menu[1] }}/" class="u-btn_cta">{{ site.data.localization.[page.lang].ctaFreetrial[0] }}</a>
 
 					<figure class="u-users">
 						<ul>
@@ -104,10 +104,10 @@ layout: marketing
 							<li><img src="/assets/images/placeholder-3x4.png" /></li>
 							<li><img src="/assets/images/placeholder-3x4.png" /></li>
 						</ul>
-						<figcaption class="CSScentered">More than 124k users <br />worldwide trust us</figcaption>
+						<figcaption class="CSScentered">{{ site.data.localization.[page.lang].ctaFreetrial[1] }}</figcaption>
 					</figure>
 				</nav>
 			</section>
 			
-			<footer><p>&copy; Copyrights 2027: <a>Donatien Malala</a>. All rights reserved.</p></footer>
+			{% include components/marketing_footer.html %}
 		</main>

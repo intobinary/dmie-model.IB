@@ -1,4 +1,6 @@
 en:
+    ctaFreetrial: ["Start Free Trial", "More than 124k users <br />worldwide trust us"]
+    footer: "All Rights Reserved."
     headerH1: "DMIE Model Calculator"
     headerH2: "DMIE: Diophantine Model of Informal Economy"
     headerDescription: "The DMIE Model is an innovative scientific model developed by the economics researcher: Donatien Malala. Did you know that you can estimate a country's informal economy with a simple math equation?"
@@ -6,6 +8,8 @@ en:
     menu2: ["features", "solutions", "pricing", "resources"]
     menuButtonLocalization: "View Site in English"
 fr:
+    ctaFreetrial: ["Commencer l'Essai Gratuit", "Plus de 124k utilisateurs <br />dans le monde nous font confiance"]
+    footer: "Tous Droits Réservés."
     headerH1: "Calculateur DMIE Model"
     headerH2: "DMIE : Modèle Diophantien de l'Economie Informelle"
     headerDescription: "Le modèle DMIE est un modèle scientifique innovant développé par le chercheur en économie Donatien Malala. Saviez-vous que l'on peut estimer l'économie informelle d'un pays avec une simple équation mathématique ?"

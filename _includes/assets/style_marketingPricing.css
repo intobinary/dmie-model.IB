@@ -16,7 +16,8 @@
 .benefits ul li,
 .freetrial nav,
 .pricing ul a,
-.pricing ul p { text-align: center; }
+.pricing ul p,
+.u-btn_cta { text-align: center; }
 
 .pricing ul a:hover,
 .pricing ul a:active,

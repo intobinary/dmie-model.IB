@@ -8,7 +8,7 @@ layout: marketing
 				<h2>{{ site.data.localization.[page.lang].headerH2 }}</h2>
 				<p>{{ site.data.localization.[page.lang].headerDescription }}</p>
 				<nav>
-					<a href="/marketing/{{ page.lang }}/{{ site.data.localization.[page.lang].menu[1] }}/" class="u-btn_cta">Start a Free Trial</a>
+					<a href="/marketing/{{ page.lang }}/{{ site.data.localization.[page.lang].menu[1] }}/" class="u-btn_cta">{{ site.data.localization.[page.lang].ctaFreetrial[0] }}</a>
 
 					<figure class="u-users">
 						<ul>
@@ -16,7 +16,7 @@ layout: marketing
 							<li><img src="/assets/images/placeholder-3x4.png" /></li>
 							<li><img src="/assets/images/placeholder-3x4.png" /></li>
 						</ul>
-						<figcaption class="CSScentered">More than 124k users <br />worldwide trust us</figcaption>
+						<figcaption class="CSScentered">{{ site.data.localization.[page.lang].ctaFreetrial[1] }}</figcaption>
 					</figure>
 				</nav>
 				
@@ -95,5 +95,5 @@ layout: marketing
 				</div>
 			</aside>
 			
-			<footer><p>&copy; Copyrights 2027: <a>Donatien Malala</a>. All rights reserved.</p></footer>
+			{% include components/marketing_footer.html %}
 		</main>
