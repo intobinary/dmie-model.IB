@@ -1,4 +1,6 @@
 /*** COLORS ***/
+.features2 ul li { background-color: #04EA60; }
+
 .compliance,
 .empire article,
 .master, .master_ext span,
@@ -10,7 +12,8 @@
 /*** FONTS ***/
 .master, .master_ext { text-align: center; }
 
-.compliance { text-align: center; }
+.compliance,
+.features2 ul li { text-align: center; }
 .compliance a { text-decoration: underline; }
 /*** END FONTS ***/
 
@@ -27,6 +30,8 @@
 	.compliance { margin: 1.8em 0; }
 	
 	/*** .compliance ***/
+	
+	/*** .features ***/
 	
 	/*** .empire ***/
 	.empire,
@@ -57,6 +62,20 @@
 	.features ul { flex-wrap: wrap; }
 	
 	.features ul li { padding: 1em .5em; }
+	
+	/*** .features2 ***/
+	.features2 ul { display: flex; }
+	.features2 ul { gap: 1.8em; }
+	
+	.features2 ul li {
+		padding: 1.8em;
+	}
+	.features2 ul span {
+		width: 2.3em; height: 2.3em;
+		display: inline-block;
+		margin: auto;
+	}
+	.features2 ul h4 { margin-bottom: 1em; }
 
 	/*** .master ***/
 	.master_ext {
@@ -101,6 +120,10 @@
 	/*** COMPONENTS: .features ***/
 	.features ul li { flex: 0 0 50%; }
 	
+	/*** COMPONENTS: .features2 ***/
+		/*** VIEWPORT: .features2 ***/
+		.features2 ul { flex-direction: column; }
+	
 	/*** COMPONENTS: .masters ***/
 	.master_ext { margin-bottom: 4em; }
 		/*** VIEWPORT: .masters ***/
@@ -124,6 +147,14 @@
 		
 	/*** COMPONENTS: .features ***/
 	.features ul li { flex: 0 0 33.3333%; }
+	
+	/*** COMPONENTS: .features2 ***/
+	.features2 ul { flex-wrap: wrap; }
+	.features2 ul li {// flex: 0 0 33.3333%; }
+	.features2 ul li { flex: 0 0 calc((100% - 3.6em) / 3); }
+	
+	.features2 ul li:nth-child(2),
+	.features2 ul li:nth-child(5) {// margin: 0 1em; }
 
 	/*** COMPONENTS: .masters ***/
 	.master_ext { margin-bottom: 7em; }
@@ -152,3 +183,7 @@
 		.team article:first-child { text-align: right; }
 }
 /*** END MEDIA-QUERIES ***/
+
+/*** SANDBOX ***/
+.features { display: none !important; }
+/*** END SANDBOX ***/
