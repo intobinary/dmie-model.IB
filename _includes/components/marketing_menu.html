@@ -5,6 +5,6 @@
 					<li><a href="/marketing/{{ page.lang }}/{% if forloop.index != 1 %}{{ item }}/{% endif %}"{% if page.slug contains vItem %} class="is-active"{% endif %}>{{ item }}</a></li>{% endfor %}
 				</ul>
 				
-				<a href="/auth/" class="u-btn_cta">Account</a>
+				<a href="/auth/" class="u-btn_cta" style="background-image: url('/assets/images/icon_account_colors.png');">&nbsp;</a>
 				<ul><li><a href="{{ page.localization_en }}" class="u-btn_link{% if page.url contains page.localization_en %} is-active{% endif %}" title="{{ site.data.localization.en.menuButtonLocalization }}">EN</a></li><li><a href="{{ page.localization_fr }}" class="u-btn_link{% if page.url contains page.localization_fr %} is-active{% endif %}" title="{{ site.data.localization.fr.menuButtonLocalization }}">FR</a></li></ul>
 			</nav>
