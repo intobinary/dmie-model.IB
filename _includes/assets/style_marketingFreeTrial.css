@@ -1,0 +1,28 @@
+/*** COLORS ***/
+ { background-color: #04EA60; }
+ { background-color: #eee; }
+ { background-color: rgba(0, 0, 0, .1); }
+/*** END COLORS ***/
+
+/*** FONTS ***/
+/*** END FONTS ***/
+
+/*** MEDIA ***/
+/*** END MEDIA ***/
+
+/*** COMPONENTS ***/
+	/*** COMMONS ***/
+
+/*** END COMPONENTS ***/
+
+/*** MEDIA-QUERIES ***/
+@media screen and (max-width: 50em) {
+	/*** FONTS ***/
+	.master h2 { font-size: 1.6em; }
+}
+@media screen and (min-width: 50em) {
+	/*** FONTS ***/
+	.master h2 { font-size: 3em; }
+	.pricing ul p span { font-size: 1.8em; }
+}
+/*** END MEDIA-QUERIES ***/
